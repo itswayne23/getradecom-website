@@ -1,0 +1,423 @@
+:root {
+    --apple-bg: #ffffff;
+    --apple-surface: #f5f5f7;
+    --apple-surface-elevated: #fbfbfd;
+    --apple-dark: #000000;
+    --apple-dark-elevated: #161617;
+    --apple-text: #1d1d1f;
+    --apple-muted: #6e6e73;
+    --apple-subtle: #86868b;
+    --apple-border: #d2d2d7;
+    --apple-blue: #0071e3;
+    --apple-blue-hover: #0077ed;
+    --apple-blue-dark: #2997ff;
+    /* Luxurious, unhurried Apple expo-out deceleration */
+    --apple-ease: cubic-bezier(0.16, 1, 0.3, 1);
+    --apple-ease-inout: cubic-bezier(0.45, 0, 0.25, 1);
+    --apple-font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --apple-font-text: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: var(--apple-font-text);
+    color: var(--apple-text);
+    background-color: var(--apple-bg);
+    letter-spacing: -0.016em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, .font-display {
+    font-family: var(--apple-font-display);
+    letter-spacing: -0.028em;
+}
+
+/* Official Apple Frosted Navigation Bar */
+.glass-nav {
+    background: rgba(251, 251, 253, 0.82);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    transition: background-color 0.5s var(--apple-ease-inout), box-shadow 0.5s var(--apple-ease-inout);
+}
+
+.glass-nav.is-scrolled {
+    background: rgba(251, 251, 253, 0.94);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08), 0 10px 28px -18px rgba(0, 0, 0, 0.12);
+}
+
+.glass-nav.curtain-open {
+    background: rgba(251, 251, 253, 0.98);
+}
+
+.glass-dark {
+    background: rgba(22, 22, 23, 0.84);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+}
+
+/* Fluid Gliding Nav Hover Pill (GPU-composited) */
+#nav-hover-pill {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 30px;
+    border-radius: 9999px;
+    background: rgba(0, 0, 0, 0.06);
+    transform: translate3d(0, -50%, 0);
+    opacity: 0;
+    pointer-events: none;
+    will-change: transform, width, opacity;
+    transition:
+        transform 0.48s var(--apple-ease),
+        width 0.48s var(--apple-ease),
+        opacity 0.3s ease;
+}
+
+#nav-hover-pill.is-visible {
+    opacity: 1;
+}
+
+/* Lightweight GPU Curtain Backdrop (avoids full-viewport blur repaint jank) */
+#nav-curtain-backdrop {
+    position: fixed;
+    inset: 0;
+    top: var(--nav-bottom, 84px);
+    background: rgba(0, 0, 0, 0.28);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 35;
+    will-change: opacity;
+    transition: opacity 0.52s var(--apple-ease);
+}
+
+#nav-curtain-backdrop.is-open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Apple Global Nav Curtain (Fluid CSS Grid-Row + Opacity + Slide) */
+#apple-nav-curtain {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: var(--nav-bottom, 84px);
+    z-index: 39;
+    background: rgba(251, 251, 253, 0.97);
+    backdrop-filter: saturate(180%) blur(24px);
+    -webkit-backdrop-filter: saturate(180%) blur(24px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 28px 56px -20px rgba(0, 0, 0, 0.16);
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    pointer-events: none;
+    will-change: grid-template-rows, opacity;
+    transition:
+        grid-template-rows 0.56s var(--apple-ease),
+        opacity 0.42s var(--apple-ease);
+}
+
+#apple-nav-curtain.is-open {
+    grid-template-rows: 1fr;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#apple-nav-curtain > .curtain-inner {
+    overflow: hidden;
+    min-height: 0;
+}
+
+/* Smooth inner cross-fade when switching categories without snapping */
+#curtain-content {
+    transition: opacity 0.28s var(--apple-ease), transform 0.36s var(--apple-ease);
+}
+
+#curtain-content.is-switching {
+    opacity: 0;
+    transform: translate3d(0, -6px, 0);
+}
+
+.curtain-stagger {
+    opacity: 0;
+    transform: translate3d(0, -10px, 0);
+    transition: opacity 0.48s var(--apple-ease), transform 0.52s var(--apple-ease);
+}
+
+#apple-nav-curtain.is-open .curtain-stagger {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+/* Apple 2-Line Hamburger -> X Morph */
+.apple-burger {
+    width: 18px;
+    height: 14px;
+    position: relative;
+}
+
+.apple-burger span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 1.5px;
+    background: currentColor;
+    border-radius: 2px;
+    transition: transform 0.45s var(--apple-ease), top 0.45s var(--apple-ease);
+}
+
+.apple-burger span:first-child { top: 3px; }
+.apple-burger span:last-child { top: 10px; }
+
+.apple-burger.is-open span:first-child {
+    top: 6.5px;
+    transform: rotate(45deg);
+}
+
+.apple-burger.is-open span:last-child {
+    top: 6.5px;
+    transform: rotate(-45deg);
+}
+
+/* Fluid Mobile Drawer Slide */
+#mobile-menu {
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    pointer-events: none;
+    transition: grid-template-rows 0.56s var(--apple-ease), opacity 0.4s var(--apple-ease);
+}
+
+#mobile-menu.is-open {
+    grid-template-rows: 1fr;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#mobile-menu > .mobile-drawer-inner {
+    overflow: hidden;
+    min-height: 0;
+}
+
+.mobile-nav-item {
+    opacity: 0;
+    transform: translate3d(0, -10px, 0);
+    transition: opacity 0.48s var(--apple-ease), transform 0.48s var(--apple-ease);
+}
+
+#mobile-menu.is-open .mobile-nav-item {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+/* Modal Spring Entrance (GPU-only, zero backdrop-blur animation lag) */
+.apple-modal-overlay {
+    opacity: 0;
+    pointer-events: none;
+    will-change: opacity;
+    transition: opacity 0.38s var(--apple-ease);
+}
+
+.apple-modal-overlay.is-open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.apple-modal-panel {
+    transform: translate3d(0, 16px, 0) scale(0.96);
+    opacity: 0;
+    will-change: transform, opacity;
+    transition: transform 0.48s var(--apple-ease), opacity 0.38s var(--apple-ease);
+}
+
+.apple-modal-overlay.is-open .apple-modal-panel {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 1;
+}
+
+/* Apple Intelligence Spectral Accent */
+.ai-gradient-text {
+    background: linear-gradient(90deg, #007aff 0%, #9b51e0 38%, #ff2d55 72%, #ff9500 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.ai-ring {
+    position: relative;
+}
+
+.ai-ring::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(120deg, rgba(0, 122, 255, 0.55), rgba(175, 82, 222, 0.48), rgba(255, 45, 85, 0.45), rgba(255, 159, 10, 0.48));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+/* Ambient Hero Glow */
+.hero-titanium-glow {
+    background:
+        radial-gradient(55% 45% at 50% 12%, rgba(41, 151, 255, 0.22) 0%, rgba(0, 0, 0, 0) 70%),
+        radial-gradient(40% 38% at 78% 72%, rgba(175, 82, 222, 0.16) 0%, rgba(0, 0, 0, 0) 70%),
+        radial-gradient(35% 35% at 22% 75%, rgba(255, 159, 10, 0.08) 0%, rgba(0, 0, 0, 0) 70%),
+        linear-gradient(180deg, #000000 0%, #0a0a0e 100%);
+}
+
+.hero-light-stage {
+    background:
+        radial-gradient(70% 55% at 50% 0%, rgba(0, 113, 227, 0.065) 0%, rgba(245, 245, 247, 0) 70%),
+        linear-gradient(180deg, #fbfbfd 0%, #f5f5f7 100%);
+}
+
+/* Tactile Buttons */
+button, a {
+    transition-timing-function: var(--apple-ease);
+}
+
+button:active:not(:disabled),
+a.btn-tactile:active {
+    transform: scale(0.975);
+}
+
+/* GPU-Composited Apple Cards (Pseudo-element shadow avoids paint stutter!) */
+.apple-card,
+.motion-card {
+    position: relative;
+    will-change: transform;
+    transition: transform 0.62s var(--apple-ease), background-color 0.4s ease, border-color 0.4s ease;
+}
+
+.apple-card::after,
+.motion-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: 0 28px 56px -20px rgba(0, 0, 0, 0.14);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.62s var(--apple-ease);
+}
+
+.apple-card:hover,
+.motion-card:hover {
+    transform: translate3d(0, -5px, 0);
+}
+
+.motion-card:hover {
+    border-color: rgba(0, 113, 227, 0.32);
+}
+
+.apple-card:hover::after,
+.motion-card:hover::after {
+    opacity: 1;
+}
+
+/* Specular Hardware Sheen */
+.hardware-sheen {
+    position: relative;
+    overflow: hidden;
+}
+
+.hardware-sheen::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(115deg, rgba(255,255,255,0) 30%, rgba(255,255,255,0.13) 48%, rgba(255,255,255,0) 65%);
+    transform: translate3d(-110%, 0, 0);
+    transition: transform 1.15s var(--apple-ease);
+    pointer-events: none;
+}
+
+.apple-card:hover .hardware-sheen::after,
+.motion-card:hover .hardware-sheen::after,
+.hardware-stage:hover .hardware-sheen::after {
+    transform: translate3d(110%, 0, 0);
+}
+
+/* Interactive 3D Hardware Tilt (driven smoothly via rAF lerp in JS) */
+.tilt-stage {
+    will-change: transform;
+    transform-style: preserve-3d;
+}
+
+/* Scrollbar Hide */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Unhurried Fluid Scroll Reveal */
+.reveal-card {
+    opacity: 0;
+    transform: translate3d(0, 24px, 0);
+    will-change: opacity, transform;
+    transition: opacity 0.85s var(--apple-ease), transform 0.85s var(--apple-ease);
+}
+
+.reveal-card.is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+/* Apple Link Arrow Micro-motion */
+.apple-link-arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.apple-link-arrow svg {
+    transition: transform 0.36s var(--apple-ease);
+}
+
+.apple-link-arrow:hover svg {
+    transform: translate3d(4px, 0, 0);
+}
+
+/* Gentle Fluid Hardware Float */
+@keyframes floatSlow {
+    0%, 100% { transform: translate3d(0, 0, 0); }
+    50% { transform: translate3d(0, -8px, 0); }
+}
+
+.animate-float-slow {
+    animation: floatSlow 8.5s ease-in-out infinite;
+    will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal-card,
+    .apple-card,
+    .motion-card,
+    .animate-float-slow,
+    #apple-nav-curtain,
+    #nav-hover-pill,
+    .curtain-stagger,
+    .apple-modal-panel,
+    #mobile-menu,
+    .mobile-nav-item {
+        transition: none !important;
+        animation: none !important;
+        transform: none !important;
+    }
+    .reveal-card {
+        opacity: 1 !important;
+    }
+}
