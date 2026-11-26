@@ -82,7 +82,7 @@ unset($_SESSION['flash_message']);
 
         <!-- Quick District Pills -->
         <?php if (!empty($districts)): ?>
-        <div class="flex gap-2 overflow-x-auto no-scrollbar pt-5 pb-1">
+        <div id="district-filter-bar" class="flex gap-2 overflow-x-auto no-scrollbar pt-5 pb-1">
             <a href="dealers.php"
                class="px-3.5 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition <?= ($district === '' || $district === 'All') ? 'bg-[#1d1d1f] text-white' : 'bg-white text-[#424245] border border-[#d2d2d7] hover:border-[#1d1d1f]' ?>">
                 All Districts

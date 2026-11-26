@@ -67,7 +67,7 @@ unset($_SESSION['flash_message']);
         </div>
 
         <!-- Category Filter Pills -->
-        <div class="flex gap-2 overflow-x-auto no-scrollbar pt-8 pb-1">
+        <div id="category-filter-bar" class="flex gap-2 overflow-x-auto no-scrollbar pt-8 pb-1">
             <?php foreach ($categories as $cat):
                 $active = ($cat === $selected_category);
                 $url = 'products.php?category=' . urlencode($cat) . ($search !== '' ? '&q=' . urlencode($search) : '');

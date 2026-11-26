@@ -438,9 +438,19 @@ function moveNavPill(triggerEl) {
     if (!hoverPill || !triggerEl || !desktopNav) return;
     const navRect = desktopNav.getBoundingClientRect();
     const elRect = triggerEl.getBoundingClientRect();
-    hoverPill.style.width = elRect.width + 'px';
-    hoverPill.style.transform = `translate3d(${elRect.left - navRect.left}px, -50%, 0)`;
-    hoverPill.classList.add('is-visible');
+    const wasVisible = hoverPill.classList.contains('is-visible');
+
+    if (!wasVisible) {
+        hoverPill.style.transition = 'none';
+        hoverPill.style.width = elRect.width + 'px';
+        hoverPill.style.transform = `translate3d(${elRect.left - navRect.left}px, -50%, 0)`;
+        void hoverPill.offsetWidth;
+        hoverPill.style.transition = '';
+        hoverPill.classList.add('is-visible');
+    } else {
+        hoverPill.style.width = elRect.width + 'px';
+        hoverPill.style.transform = `translate3d(${elRect.left - navRect.left}px, -50%, 0)`;
+    }
 }
 
 function openNavCurtain(key, triggerEl) {
@@ -460,22 +470,26 @@ function openNavCurtain(key, triggerEl) {
         curtainSwitchTimer = setTimeout(() => {
             activeCurtainKey = key;
             curtainContent.innerHTML = buildCurtainHTML(data);
-            requestAnimationFrame(() => curtainContent.classList.remove('is-switching'));
-        }, 120);
+            void curtainContent.offsetWidth;
+            requestAnimationFrame(() => {
+                curtainContent.classList.remove('is-switching');
+            });
+        }, 110);
         return;
     }
 
     if (!alreadyOpen) {
         curtainOpenTimer = setTimeout(() => {
             activeCurtainKey = key;
-            curtainContent.innerHTML = buildCurtainHTML(data);
             curtainContent.classList.remove('is-switching');
+            curtainContent.innerHTML = buildCurtainHTML(data);
+            void navCurtain.offsetWidth;
             requestAnimationFrame(() => {
                 navCurtain.classList.add('is-open');
                 curtainBackdrop?.classList.add('is-open');
                 mainNavbar?.classList.add('curtain-open');
             });
-        }, 55);
+        }, 45);
     }
 }
 
@@ -502,7 +516,11 @@ document.querySelectorAll('.nav-trigger').forEach(link => {
     link.addEventListener('focus', () => openNavCurtain(key, link));
 });
 
-desktopNav?.addEventListener('mouseleave', scheduleCloseNavCurtain);
+desktopNav?.addEventListener('mouseleave', () => {
+    hoverPill?.classList.remove('is-visible');
+});
+mainNavbar?.addEventListener('mouseenter', () => clearTimeout(curtainCloseTimer));
+mainNavbar?.addEventListener('mouseleave', scheduleCloseNavCurtain);
 navCurtain?.addEventListener('mouseenter', () => clearTimeout(curtainCloseTimer));
 navCurtain?.addEventListener('mouseleave', scheduleCloseNavCurtain);
 curtainBackdrop?.addEventListener('mouseenter', closeNavCurtain);

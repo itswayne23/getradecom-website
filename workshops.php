@@ -37,7 +37,7 @@ unset($_SESSION['flash_message']);
         </p>
 
         <?php if (!empty($cities)): ?>
-        <div class="flex gap-2 overflow-x-auto no-scrollbar pt-7 pb-1">
+        <div id="city-filter-bar" class="flex gap-2 overflow-x-auto no-scrollbar pt-7 pb-1">
             <a href="workshops.php" class="px-4 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition <?= ($city_filter === '' || $city_filter === 'All') ? 'bg-[#1d1d1f] text-white' : 'bg-white text-[#424245] border border-[#d2d2d7]' ?>">
                 All Cities
             </a>

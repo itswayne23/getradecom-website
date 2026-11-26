@@ -101,42 +101,43 @@ h1, h2, h3, .font-display {
     pointer-events: auto;
 }
 
-/* Apple Global Nav Curtain (Fluid CSS Grid-Row + Opacity + Slide) */
+/* Apple Global Nav Curtain (100% GPU-Composited Clip-Path + Fade — Zero Reflow!) */
 #apple-nav-curtain {
     position: fixed;
     left: 0;
     right: 0;
     top: var(--nav-bottom, 84px);
     z-index: 39;
-    background: rgba(251, 251, 253, 0.97);
+    background: rgba(251, 251, 253, 0.96);
     backdrop-filter: saturate(180%) blur(24px);
     -webkit-backdrop-filter: saturate(180%) blur(24px);
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     box-shadow: 0 28px 56px -20px rgba(0, 0, 0, 0.16);
-    display: grid;
-    grid-template-rows: 0fr;
+    clip-path: inset(0 0 100% 0);
+    transform: translate3d(0, -6px, 0);
     opacity: 0;
     pointer-events: none;
-    will-change: grid-template-rows, opacity;
+    will-change: clip-path, transform, opacity;
     transition:
-        grid-template-rows 0.56s var(--apple-ease),
-        opacity 0.42s var(--apple-ease);
+        clip-path 0.52s var(--apple-ease),
+        transform 0.52s var(--apple-ease),
+        opacity 0.36s var(--apple-ease);
 }
 
 #apple-nav-curtain.is-open {
-    grid-template-rows: 1fr;
+    clip-path: inset(0 0 0% 0);
+    transform: translate3d(0, 0, 0);
     opacity: 1;
     pointer-events: auto;
 }
 
 #apple-nav-curtain > .curtain-inner {
     overflow: hidden;
-    min-height: 0;
 }
 
 /* Smooth inner cross-fade when switching categories without snapping */
 #curtain-content {
-    transition: opacity 0.28s var(--apple-ease), transform 0.36s var(--apple-ease);
+    transition: opacity 0.24s var(--apple-ease), transform 0.32s var(--apple-ease);
 }
 
 #curtain-content.is-switching {
@@ -150,7 +151,7 @@ h1, h2, h3, .font-display {
     transition: opacity 0.48s var(--apple-ease), transform 0.52s var(--apple-ease);
 }
 
-#apple-nav-curtain.is-open .curtain-stagger {
+#apple-nav-curtain.is-open #curtain-content:not(.is-switching) .curtain-stagger {
     opacity: 1;
     transform: translate3d(0, 0, 0);
 }
