@@ -29,7 +29,7 @@ unset($_SESSION['flash_message']);
             Corporate portfolio &amp; channel hub for GE Tradecom Pvt Ltd &mdash; connecting Assam customers, verified dealers, institutions, and service partners with the official Apple ecosystem.
         </p>
 
-        <div class="flex flex-wrap justify-center items-center gap-3.5 mb-14">
+        <div class="flex flex-wrap justify-center items-center gap-3.5 mb-12">
             <a href="products.php" class="btn-tactile px-7 py-3 rounded-full bg-[#0071e3] hover:bg-[#0077ed] text-white font-medium text-[15px] transition shadow-[0_6px_24px_rgba(0,113,227,0.35)]">
                 Explore Product Portfolio
             </a>
@@ -42,49 +42,8 @@ unset($_SESSION['flash_message']);
             </button>
         </div>
 
-        <!-- Sculptural Interactive 3D-Tilt Hardware Duo Showcase -->
-        <div data-tilt-stage class="tilt-stage hardware-stage relative max-w-3xl mx-auto pt-2 pb-4 flex flex-col sm:flex-row items-end justify-center gap-8 sm:gap-12">
-            <!-- MacBook Pro M4 Architectural Silhouette -->
-            <div class="animate-float-slow w-72 sm:w-88 mx-auto sm:mx-0">
-                <div class="mx-auto w-64 sm:w-80 h-44 sm:h-52 rounded-t-2xl border-[4px] border-[#3a3a3f] bg-gradient-to-br from-[#0f1320] via-[#1c2942] to-[#08090d] shadow-[0_32px_80px_rgba(41,151,255,0.22)] relative flex flex-col items-center justify-between py-5 hardware-sheen">
-                    <div class="w-7 h-2 bg-black rounded-b-md absolute top-0 left-1/2 -translate-x-1/2 border-x border-b border-white/10"></div>
-                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_60%_25%,rgba(41,151,255,0.48),transparent_55%),radial-gradient(circle_at_30%_75%,rgba(175,82,222,0.38),transparent_55%)]"></div>
-                    <div class="relative z-10 my-auto text-center px-4">
-                        <div class="text-[10px] uppercase tracking-[0.25em] text-[#2997ff] font-semibold mb-1">Enterprise &amp; Pro</div>
-                        <div class="font-display text-2xl sm:text-3xl font-semibold tracking-tight text-white">Mac M4 Series</div>
-                        <div class="text-[11px] text-white/60 mt-1">MacBook Air &amp; MacBook Pro</div>
-                    </div>
-                    <div class="relative z-10 flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15">
-                        <span class="w-2 h-2 rounded-full bg-[#2997ff]"></span>
-                        <span class="w-2 h-2 rounded-full bg-[#30d158]"></span>
-                        <span class="w-2 h-2 rounded-full bg-[#ff9f0a]"></span>
-                        <span class="w-2 h-2 rounded-full bg-[#bf5af2]"></span>
-                    </div>
-                </div>
-                <div class="mx-auto w-72 sm:w-88 h-3 rounded-b-xl bg-gradient-to-b from-[#4a4a50] to-[#232327] shadow-2xl flex justify-center">
-                    <div class="w-14 h-1 rounded-b bg-[#161617]"></div>
-                </div>
-            </div>
-
-            <!-- iPhone 17 Pro Titanium Silhouette -->
-            <div class="mx-auto sm:mx-0 w-36 h-64 rounded-[34px] border-[4px] border-[#524f4a] bg-gradient-to-br from-[#191a20] via-[#262c3d] to-[#0a0a0d] shadow-[0_32px_80px_rgba(175,82,222,0.24)] p-3 flex flex-col justify-between relative hardware-sheen">
-                <div class="mx-auto w-12 h-3 rounded-full bg-black border border-white/10 flex items-center justify-end pr-1.5">
-                    <span class="w-1.5 h-1.5 rounded-full bg-[#1a2c4e] border border-[#2997ff]/50"></span>
-                </div>
-                <div class="absolute inset-0 bg-[radial-gradient(circle_at_35%_25%,rgba(255,159,10,0.22),transparent_50%),radial-gradient(circle_at_70%_70%,rgba(41,151,255,0.45),transparent_55%)] pointer-events-none"></div>
-                <div class="relative z-10 text-center my-auto space-y-2">
-                    <div class="font-display text-2xl font-semibold text-white/90 leading-none">9:41</div>
-                    <div class="w-11 h-11 mx-auto rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center">
-                        <span class="w-3.5 h-3.5 rounded-full bg-gradient-to-tr from-[#2997ff] to-[#bf5af2] shadow-[0_0_16px_rgba(41,151,255,0.85)]"></span>
-                    </div>
-                    <div class="text-[11px] font-semibold text-white">iPhone 17 Pro</div>
-                </div>
-                <div class="mx-auto w-12 h-1 rounded-full bg-white/40 relative z-10"></div>
-            </div>
-        </div>
-
         <!-- Corporate Footprint Bar -->
-        <div class="mt-12 pt-8 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-6 text-left">
+        <div class="pt-8 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-6 text-left">
             <div>
                 <div class="font-display text-2xl font-semibold text-white">Assam-Wide</div>
                 <div class="text-[12px] text-[#86868b] mt-0.5">Guwahati, Dibrugarh, Jorhat, Nagaon &amp; Silchar hubs</div>
