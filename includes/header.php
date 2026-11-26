@@ -44,7 +44,6 @@ $current_cat = $_GET['category'] ?? '';
             <a href="index.php" class="flex items-center gap-2.5 group shrink-0">
                 <span class="w-6 h-6 rounded-full bg-[#1d1d1f] text-white flex items-center justify-center text-[11px] font-semibold tracking-tight group-hover:bg-[#0071e3] group-hover:scale-105 transition-all duration-300">g</span>
                 <span class="font-display text-[17px] font-semibold tracking-tight text-[#1d1d1f]">getradeCom</span>
-                <span class="hidden xl:inline-block text-[10px] tracking-wide uppercase bg-black/[0.05] text-[#6e6e73] px-2 py-0.5 rounded-full font-medium">Assam Portfolio</span>
             </a>
 
             <!-- Centered Single-Row Navigation with Gliding Hover Pill -->
