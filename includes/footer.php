@@ -2,7 +2,7 @@
 
 <!-- Official Apple-Inspired Corporate Portfolio Footer -->
 <footer class="bg-[#f5f5f7] border-t border-[#d2d2d7]/60 mt-24 text-[12px] text-[#6e6e73]">
-    <div class="max-w-[1080px] mx-auto px-4 sm:px-6 py-12">
+    <div class="max-w-[1080px] mx-auto px-4 sm:px-6 pt-12 pb-20">
         <!-- Distributor Governance & Compliance Footnote -->
         <div class="pb-6 mb-8 border-b border-[#d2d2d7] leading-relaxed text-[11px] text-[#6e6e73] space-y-2">
             <p>

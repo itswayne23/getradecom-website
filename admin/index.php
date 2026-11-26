@@ -69,7 +69,7 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard | <?= e(SITE_NAME) ?></title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/css/custom.css?v=<?= @filemtime(__DIR__ . '/../assets/css/custom.css') ?: '2' ?>">
 </head>
 <body class="bg-[#f5f5f7] text-[#1d1d1f] min-h-screen">
     <header class="glass-nav border-b border-black/[0.08] sticky top-0 z-30">

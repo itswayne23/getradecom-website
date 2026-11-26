@@ -11,7 +11,7 @@ $current_cat = $_GET['category'] ?? '';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= isset($page_title) ? e($page_title) . ' | ' . SITE_NAME : SITE_NAME . ' — ' . TERRITORY ?></title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="assets/css/custom.css?v=<?= @filemtime(__DIR__ . '/../assets/css/custom.css') ?: '2' ?>">
 </head>
 <body class="bg-white text-[#1d1d1f] flex flex-col min-h-screen selection:bg-[#0071e3]/15 selection:text-[#0071e3]">
 

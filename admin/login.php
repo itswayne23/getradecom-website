@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Login | <?= e(SITE_NAME) ?></title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/css/custom.css?v=<?= @filemtime(__DIR__ . '/../assets/css/custom.css') ?: '2' ?>">
 </head>
 <body class="bg-[#f5f5f7] min-h-screen flex items-center justify-center p-4">
     <div class="bg-white border border-black/[0.06] rounded-[30px] max-w-md w-full p-8 sm:p-10 shadow-sm">
