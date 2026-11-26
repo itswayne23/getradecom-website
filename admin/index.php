@@ -13,7 +13,7 @@ if (isset($_GET['logout'])) {
     exit;
 }
 
-// Handle POST actions (update enquiry status or toggle dealer active state)
+// Handle POST actions (update enquiry status, toggle dealer, toggle campaign)
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $token = $_POST['csrf_token'] ?? '';
     if (hash_equals($_SESSION['csrf_token'] ?? '', $token)) {
@@ -33,6 +33,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $stmt = $pdo->prepare("UPDATE dealers SET is_active = IF(is_active = 1, 0, 1) WHERE id = :id");
                 $stmt->execute([':id' => $id]);
             }
+        } elseif ($admin_action === 'toggle_campaign') {
+            $id = (int)($_POST['campaign_id'] ?? 0);
+            if ($id > 0) {
+                try {
+                    $stmt = $pdo->prepare("UPDATE campaigns SET is_active = IF(is_active = 1, 0, 1) WHERE id = :id");
+                    $stmt->execute([':id' => $id]);
+                } catch (Throwable $e) {
+                    // Ignore if optional table is not yet migrated
+                }
+            }
         }
     }
     header('Location: index.php');
@@ -41,8 +51,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 $enquiries = $pdo->query("SELECT * FROM enquiries ORDER BY created_at DESC")->fetchAll();
 $dealers = $pdo->query("SELECT * FROM dealers ORDER BY district ASC, id ASC")->fetchAll();
+$workshops = $pdo->query("SELECT * FROM workshops ORDER BY session_date ASC, id ASC")->fetchAll();
 $sub_count = (int)$pdo->query("SELECT COUNT(*) FROM subscribers")->fetchColumn();
 $prod_count = (int)$pdo->query("SELECT COUNT(*) FROM products WHERE is_active = 1")->fetchColumn();
+
+$campaigns = [];
+try {
+    $campaigns = $pdo->query("SELECT * FROM campaigns ORDER BY start_date DESC")->fetchAll();
+} catch (Throwable $e) {
+    $campaigns = [];
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -57,7 +75,7 @@ $prod_count = (int)$pdo->query("SELECT COUNT(*) FROM products WHERE is_active = 
     <header class="glass-nav border-b border-black/[0.08] sticky top-0 z-30">
         <div class="max-w-[1200px] mx-auto px-4 sm:px-6 h-14 flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <span class="font-display font-semibold text-lg tracking-tight">getradeCom Admin</span>
+                <span class="font-display font-semibold text-lg tracking-tight">GE Tradecom Admin</span>
                 <span class="text-[11px] bg-[#0071e3]/10 text-[#0071e3] px-2.5 py-0.5 rounded-full font-semibold">Assam Operations</span>
             </div>
             <div class="flex items-center gap-4 text-xs">
@@ -70,7 +88,7 @@ $prod_count = (int)$pdo->query("SELECT COUNT(*) FROM products WHERE is_active = 
 
     <main class="max-w-[1200px] mx-auto px-4 sm:px-6 py-10 space-y-8">
         <!-- KPI Cards -->
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="grid grid-cols-2 lg:grid-cols-5 gap-4">
             <div class="bg-white border border-black/[0.05] rounded-[24px] p-6">
                 <div class="text-[12px] text-[#6e6e73]">Total Enquiries</div>
                 <div class="font-display text-3xl font-semibold mt-1"><?= count($enquiries) ?></div>
@@ -84,14 +102,18 @@ $prod_count = (int)$pdo->query("SELECT COUNT(*) FROM products WHERE is_active = 
                 <div class="font-display text-3xl font-semibold mt-1"><?= $prod_count ?></div>
             </div>
             <div class="bg-white border border-black/[0.05] rounded-[24px] p-6">
-                <div class="text-[12px] text-[#6e6e73]">Newsletter Subscribers</div>
+                <div class="text-[12px] text-[#6e6e73]">Workshops</div>
+                <div class="font-display text-3xl font-semibold mt-1"><?= count($workshops) ?></div>
+            </div>
+            <div class="bg-white border border-black/[0.05] rounded-[24px] p-6">
+                <div class="text-[12px] text-[#6e6e73]">Subscribers</div>
                 <div class="font-display text-3xl font-semibold mt-1"><?= $sub_count ?></div>
             </div>
         </div>
 
         <!-- Enquiries Table -->
         <section class="bg-white border border-black/[0.05] rounded-[28px] p-7 overflow-x-auto">
-            <h2 class="font-display text-xl font-semibold mb-4">Customer, Specialist &amp; Business Enquiries</h2>
+            <h2 class="font-display text-xl font-semibold mb-4">Enquiries, Stock Alerts &amp; Onboarding Requests</h2>
             <?php if (empty($enquiries)): ?>
                 <p class="text-sm text-[#6e6e73] py-6">No enquiries submitted yet. Test a form on the website to see entries appear here.</p>
             <?php else: ?>
@@ -187,6 +209,50 @@ $prod_count = (int)$pdo->query("SELECT COUNT(*) FROM products WHERE is_active = 
                 </tbody>
             </table>
         </section>
+
+        <?php if (!empty($campaigns)): ?>
+        <!-- Approved Campaigns Control -->
+        <section class="bg-white border border-black/[0.05] rounded-[28px] p-7 overflow-x-auto">
+            <h2 class="font-display text-xl font-semibold mb-4">Approved Campaigns (Publication Control)</h2>
+            <table class="w-full text-left border-collapse text-xs">
+                <thead>
+                    <tr class="border-b border-black/[0.08] text-[#86868b] uppercase">
+                        <th class="py-3 pr-4">Campaign</th>
+                        <th class="py-3 pr-4">Segment</th>
+                        <th class="py-3 pr-4">Dates</th>
+                        <th class="py-3 pr-4">Status</th>
+                        <th class="py-3">Action</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-black/[0.05]">
+                    <?php foreach ($campaigns as $cp): ?>
+                    <tr>
+                        <td class="py-3.5 pr-4 font-semibold text-[#1d1d1f]"><?= e($cp['title']) ?></td>
+                        <td class="py-3.5 pr-4"><?= e($cp['segment']) ?></td>
+                        <td class="py-3.5 pr-4"><?= e($cp['start_date']) ?> &ndash; <?= e($cp['end_date']) ?></td>
+                        <td class="py-3.5 pr-4">
+                            <?php if ($cp['is_active']): ?>
+                            <span class="px-2.5 py-0.5 rounded-full bg-[#e9f9ee] text-[#1f7a3e] font-semibold">Active</span>
+                            <?php else: ?>
+                            <span class="px-2.5 py-0.5 rounded-full bg-[#f5f5f7] text-[#6e6e73] font-semibold">Paused</span>
+                            <?php endif; ?>
+                        </td>
+                        <td class="py-3.5">
+                            <form method="POST" class="inline">
+                                <?= csrf_field() ?>
+                                <input type="hidden" name="admin_action" value="toggle_campaign">
+                                <input type="hidden" name="campaign_id" value="<?= (int)$cp['id'] ?>">
+                                <button type="submit" class="px-3.5 py-1 rounded-full border border-[#d2d2d7] hover:bg-[#f5f5f7] font-medium cursor-pointer transition">
+                                    <?= $cp['is_active'] ? 'Pause' : 'Activate' ?>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </section>
+        <?php endif; ?>
     </main>
 </body>
 </html>

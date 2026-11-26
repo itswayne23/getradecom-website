@@ -1,19 +1,19 @@
 </main>
 
-<!-- Official Apple-Inspired Directory Footer -->
+<!-- Official Apple-Inspired Corporate Portfolio Footer -->
 <footer class="bg-[#f5f5f7] border-t border-[#d2d2d7]/60 mt-24 text-[12px] text-[#6e6e73]">
-    <div class="max-w-[1024px] mx-auto px-4 sm:px-6 py-12">
-        <!-- Compliance Footnote -->
+    <div class="max-w-[1080px] mx-auto px-4 sm:px-6 py-12">
+        <!-- Distributor Governance & Compliance Footnote -->
         <div class="pb-6 mb-8 border-b border-[#d2d2d7] leading-relaxed text-[11px] text-[#6e6e73] space-y-2">
             <p>
-                <strong class="font-semibold text-[#1d1d1f]">Channel &amp; Availability Notice:</strong>
-                Product availability, trade-in evaluations, financing options, and store pickup or local delivery services are fulfilled exclusively through verified participating dealers and authorised service partners across Assam. Specifications, stock, and financing terms are subject to official partner confirmation and approval.
+                <strong class="font-semibold text-[#1d1d1f]">Distributor Corporate Governance Notice:</strong>
+                <?= e(SITE_NAME) ?> operates as an Assam Apple distribution and channel network portal focused on public product discovery, verified dealer routing, B2B consultation, training workshops, and authorised service discovery. Trade-in valuations, financing/EMI terms, education eligibility verification, and store pickup or delivery options are fulfilled exclusively through verified participating dealer or service partners, subject to approved partner terms.
             </p>
         </div>
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
             <div>
-                <h4 class="font-semibold text-[#1d1d1f] mb-3 tracking-tight">Shop &amp; Explore</h4>
+                <h4 class="font-semibold text-[#1d1d1f] mb-3 tracking-tight">Product Portfolio</h4>
                 <ul class="space-y-2">
                     <li><a href="products.php?category=iPhone" class="hover:text-[#1d1d1f] hover:underline transition">iPhone</a></li>
                     <li><a href="products.php?category=Mac" class="hover:text-[#1d1d1f] hover:underline transition">Mac</a></li>
@@ -25,28 +25,30 @@
                 </ul>
             </div>
             <div>
-                <h4 class="font-semibold text-[#1d1d1f] mb-3 tracking-tight">Assam Channel &amp; Services</h4>
+                <h4 class="font-semibold text-[#1d1d1f] mb-3 tracking-tight">Assam Channel &amp; Programmes</h4>
                 <ul class="space-y-2">
                     <li><a href="dealers.php" class="hover:text-[#1d1d1f] hover:underline transition">Assam Dealer Locator</a></li>
+                    <li><a href="dealers.php#partner-onboarding" class="hover:text-[#1d1d1f] hover:underline transition">Dealer Partner Onboarding</a></li>
                     <li><a href="business.php" class="hover:text-[#1d1d1f] hover:underline transition">Small Business Solutions</a></li>
-                    <li><a href="services.php#trade-in" class="hover:text-[#1d1d1f] hover:underline transition">Trade-In &amp; Upgrade Info</a></li>
-                    <li><a href="services.php#financing" class="hover:text-[#1d1d1f] hover:underline transition">Financing &amp; EMI Info</a></li>
+                    <li><a href="education.php" class="hover:text-[#1d1d1f] hover:underline transition">Student &amp; Teacher Programme</a></li>
+                    <li><a href="promotions.php" class="hover:text-[#1d1d1f] hover:underline transition">Approved Campaigns</a></li>
                     <li><a href="workshops.php" class="hover:text-[#1d1d1f] hover:underline transition">Workshops &amp; Training</a></li>
                 </ul>
             </div>
             <div>
-                <h4 class="font-semibold text-[#1d1d1f] mb-3 tracking-tight">Support</h4>
+                <h4 class="font-semibold text-[#1d1d1f] mb-3 tracking-tight">Services &amp; Support</h4>
                 <ul class="space-y-2">
+                    <li><a href="services.php#trade-in" class="hover:text-[#1d1d1f] hover:underline transition">Trade-In &amp; Upgrade Info</a></li>
+                    <li><a href="services.php#financing" class="hover:text-[#1d1d1f] hover:underline transition">Financing &amp; EMI Info</a></li>
+                    <li><a href="services.php#service-centres" class="hover:text-[#1d1d1f] hover:underline transition">Service-Centre Discovery</a></li>
                     <li><a href="services.php#faqs" class="hover:text-[#1d1d1f] hover:underline transition">FAQs &amp; Warranty Guidance</a></li>
-                    <li><a href="contact.php" class="hover:text-[#1d1d1f] hover:underline transition">Contact Us</a></li>
+                    <li><a href="contact.php" class="hover:text-[#1d1d1f] hover:underline transition">Contact &amp; Escalation Desk</a></li>
                     <li><button onclick="openEnquiryModal('specialist', 'Product Specialist')" class="hover:text-[#1d1d1f] hover:underline transition cursor-pointer text-left">Talk to a Product Specialist</button></li>
-                    <li class="pt-1 text-[#424245]">Phone: <?= e(OFFICIAL_PHONE) ?></li>
-                    <li class="text-[#424245]">Email: <?= e(OFFICIAL_EMAIL) ?></li>
                 </ul>
             </div>
             <div>
-                <h4 class="font-semibold text-[#1d1d1f] mb-3 tracking-tight">Stay Updated</h4>
-                <p class="mb-3 text-[11px] leading-relaxed">Receive updates on new product launches, workshops, and approved Assam campaigns.</p>
+                <h4 class="font-semibold text-[#1d1d1f] mb-3 tracking-tight">Launch &amp; Campaign Updates</h4>
+                <p class="mb-3 text-[11px] leading-relaxed">Opt in for new Apple launches, workshops, and approved Assam partner campaigns.</p>
                 <form action="api/submit-enquiry.php" method="POST" class="space-y-2.5">
                     <?= csrf_field() ?>
                     <input type="hidden" name="action" value="subscribe">
@@ -54,21 +56,25 @@
                            class="w-full px-3.5 py-2 rounded-xl border border-[#d2d2d7] bg-white text-[#1d1d1f] text-[12px] focus:outline-none focus:border-[#0071e3]">
                     <label class="flex items-start gap-2 text-[11px] leading-snug">
                         <input type="checkbox" name="consent" required class="mt-0.5 accent-[#0071e3]">
-                        <span>I consent to receive product and event updates. I can unsubscribe anytime.</span>
+                        <span>I consent to receive product and event updates from <?= e(SITE_NAME) ?>. Unsubscribe anytime.</span>
                     </label>
                     <button type="submit" class="w-full py-2 rounded-full bg-[#1d1d1f] hover:bg-black text-white text-[12px] font-medium transition cursor-pointer">
                         Subscribe
                     </button>
                 </form>
+                <div class="mt-4 pt-3 border-t border-[#d2d2d7] text-[11px] space-y-1 text-[#424245]">
+                    <div>Phone: <?= e(OFFICIAL_PHONE) ?></div>
+                    <div>Email: <?= e(OFFICIAL_EMAIL) ?></div>
+                </div>
             </div>
         </div>
 
         <div class="pt-5 border-t border-[#d2d2d7] flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 text-[11px]">
             <p>Copyright &copy; <?= date('Y') ?> <?= e(SITE_NAME) ?> &mdash; <?= e(TERRITORY) ?>. All rights reserved.</p>
             <div class="flex flex-wrap items-center gap-4">
-                <a href="services.php#privacy" class="hover:text-[#1d1d1f] hover:underline">Privacy Policy</a>
+                <a href="services.php#privacy" class="hover:text-[#1d1d1f] hover:underline">Privacy Controls</a>
                 <span class="text-[#d2d2d7]">|</span>
-                <a href="services.php#faqs" class="hover:text-[#1d1d1f] hover:underline">Terms of Use</a>
+                <a href="services.php#faqs" class="hover:text-[#1d1d1f] hover:underline">Channel Terms</a>
                 <span class="text-[#d2d2d7]">|</span>
                 <a href="dealers.php" class="hover:text-[#1d1d1f] hover:underline">Assam Network</a>
             </div>
@@ -77,19 +83,19 @@
 </footer>
 
 <!-- Floating Apple-Polished WhatsApp Quick Concierge -->
-<a href="https://wa.me/<?= e(OFFICIAL_WHATSAPP) ?>?text=Hello%20getradeCom%20Assam%2C%20I%20have%20a%20product%20enquiry." target="_blank" rel="noopener"
+<a href="https://wa.me/<?= e(OFFICIAL_WHATSAPP) ?>?text=Hello%20GE%20Tradecom%20Assam%2C%20I%20have%20an%20enquiry." target="_blank" rel="noopener"
    class="btn-tactile fixed bottom-6 right-6 z-40 flex items-center gap-2 bg-[#1d1d1f]/90 hover:bg-[#000000] backdrop-blur-md text-white px-4 py-2.5 rounded-full shadow-[0_12px_32px_rgba(0,0,0,0.22)] border border-white/15 transition font-medium text-xs"
-   title="WhatsApp getradeCom Assam">
+   title="WhatsApp GE Tradecom Assam">
     <span class="w-2.5 h-2.5 rounded-full bg-[#30d158] shadow-[0_0_8px_#30d158]"></span>
     <svg class="w-4 h-4 fill-current text-[#30d158]" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/></svg>
-    <span class="hidden sm:inline">WhatsApp Specialist</span>
+    <span class="hidden sm:inline">WhatsApp Support</span>
 </a>
 
 <!-- Spotlight Quick Search Modal (Spring Animated) -->
 <div id="spotlight-modal" class="apple-modal-overlay fixed inset-0 z-50 hidden bg-black/40 flex items-start justify-center pt-20 px-4">
     <div class="apple-modal-panel bg-[#fbfbfd] border border-black/10 rounded-[28px] max-w-xl w-full p-6 shadow-2xl relative">
         <div class="flex items-center justify-between mb-4">
-            <span class="text-[11px] font-semibold uppercase tracking-widest text-[#6e6e73]">Quick Search &mdash; getradeCom Assam</span>
+            <span class="text-[11px] font-semibold uppercase tracking-widest text-[#6e6e73]">Quick Search &mdash; GE Tradecom Assam</span>
             <button onclick="closeSpotlightModal()" class="p-1.5 rounded-full hover:bg-black/5 text-[#6e6e73] cursor-pointer" aria-label="Close search">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
             </button>
@@ -105,7 +111,7 @@
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
             <div>
-                <div class="text-[11px] font-semibold text-[#86868b] uppercase tracking-wider mb-2">Popular Lineup</div>
+                <div class="text-[11px] font-semibold text-[#86868b] uppercase tracking-wider mb-2">Portfolio Categories</div>
                 <ul class="space-y-1.5 text-[#1d1d1f]">
                     <li><a href="products.php?category=iPhone" class="block px-3 py-1.5 rounded-lg hover:bg-black/[0.04]">iPhone &rarr;</a></li>
                     <li><a href="products.php?category=Mac" class="block px-3 py-1.5 rounded-lg hover:bg-black/[0.04]">MacBook Air &amp; Pro &rarr;</a></li>
@@ -117,24 +123,25 @@
                 <div class="text-[11px] font-semibold text-[#86868b] uppercase tracking-wider mb-2">Assam Channel Shortcuts</div>
                 <ul class="space-y-1.5 text-[#1d1d1f]">
                     <li><a href="dealers.php" class="block px-3 py-1.5 rounded-lg hover:bg-black/[0.04]">Locate Assam Dealers &rarr;</a></li>
-                    <li><a href="business.php" class="block px-3 py-1.5 rounded-lg hover:bg-black/[0.04]">Business &amp; Bulk Orders &rarr;</a></li>
-                    <li><a href="services.php#trade-in" class="block px-3 py-1.5 rounded-lg hover:bg-black/[0.04]">Trade-In &amp; Financing &rarr;</a></li>
-                    <li><a href="workshops.php" class="block px-3 py-1.5 rounded-lg hover:bg-black/[0.04]">Assam Workshops &rarr;</a></li>
+                    <li><a href="business.php" class="block px-3 py-1.5 rounded-lg hover:bg-black/[0.04]">Small Business Solutions &rarr;</a></li>
+                    <li><a href="education.php" class="block px-3 py-1.5 rounded-lg hover:bg-black/[0.04]">Student &amp; Teacher Programme &rarr;</a></li>
+                    <li><a href="promotions.php" class="block px-3 py-1.5 rounded-lg hover:bg-black/[0.04]">Approved Campaigns &rarr;</a></li>
+                    <li><a href="services.php#service-centres" class="block px-3 py-1.5 rounded-lg hover:bg-black/[0.04]">Authorised Service Centres &rarr;</a></li>
                 </ul>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Reusable Product / Specialist / Workshop Enquiry Modal (Spring Animated) -->
+<!-- Reusable Product / Specialist / Stock Notification / Dealer Onboarding / Workshop Enquiry Modal -->
 <div id="enquiry-modal" class="apple-modal-overlay fixed inset-0 z-50 hidden bg-black/45 flex items-center justify-center p-4">
     <div class="apple-modal-panel bg-white rounded-[28px] max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-black/5 relative">
         <button onclick="closeEnquiryModal()" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-[#f5f5f7] hover:bg-[#e8e8ed] flex items-center justify-center text-[#6e6e73] hover:text-[#1d1d1f] transition cursor-pointer" aria-label="Close modal">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
         </button>
-        <span class="text-[11px] font-semibold uppercase tracking-widest text-[#0071e3]">getradeCom Concierge</span>
+        <span id="modal-badge" class="text-[11px] font-semibold uppercase tracking-widest text-[#0071e3]">GE Tradecom Concierge</span>
         <h3 id="modal-title" class="font-display text-2xl font-semibold tracking-tight text-[#1d1d1f] mt-1 mb-1">Talk to a Product Specialist</h3>
-        <p class="text-[13px] text-[#6e6e73] mb-6">We will route your enquiry to our Assam specialist team or your nearest verified dealer.</p>
+        <p id="modal-subtitle" class="text-[13px] text-[#6e6e73] mb-6">We will route your request to our Assam specialist team or your nearest verified dealer.</p>
 
         <form action="api/submit-enquiry.php" method="POST" class="space-y-4">
             <?= csrf_field() ?>
@@ -164,16 +171,16 @@
                     <option>Other Assam District</option>
                 </select>
             </div>
-            <textarea name="message" rows="3" placeholder="Tell us what you are looking for (model, storage, quantity, or questions)..."
+            <textarea name="message" rows="3" placeholder="Tell us your requirements (configuration, storage, dealer area, or questions)..."
                       class="w-full px-4 py-2.5 rounded-xl border border-[#d2d2d7] text-sm focus:outline-none focus:border-[#0071e3]"></textarea>
 
             <label class="flex items-start gap-2 text-[11px] text-[#6e6e73] leading-snug">
                 <input type="checkbox" name="consent" required class="mt-0.5 accent-[#0071e3]">
-                <span>I agree to be contacted by getradeCom Assam or an authorised local dealer regarding this enquiry.</span>
+                <span>I agree to be contacted by GE Tradecom Pvt Ltd or an authorised Assam partner regarding this request.</span>
             </label>
 
             <button type="submit" class="w-full py-3 rounded-full bg-[#0071e3] hover:bg-[#0077ed] text-white font-medium text-sm transition cursor-pointer">
-                Submit Enquiry
+                Submit Request
             </button>
         </form>
     </div>
@@ -216,10 +223,11 @@ const CURTAIN_DATA = {
         secondary: [
             { label: 'Locate an Assam Dealer', href: 'dealers.php' },
             { label: 'Trade-In & Upgrade Info', href: 'services.php#trade-in' },
-            { label: 'Financing & EMI Options', href: 'services.php#financing' }
+            { label: 'Financing & EMI Info', href: 'services.php#financing' }
         ],
-        tertiaryTitle: 'More from getradeCom',
+        tertiaryTitle: 'Programmes & Support',
         tertiary: [
+            { label: 'Student & Teacher Programme', href: 'education.php' },
             { label: 'Mac M4 Workshops', href: 'workshops.php' },
             { label: 'Talk to a Specialist', action: "openEnquiryModal('specialist', 'Mac Consultation')" }
         ]
@@ -230,7 +238,7 @@ const CURTAIN_DATA = {
             { label: 'Explore All iPad', href: 'products.php?category=iPad' },
             { label: 'iPad Air', href: 'product-details.php?slug=ipad-air' },
             { label: 'Apple Pencil Pro', href: 'product-details.php?slug=apple-pencil-pro' },
-            { label: 'iPad for Teams & Education', href: 'business.php' }
+            { label: 'iPad for Education', href: 'education.php' }
         ],
         secondaryTitle: 'Assam Channel',
         secondary: [
@@ -238,10 +246,10 @@ const CURTAIN_DATA = {
             { label: 'Trade-In Guidance', href: 'services.php#trade-in' },
             { label: 'Partner Financing', href: 'services.php#financing' }
         ],
-        tertiaryTitle: 'More from getradeCom',
+        tertiaryTitle: 'More from GE Tradecom',
         tertiary: [
-            { label: 'iPad Creative Sessions', href: 'workshops.php' },
-            { label: 'Enquire About iPad', action: "openEnquiryModal('product', 'iPad Lineup')" }
+            { label: 'iPad Creative Workshops', href: 'workshops.php' },
+            { label: 'Stock Availability Alert', action: "openEnquiryModal('stock_notify', 'iPad Air')" }
         ]
     },
     iPhone: {
@@ -255,11 +263,12 @@ const CURTAIN_DATA = {
         secondary: [
             { label: 'Locate Nearest Outlet', href: 'dealers.php' },
             { label: 'Trade-In Evaluation Info', href: 'services.php#trade-in' },
-            { label: 'Bank & EMI Options', href: 'services.php#financing' }
+            { label: 'Approved Campaigns', href: 'promotions.php' }
         ],
-        tertiaryTitle: 'More from getradeCom',
+        tertiaryTitle: 'Concierge',
         tertiary: [
             { label: 'iPhone Photography Workshops', href: 'workshops.php' },
+            { label: 'Stock Notification', action: "openEnquiryModal('stock_notify', 'iPhone 17 Pro')" },
             { label: 'Talk to a Specialist', action: "openEnquiryModal('product', 'iPhone 17 Pro')" }
         ]
     },
@@ -272,7 +281,7 @@ const CURTAIN_DATA = {
         secondaryTitle: 'Assam Channel',
         secondary: [
             { label: 'Verified Assam Dealers', href: 'dealers.php' },
-            { label: 'Support & Warranty FAQs', href: 'services.php#faqs' }
+            { label: 'Authorised Service Centres', href: 'services.php#service-centres' }
         ],
         tertiaryTitle: 'Concierge',
         tertiary: [
@@ -288,11 +297,11 @@ const CURTAIN_DATA = {
         secondaryTitle: 'Assam Channel',
         secondary: [
             { label: 'Find an Outlet in Assam', href: 'dealers.php' },
-            { label: 'TV & Home Audio', href: 'products.php?category=TV+%26+Home' }
+            { label: 'TV & Home', href: 'products.php?category=TV+%26+Home' }
         ],
         tertiaryTitle: 'Concierge',
         tertiary: [
-            { label: 'Ask a Specialist', action: "openEnquiryModal('product', 'AirPods Lineup')" }
+            { label: 'Ask a Specialist', action: "openEnquiryModal('product', 'AirPods Pro (2nd Gen)')" }
         ]
     },
     Accessories: {
@@ -304,7 +313,7 @@ const CURTAIN_DATA = {
         ],
         secondaryTitle: 'Assam Channel',
         secondary: [
-            { label: 'Check Outlet Stock', href: 'dealers.php' },
+            { label: 'Check Outlet Availability', href: 'dealers.php' },
             { label: 'Bulk Corporate Orders', href: 'business.php' }
         ],
         tertiaryTitle: 'Support',
@@ -318,32 +327,50 @@ const CURTAIN_DATA = {
             { label: 'Find All Assam Dealers', href: 'dealers.php' },
             { label: 'Guwahati (Kamrup Metro)', href: 'dealers.php?district=Kamrup+Metropolitan+(Guwahati)' },
             { label: 'Dibrugarh & Jorhat', href: 'dealers.php?district=Dibrugarh' },
-            { label: 'Nagaon & Silchar', href: 'dealers.php?district=Nagaon' }
+            { label: 'Partner Onboarding', href: 'dealers.php#partner-onboarding' }
         ],
-        secondaryTitle: 'Channel Services',
+        secondaryTitle: 'Outlet Capabilities',
         secondary: [
-            { label: 'Store Pickup & Delivery Info', href: 'services.php' },
-            { label: 'Service Centre Verification', href: 'services.php' }
+            { label: 'Store Pickup & Delivery Policy', href: 'services.php#pickup-delivery' },
+            { label: 'Authorised Service Centres', href: 'services.php#service-centres' }
         ],
-        tertiaryTitle: 'Partner Desk',
+        tertiaryTitle: 'Dealer Registration',
         tertiary: [
-            { label: 'Partner Onboarding Query', href: 'contact.php' }
+            { label: 'Register Dealer Interest', action: "openEnquiryModal('dealer_onboarding', 'Assam Dealer Partner Onboarding')" }
+        ]
+    },
+    Business: {
+        primaryTitle: 'Business & Education',
+        primary: [
+            { label: 'Small Business Solutions', href: 'business.php' },
+            { label: 'Student & Teacher Programme', href: 'education.php' },
+            { label: 'Approved Assam Campaigns', href: 'promotions.php' }
+        ],
+        secondaryTitle: 'Enterprise Services',
+        secondary: [
+            { label: 'Bulk Deployment Enquiry', href: 'business.php#b2b-form' },
+            { label: 'Compare Portfolio Models', href: 'products.php' }
+        ],
+        tertiaryTitle: 'Concierge',
+        tertiary: [
+            { label: 'Request B2B Consultation', action: "openEnquiryModal('business', 'Corporate / Institutional Enquiry')" }
         ]
     },
     Services: {
-        primaryTitle: 'Services & Guidance',
+        primaryTitle: 'Services & Governance',
         primary: [
             { label: 'Services Overview', href: 'services.php' },
             { label: 'Trade-In & Upgrade Info', href: 'services.php#trade-in' },
             { label: 'Financing & EMI Info', href: 'services.php#financing' },
-            { label: 'FAQs & Privacy', href: 'services.php#faqs' }
+            { label: 'Service-Centre Discovery', href: 'services.php#service-centres' }
         ],
-        secondaryTitle: 'Business & Support',
+        secondaryTitle: 'Support & Policies',
         secondary: [
-            { label: 'Small Business Solutions', href: 'business.php' },
-            { label: 'Contact Specialist Desk', href: 'contact.php' }
+            { label: 'Pickup & Delivery Info', href: 'services.php#pickup-delivery' },
+            { label: 'FAQs & Warranty Guidance', href: 'services.php#faqs' },
+            { label: 'Contact & Escalation', href: 'contact.php' }
         ],
-        tertiaryTitle: 'Concierge',
+        tertiaryTitle: 'Quick Requests',
         tertiary: [
             { label: 'Request Trade-In Guidance', action: "openEnquiryModal('trade_in', 'Trade-In / Upgrade Enquiry')" }
         ]
@@ -352,12 +379,13 @@ const CURTAIN_DATA = {
         primaryTitle: 'Learn & Enablement',
         primary: [
             { label: 'Upcoming Assam Workshops', href: 'workshops.php' },
+            { label: 'Approved Campaigns', href: 'promotions.php' },
             { label: 'Corporate Team Training', href: 'business.php' }
         ],
-        secondaryTitle: 'Explore Hardware',
+        secondaryTitle: 'Programmes',
         secondary: [
-            { label: 'Mac M4 Lineup', href: 'products.php?category=Mac' },
-            { label: 'iPad & Apple Pencil', href: 'products.php?category=iPad' }
+            { label: 'Student & Teacher Offers', href: 'education.php' },
+            { label: 'Explore All Products', href: 'products.php' }
         ],
         tertiaryTitle: 'Updates',
         tertiary: [
@@ -427,7 +455,6 @@ function openNavCurtain(key, triggerEl) {
     const alreadyOpen = navCurtain.classList.contains('is-open');
 
     if (alreadyOpen && activeCurtainKey !== key) {
-        // Cross-fade inner content smoothly without closing/re-opening the curtain
         clearTimeout(curtainSwitchTimer);
         curtainContent.classList.add('is-switching');
         curtainSwitchTimer = setTimeout(() => {
@@ -498,10 +525,29 @@ function hideSpringModal(el) {
 }
 
 function openEnquiryModal(type, productLabel, workshopId) {
+    const badgeEl = document.getElementById('modal-badge');
+    const subEl = document.getElementById('modal-subtitle');
     document.getElementById('modal-enquiry-type').value = type || 'specialist';
     document.getElementById('modal-product-interest').value = productLabel || '';
     document.getElementById('modal-workshop-id').value = workshopId || '';
-    document.getElementById('modal-title').textContent = productLabel ? 'Enquire: ' + productLabel : 'Talk to a Product Specialist';
+
+    const labels = {
+        stock_notify: ['Stock Notification', 'Stock Alert: ' + (productLabel || 'Apple Product'), 'Register your details to be notified when this model or configuration becomes available via verified Assam partners.'],
+        dealer_onboarding: ['Partner Registration', 'Assam Dealer Partner Onboarding', 'Submit your business details for GE Tradecom verification and authorised channel onboarding across Assam.'],
+        education: ['Education Eligibility', 'Student & Teacher Verification', 'Submit institutional details for eligibility verification and partner-routed education guidance.'],
+        trade_in: ['Upgrade Evaluation', 'Trade-In / Upgrade Guidance', 'Request partner-led exchange guidance. Final valuation depends on physical inspection and eligible model terms.']
+    };
+
+    if (labels[type]) {
+        badgeEl.textContent = labels[type][0];
+        document.getElementById('modal-title').textContent = labels[type][1];
+        subEl.textContent = labels[type][2];
+    } else {
+        badgeEl.textContent = 'GE Tradecom Concierge';
+        document.getElementById('modal-title').textContent = productLabel ? 'Enquire: ' + productLabel : 'Talk to a Product Specialist';
+        subEl.textContent = 'We will route your request to our Assam specialist team or your nearest verified dealer.';
+    }
+
     showSpringModal(document.getElementById('enquiry-modal'));
 }
 

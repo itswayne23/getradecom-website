@@ -3,8 +3,19 @@ require_once 'config/db.php';
 $page_title = 'Workshops & Training Sessions';
 require_once 'includes/header.php';
 
-$stmt = $pdo->query("SELECT * FROM workshops WHERE is_active = 1 ORDER BY session_date ASC, id ASC");
+$city_filter = trim($_GET['city'] ?? '');
+$sql = "SELECT * FROM workshops WHERE is_active = 1";
+$params = [];
+if ($city_filter !== '' && $city_filter !== 'All') {
+    $sql .= " AND city = :city";
+    $params[':city'] = $city_filter;
+}
+$sql .= " ORDER BY session_date ASC, id ASC";
+$stmt = $pdo->prepare($sql);
+$stmt->execute($params);
 $workshops = $stmt->fetchAll();
+
+$cities = $pdo->query("SELECT DISTINCT city FROM workshops WHERE is_active = 1 ORDER BY city ASC")->fetchAll(PDO::FETCH_COLUMN);
 
 $flash = $_SESSION['flash_message'] ?? null;
 unset($_SESSION['flash_message']);
@@ -19,11 +30,24 @@ unset($_SESSION['flash_message']);
 <!-- Today at Apple Inspired Hero -->
 <section class="hero-light-stage border-b border-black/[0.06] py-14">
     <div class="max-w-[1200px] mx-auto px-4 sm:px-6">
-        <span class="text-[11px] font-semibold uppercase tracking-widest text-[#0071e3]">Learning &amp; Enablement</span>
-        <h1 class="font-display text-4xl sm:text-5xl font-semibold tracking-tight text-[#1d1d1f] mt-1">Workshops &amp; Sessions</h1>
+        <span class="text-[11px] font-semibold uppercase tracking-widest text-[#0071e3]">Learning &amp; Channel Enablement</span>
+        <h1 class="font-display text-4xl sm:text-5xl font-semibold tracking-tight text-[#1d1d1f] mt-1">Workshops &amp; Training</h1>
         <p class="text-[#6e6e73] text-[15px] sm:text-[17px] mt-2 max-w-2xl">
-            Explore scheduled hands-on product and workflow sessions across Assam and reserve a seat where available.
+            Explore scheduled public sessions and dealer enablement workshops across Assam cities, check seat capacity, and reserve your spot.
         </p>
+
+        <?php if (!empty($cities)): ?>
+        <div class="flex gap-2 overflow-x-auto no-scrollbar pt-7 pb-1">
+            <a href="workshops.php" class="px-4 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition <?= ($city_filter === '' || $city_filter === 'All') ? 'bg-[#1d1d1f] text-white' : 'bg-white text-[#424245] border border-[#d2d2d7]' ?>">
+                All Cities
+            </a>
+            <?php foreach ($cities as $c): ?>
+            <a href="workshops.php?city=<?= urlencode($c) ?>" class="px-4 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition <?= $city_filter === $c ? 'bg-[#1d1d1f] text-white' : 'bg-white text-[#424245] border border-[#d2d2d7]' ?>">
+                <?= e($c) ?>
+            </a>
+            <?php endforeach; ?>
+        </div>
+        <?php endif; ?>
     </div>
 </section>
 
@@ -62,11 +86,13 @@ unset($_SESSION['flash_message']);
 
                     <div class="space-y-2 text-[12px] text-[#424245] bg-white/85 rounded-2xl p-4 border border-black/[0.04] mb-4">
                         <p><strong class="text-[#1d1d1f]">Venue:</strong> <?= e($ws['venue']) ?></p>
+                        <?php if (!empty($ws['trainer'])): ?>
+                        <p><strong class="text-[#1d1d1f]">Trainer:</strong> <?= e($ws['trainer']) ?></p>
+                        <?php endif; ?>
                         <p><strong class="text-[#1d1d1f]">Date:</strong> <?= e(date('d M Y', strtotime($ws['session_date']))) ?></p>
                         <p><strong class="text-[#1d1d1f]">Time:</strong> <?= e($ws['session_time']) ?></p>
                     </div>
 
-                    <!-- Capacity Bar -->
                     <div class="mb-6">
                         <div class="w-full h-1.5 rounded-full bg-black/10 overflow-hidden">
                             <div class="h-full rounded-full <?= $remaining > 0 ? 'bg-[#0071e3]' : 'bg-[#ff3b30]' ?>" style="width: <?= $pct ?>%"></div>
@@ -76,7 +102,7 @@ unset($_SESSION['flash_message']);
 
                 <?php if ($remaining > 0): ?>
                 <button onclick="openEnquiryModal('workshop', 'Workshop: <?= e($ws['title']) ?> (<?= e($ws['city']) ?>)', <?= (int)$ws['id'] ?>)"
-                        class="w-full py-2.5 px-4 rounded-full bg-[#0071e3] hover:bg-[#0077ed] text-white text-[13px] font-medium transition cursor-pointer">
+                        class="btn-tactile w-full py-2.5 px-4 rounded-full bg-[#0071e3] hover:bg-[#0077ed] text-white text-[13px] font-medium transition cursor-pointer">
                     Register for Session
                 </button>
                 <?php else: ?>

@@ -1,6 +1,6 @@
 <?php
 require_once 'config/db.php';
-$page_title = 'Assam Dealer Locator';
+$page_title = 'Assam Dealer Locator & Partner Onboarding';
 require_once 'includes/header.php';
 
 $district = trim($_GET['district'] ?? '');
@@ -27,14 +27,23 @@ $sql .= " ORDER BY district ASC, store_name ASC";
 $stmt = $pdo->prepare($sql);
 $stmt->execute($params);
 $dealers = $stmt->fetchAll();
+
+$flash = $_SESSION['flash_message'] ?? null;
+unset($_SESSION['flash_message']);
 ?>
+
+<?php if ($flash): ?>
+<div class="bg-[#f5f5f7] border-b border-[#d2d2d7] text-[#1d1d1f] text-[13px] py-3 px-4 text-center font-medium">
+    <span class="inline-block w-2 h-2 rounded-full bg-[#30d158] mr-2"></span><?= e($flash) ?>
+</div>
+<?php endif; ?>
 
 <section class="hero-light-stage border-b border-black/[0.06] py-14">
     <div class="max-w-[1200px] mx-auto px-4 sm:px-6">
         <span class="text-[11px] font-semibold uppercase tracking-widest text-[#0071e3]">Assam Channel Network</span>
         <h1 class="font-display text-4xl sm:text-5xl font-semibold tracking-tight text-[#1d1d1f] mt-1">Find a Verified Dealer in Assam</h1>
         <p class="text-[#6e6e73] text-[15px] sm:text-[17px] mt-2 max-w-2xl">
-            Search by district, town, store name, or PIN code to view verified partner details, opening hours, and directions.
+            Search by district, town, store name, or PIN code to view verified partner details, opening hours, outlet pickup/delivery support, and map directions.
         </p>
 
         <!-- Apple Retail Style Search Bar -->
@@ -56,7 +65,7 @@ $dealers = $stmt->fetchAll();
             </div>
 
             <div class="md:col-span-3 flex items-end gap-2">
-                <button type="submit" class="flex-1 py-2.5 px-5 rounded-full bg-[#0071e3] hover:bg-[#0077ed] text-white text-sm font-medium transition cursor-pointer">
+                <button type="submit" class="btn-tactile flex-1 py-2.5 px-5 rounded-full bg-[#0071e3] hover:bg-[#0077ed] text-white text-sm font-medium transition cursor-pointer">
                     Search Dealers
                 </button>
                 <?php if ($district !== '' || $search !== ''): ?>
@@ -91,7 +100,7 @@ $dealers = $stmt->fetchAll();
             Showing <strong class="text-[#1d1d1f] font-semibold"><?= count($dealers) ?></strong> verified listing(s) in Assam
         </p>
         <span class="text-[11px] bg-[#f5f5f7] text-[#6e6e73] border border-black/[0.06] px-3.5 py-1.5 rounded-full">
-            Sample Assam entries shown for demo &mdash; replace with approved dealer master before launch
+            Only verified partner outlets approved for public display are shown
         </span>
     </div>
 
@@ -105,7 +114,10 @@ $dealers = $stmt->fetchAll();
         </div>
     <?php else: ?>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <?php foreach ($dealers as $dl): ?>
+            <?php foreach ($dealers as $dl):
+                $pickup = !empty($dl['supports_pickup']);
+                $delivery = !empty($dl['supports_delivery']);
+            ?>
             <div class="reveal-card motion-card bg-[#f5f5f7] border border-black/[0.04] rounded-[28px] p-7 flex flex-col justify-between">
                 <div>
                     <div class="flex items-center justify-between gap-2 mb-4">
@@ -119,7 +131,16 @@ $dealers = $stmt->fetchAll();
                     </div>
 
                     <h2 class="font-display text-xl font-semibold text-[#1d1d1f] mb-0.5"><?= e($dl['store_name']) ?></h2>
-                    <p class="text-[12px] font-medium text-[#6e6e73] mb-4"><?= e($dl['town']) ?>, Assam</p>
+                    <p class="text-[12px] font-medium text-[#6e6e73] mb-3"><?= e($dl['town']) ?>, Assam</p>
+
+                    <div class="flex flex-wrap gap-1.5 mb-4">
+                        <?php if ($pickup): ?>
+                        <span class="text-[10px] font-semibold bg-white text-[#1d1d1f] px-2.5 py-0.5 rounded-full border border-black/[0.06]">Store Pickup</span>
+                        <?php endif; ?>
+                        <?php if ($delivery): ?>
+                        <span class="text-[10px] font-semibold bg-white text-[#0071e3] px-2.5 py-0.5 rounded-full border border-[#0071e3]/20">Local Delivery</span>
+                        <?php endif; ?>
+                    </div>
 
                     <div class="space-y-2 text-[12px] text-[#424245] bg-white/85 rounded-2xl p-4 border border-black/[0.04] mb-5">
                         <p><strong class="text-[#1d1d1f]">Address:</strong> <?= e($dl['address']) ?></p>
@@ -134,12 +155,12 @@ $dealers = $stmt->fetchAll();
 
                 <div class="flex items-center gap-2.5 pt-1">
                     <a href="tel:<?= e(preg_replace('/\s+/', '', $dl['phone'])) ?>"
-                       class="flex-1 text-center py-2.5 px-4 rounded-full bg-[#1d1d1f] hover:bg-black text-white text-[12px] font-medium transition">
+                       class="btn-tactile flex-1 text-center py-2.5 px-4 rounded-full bg-[#1d1d1f] hover:bg-black text-white text-[12px] font-medium transition">
                         Call Outlet
                     </a>
                     <?php if (!empty($dl['map_url'])): ?>
                     <a href="<?= e($dl['map_url']) ?>" target="_blank" rel="noopener"
-                       class="flex-1 text-center py-2.5 px-4 rounded-full bg-[#0071e3] hover:bg-[#0077ed] text-white text-[12px] font-medium transition">
+                       class="btn-tactile flex-1 text-center py-2.5 px-4 rounded-full bg-[#0071e3] hover:bg-[#0077ed] text-white text-[12px] font-medium transition">
                         Directions
                     </a>
                     <?php endif; ?>
@@ -148,6 +169,21 @@ $dealers = $stmt->fetchAll();
             <?php endforeach; ?>
         </div>
     <?php endif; ?>
+
+    <!-- Dealer Partner Onboarding Journey -->
+    <div id="partner-onboarding" class="reveal-card mt-16 bg-[#161617] text-white rounded-[32px] p-9 sm:p-12 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+        <div class="max-w-2xl">
+            <span class="text-[11px] font-semibold uppercase tracking-widest text-[#2997ff]">Channel Expansion &middot; Assam</span>
+            <h2 class="font-display text-3xl font-semibold tracking-tight mt-1.5 mb-2">Become an Authorised Assam Channel Partner</h2>
+            <p class="text-[#a1a1a6] text-[14px] leading-relaxed">
+                Register interest to join the GE Tradecom Pvt Ltd Assam dealer network. Our channel team reviews submitted business details, verifies outlet readiness, and enables approved partners with campaigns and training.
+            </p>
+        </div>
+        <button type="button" onclick="openEnquiryModal('dealer_onboarding', 'Assam Dealer Partner Registration')"
+                class="btn-tactile shrink-0 px-7 py-3 rounded-full bg-[#0071e3] hover:bg-[#0077ed] text-white text-[14px] font-medium transition cursor-pointer">
+            Register Dealer Interest
+        </button>
+    </div>
 </section>
 
 <?php require_once 'includes/footer.php'; ?>

@@ -15,10 +15,10 @@ unset($_SESSION['flash_message']);
 
 <section class="hero-light-stage border-b border-black/[0.06] py-14">
     <div class="max-w-[1200px] mx-auto px-4 sm:px-6">
-        <span class="text-[11px] font-semibold uppercase tracking-widest text-[#0071e3]">getradeCom &mdash; Assam</span>
-        <h1 class="font-display text-4xl sm:text-5xl font-semibold tracking-tight text-[#1d1d1f] mt-1">Contact &amp; Product Specialists</h1>
+        <span class="text-[11px] font-semibold uppercase tracking-widest text-[#0071e3]">GE Tradecom Pvt Ltd &mdash; Assam</span>
+        <h1 class="font-display text-4xl sm:text-5xl font-semibold tracking-tight text-[#1d1d1f] mt-1">Contact &amp; Escalation Desk</h1>
         <p class="text-[#6e6e73] text-[15px] sm:text-[17px] mt-2 max-w-2xl">
-            Reach out for product consultations, Assam dealer queries, channel partner interest, or support escalation.
+            Reach out for product consultations, stock notifications, Assam dealer onboarding, corporate enquiries, or service escalation.
         </p>
     </div>
 </section>
@@ -30,16 +30,18 @@ unset($_SESSION['flash_message']);
             <div class="reveal-card motion-card bg-[#f5f5f7] border border-black/[0.04] rounded-[28px] p-8">
                 <h2 class="font-display text-xl font-semibold text-[#1d1d1f] mb-4">Official Support &amp; Routing</h2>
                 <div class="space-y-3 text-[14px] text-[#424245]">
+                    <p><strong class="text-[#1d1d1f]">Company:</strong> <?= e(SITE_NAME) ?></p>
                     <p><strong class="text-[#1d1d1f]">Territory:</strong> <?= e(TERRITORY) ?></p>
                     <p><strong class="text-[#1d1d1f]">Phone:</strong> <?= e(OFFICIAL_PHONE) ?></p>
                     <p><strong class="text-[#1d1d1f]">Email:</strong> <?= e(OFFICIAL_EMAIL) ?></p>
                     <p><strong class="text-[#1d1d1f]">WhatsApp:</strong> +<?= e(OFFICIAL_WHATSAPP) ?></p>
+                    <p><strong class="text-[#1d1d1f]">Hours:</strong> 10:00 AM &ndash; 6:30 PM (Mon&ndash;Sat)</p>
                 </div>
                 <div class="mt-6 pt-5 border-t border-black/[0.06] flex flex-wrap gap-3">
                     <a href="dealers.php" class="px-5 py-2.5 rounded-full bg-white hover:bg-[#e8e8ed] text-[#1d1d1f] border border-[#d2d2d7] text-[12px] font-medium transition">
                         Find Assam Dealers
                     </a>
-                    <a href="https://wa.me/<?= e(OFFICIAL_WHATSAPP) ?>?text=Hello%20getradeCom%20Assam%2C%20I%20would%20like%20to%20speak%20with%20a%20specialist." target="_blank" rel="noopener"
+                    <a href="https://wa.me/<?= e(OFFICIAL_WHATSAPP) ?>?text=Hello%20GE%20Tradecom%20Assam%2C%20I%20would%20like%20to%20speak%20with%20a%20specialist." target="_blank" rel="noopener"
                        class="px-5 py-2.5 rounded-full bg-[#1d1d1f] hover:bg-black text-white text-[12px] font-medium transition inline-flex items-center gap-1.5">
                         <span class="w-2 h-2 rounded-full bg-[#30d158]"></span>
                         Chat on WhatsApp
@@ -48,10 +50,10 @@ unset($_SESSION['flash_message']);
             </div>
 
             <div class="reveal-card motion-card bg-[#161617] text-white rounded-[28px] p-8">
-                <span class="text-[11px] font-semibold uppercase tracking-widest text-[#2997ff]">Channel Desk</span>
-                <h3 class="font-display text-lg font-semibold mt-1.5 mb-2">Channel &amp; Dealer Enquiries</h3>
+                <span class="text-[11px] font-semibold uppercase tracking-widest text-[#2997ff]">Channel Governance</span>
+                <h3 class="font-display text-lg font-semibold mt-1.5 mb-2">Dealer Onboarding &amp; Escalations</h3>
                 <p class="text-[13px] text-[#a1a1a6] leading-relaxed">
-                    Interested in dealer onboarding, campaign updates, or business coordination in Assam? Select your enquiry topic in the form and our team will review and route it appropriately.
+                    Interested in Assam dealer onboarding, approved campaign coordination, or service escalation? Choose your topic in the form and our channel operations team will review and route it.
                 </p>
             </div>
         </div>
@@ -71,9 +73,12 @@ unset($_SESSION['flash_message']);
                         <select name="enquiry_type" class="w-full px-4 py-2.5 rounded-xl border border-[#d2d2d7] text-sm bg-white focus:outline-none focus:border-[#0071e3]">
                             <option value="specialist">Talk to a Product Specialist</option>
                             <option value="product">Product Availability / Specification</option>
-                            <option value="business">Business / Bulk Enquiry</option>
+                            <option value="stock_notify">Back-in-Stock Notification</option>
+                            <option value="business">Business / Institutional Enquiry</option>
                             <option value="trade_in">Trade-In / Upgrade Guidance</option>
-                            <option value="general">Dealer / General Query</option>
+                            <option value="education">Student / Teacher Verification</option>
+                            <option value="dealer_onboarding">Assam Dealer Onboarding Interest</option>
+                            <option value="general">Support Escalation / General Query</option>
                         </select>
                     </div>
                     <div>
@@ -110,10 +115,10 @@ unset($_SESSION['flash_message']);
 
                 <label class="flex items-start gap-2.5 text-[12px] text-[#6e6e73]">
                     <input type="checkbox" name="consent" required class="mt-0.5 accent-[#0071e3]">
-                    <span>I consent to getradeCom or an authorised channel partner contacting me regarding my enquiry.</span>
+                    <span>I consent to GE Tradecom Pvt Ltd or an authorised channel partner contacting me regarding my enquiry.</span>
                 </label>
 
-                <button type="submit" class="px-8 py-3 rounded-full bg-[#0071e3] hover:bg-[#0077ed] text-white text-sm font-medium transition cursor-pointer">
+                <button type="submit" class="btn-tactile px-8 py-3 rounded-full bg-[#0071e3] hover:bg-[#0077ed] text-white text-sm font-medium transition cursor-pointer">
                     Submit Enquiry
                 </button>
             </form>

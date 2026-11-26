@@ -31,15 +31,17 @@ CREATE TABLE dealers (
     opening_hours VARCHAR(120) DEFAULT '10:30 AM – 8:30 PM (Mon–Sat)',
     categories_handled VARCHAR(255) DEFAULT 'iPhone, Mac, iPad, Watch, Accessories',
     map_url VARCHAR(255),
+    supports_pickup TINYINT(1) DEFAULT 1,
+    supports_delivery TINYINT(1) DEFAULT 0,
     is_verified TINYINT(1) DEFAULT 1,
     is_active TINYINT(1) DEFAULT 1,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- 3. Enquiries Table (Product, Specialist, B2B, Trade-in, Workshop)
+-- 3. Enquiries Table (Product, Specialist, B2B, Trade-in, Workshop, Stock Notify, Dealer Onboarding, Education)
 CREATE TABLE enquiries (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    enquiry_type ENUM('product','specialist','business','trade_in','workshop','general') NOT NULL,
+    enquiry_type ENUM('product','specialist','business','trade_in','workshop','stock_notify','dealer_onboarding','education','general') NOT NULL,
     full_name VARCHAR(120) NOT NULL,
     phone VARCHAR(30) NOT NULL,
     email VARCHAR(120) NOT NULL,
@@ -58,6 +60,7 @@ CREATE TABLE workshops (
     id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(180) NOT NULL,
     topic VARCHAR(120),
+    trainer VARCHAR(120) DEFAULT 'GE Tradecom Certified Specialist',
     city VARCHAR(100) NOT NULL,
     venue VARCHAR(180) NOT NULL,
     session_date DATE NOT NULL,
@@ -67,7 +70,33 @@ CREATE TABLE workshops (
     is_active TINYINT(1) DEFAULT 1
 );
 
--- 5. Newsletter Subscribers
+-- 5. Approved Campaigns & Promotions
+CREATE TABLE campaigns (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(180) NOT NULL,
+    segment VARCHAR(100) NOT NULL,
+    eligible_products VARCHAR(255) NOT NULL,
+    summary TEXT NOT NULL,
+    terms TEXT NOT NULL,
+    start_date DATE NOT NULL,
+    end_date DATE NOT NULL,
+    is_active TINYINT(1) DEFAULT 1
+);
+
+-- 6. Authorised Service Centres
+CREATE TABLE service_centres (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    centre_name VARCHAR(160) NOT NULL,
+    city VARCHAR(100) NOT NULL,
+    address TEXT NOT NULL,
+    phone VARCHAR(30) NOT NULL,
+    services_offered VARCHAR(255) NOT NULL,
+    hours VARCHAR(120) NOT NULL,
+    is_verified TINYINT(1) DEFAULT 1,
+    is_active TINYINT(1) DEFAULT 1
+);
+
+-- 7. Newsletter Subscribers
 CREATE TABLE subscribers (
     id INT AUTO_INCREMENT PRIMARY KEY,
     email VARCHAR(150) NOT NULL UNIQUE,
@@ -75,7 +104,7 @@ CREATE TABLE subscribers (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- 6. Admin Users (Default login: admin@getradecom.com / Admin@123)
+-- 8. Admin Users (Default login: admin@getradecom.com / Admin@123)
 CREATE TABLE admin_users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     email VARCHAR(120) NOT NULL UNIQUE,
@@ -85,11 +114,11 @@ CREATE TABLE admin_users (
 
 -- Seed Admin User (Password: Admin@123)
 INSERT INTO admin_users (email, password_hash, name) VALUES
-('admin@getradecom.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'getradeCom Admin');
+('admin@getradecom.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'GE Tradecom Admin');
 
 -- Seed Sample Products (Distributor-Safe, No Unverified Retail Prices)
 INSERT INTO products (category, name, slug, tagline, description, key_specs, colors, badge, is_featured) VALUES
-('iPhone', 'iPhone 17 Pro', 'iphone-17-pro', 'Built for Apple Intelligence. Engineered in titanium.', 'Flagship performance with pro camera system and all-day battery life. Available through verified getradeCom channel partners across Assam.', 'A19 Pro chip | ProMotion XDR Display | 48MP Pro Camera System | USB-C', 'Natural Titanium, Black Titanium, Desert Titanium', 'NEW', 1),
+('iPhone', 'iPhone 17 Pro', 'iphone-17-pro', 'Built for Apple Intelligence. Engineered in titanium.', 'Flagship performance with pro camera system and all-day battery life. Available through verified GE Tradecom channel partners across Assam.', 'A19 Pro chip | ProMotion XDR Display | 48MP Pro Camera System | USB-C', 'Natural Titanium, Black Titanium, Desert Titanium', 'NEW', 1),
 ('Mac', 'MacBook Air M4', 'macbook-air-m4', 'Lean. Mean. M4 machine.', 'Ultra-thin, fanless design with remarkable battery life for business professionals, creators, and students.', 'Apple M4 Chip | 13.6" & 15.3" Liquid Retina | Up to 18 hrs battery | MagSafe 3', 'Midnight, Starlight, Silver, Space Grey', 'NEW', 1),
 ('Mac', 'MacBook Pro M4 Pro', 'macbook-pro-m4-pro', 'Mind-blowing. Head-turning.', 'Workstation-class performance for enterprise, design, and software teams.', 'Apple M4 Pro | Liquid Retina XDR | Thunderbolt 5 | Up to 24 hrs battery', 'Space Black, Silver', 'PRO', 1),
 ('iPad', 'iPad Air', 'ipad-air', 'Fresh Air. Serious power.', 'Portable versatility with Apple Pencil Pro support for education and mobile business workflows.', 'M-series Chip | 11" & 13" Liquid Retina | Landscape 12MP Front Camera', 'Blue, Purple, Starlight, Space Grey', 'POPULAR', 1),
@@ -99,15 +128,25 @@ INSERT INTO products (category, name, slug, tagline, description, key_specs, col
 ('Accessories', 'Apple Pencil Pro', 'apple-pencil-pro', 'Engineered for limitless creativity.', 'Pixel-perfect precision, squeeze gestures, barrel roll, and haptic feedback for iPad workflows.', 'Squeeze & Barrel Roll | Haptic Feedback | Magnetic Pairing | Find My', 'White', 'NEW', 0);
 
 -- Seed Sample Assam Dealers
-INSERT INTO dealers (store_name, district, town, pin_code, address, phone, email, opening_hours, categories_handled, map_url) VALUES
-('getradeCom Partner — GS Road Hub', 'Kamrup Metropolitan (Guwahati)', 'Guwahati', '781005', 'GS Road, Christian Basti, Guwahati, Assam', '+91 361 234 5601', 'guwahati@getradecom.com', '10:30 AM – 8:30 PM (Mon–Sat)', 'iPhone, Mac, iPad, Watch, AirPods, Accessories', 'https://maps.google.com/?q=GS+Road+Guwahati+Assam'),
-('Brahmaputra Digital Point', 'Dibrugarh', 'Dibrugarh', '786001', 'HS Road, Near Thana Chariali, Dibrugarh, Assam', '+91 373 232 4102', 'dibrugarh@getradecom.com', '10:00 AM – 8:00 PM (Mon–Sat)', 'iPhone, Mac, iPad, Watch, Accessories', 'https://maps.google.com/?q=Dibrugarh+Assam'),
-('Upper Assam Tech Retail', 'Jorhat', 'Jorhat', '785001', 'AT Road, Gar-Ali, Jorhat, Assam', '+91 376 230 1188', 'jorhat@getradecom.com', '10:30 AM – 8:00 PM (Mon–Sat)', 'iPhone, iPad, Watch, AirPods', 'https://maps.google.com/?q=Jorhat+Assam'),
-('Central Assam Apple Zone', 'Nagaon', 'Nagaon', '782001', 'Haibargaon Main Road, Nagaon, Assam', '+91 3672 220 450', 'nagaon@getradecom.com', '10:00 AM – 8:00 PM (Mon–Sat)', 'iPhone, Mac, Watch, Accessories', 'https://maps.google.com/?q=Nagaon+Assam'),
-('Barak Valley Authorised Outlet', 'Cachar (Silchar)', 'Silchar', '788001', 'Central Road, Silchar, Cachar, Assam', '+91 3842 245 790', 'silchar@getradecom.com', '10:30 AM – 8:30 PM (Mon–Sat)', 'iPhone, Mac, iPad, AirPods, Accessories', 'https://maps.google.com/?q=Silchar+Assam');
+INSERT INTO dealers (store_name, district, town, pin_code, address, phone, email, opening_hours, categories_handled, map_url, supports_pickup, supports_delivery) VALUES
+('GE Tradecom Partner — GS Road Hub', 'Kamrup Metropolitan (Guwahati)', 'Guwahati', '781005', 'GS Road, Christian Basti, Guwahati, Assam', '+91 361 234 5601', 'guwahati@getradecom.com', '10:30 AM – 8:30 PM (Mon–Sat)', 'iPhone, Mac, iPad, Watch, AirPods, Accessories', 'https://maps.google.com/?q=GS+Road+Guwahati+Assam', 1, 1),
+('Brahmaputra Digital Point', 'Dibrugarh', 'Dibrugarh', '786001', 'HS Road, Near Thana Chariali, Dibrugarh, Assam', '+91 373 232 4102', 'dibrugarh@getradecom.com', '10:00 AM – 8:00 PM (Mon–Sat)', 'iPhone, Mac, iPad, Watch, Accessories', 'https://maps.google.com/?q=Dibrugarh+Assam', 1, 0),
+('Upper Assam Tech Retail', 'Jorhat', 'Jorhat', '785001', 'AT Road, Gar-Ali, Jorhat, Assam', '+91 376 230 1188', 'jorhat@getradecom.com', '10:30 AM – 8:00 PM (Mon–Sat)', 'iPhone, iPad, Watch, AirPods', 'https://maps.google.com/?q=Jorhat+Assam', 1, 0),
+('Central Assam Apple Zone', 'Nagaon', 'Nagaon', '782001', 'Haibargaon Main Road, Nagaon, Assam', '+91 3672 220 450', 'nagaon@getradecom.com', '10:00 AM – 8:00 PM (Mon–Sat)', 'iPhone, Mac, Watch, Accessories', 'https://maps.google.com/?q=Nagaon+Assam', 1, 0),
+('Barak Valley Authorised Outlet', 'Cachar (Silchar)', 'Silchar', '788001', 'Central Road, Silchar, Cachar, Assam', '+91 3842 245 790', 'silchar@getradecom.com', '10:30 AM – 8:30 PM (Mon–Sat)', 'iPhone, Mac, iPad, AirPods, Accessories', 'https://maps.google.com/?q=Silchar+Assam', 1, 1);
 
 -- Seed Sample Assam Workshops
-INSERT INTO workshops (title, topic, city, venue, session_date, session_time, seats_total, seats_booked) VALUES
-('Getting Started with MacBook M4', 'Productivity & Apple Silicon Workflows', 'Guwahati', 'getradeCom Experience Lounge, GS Road', '2026-12-05', '11:00 AM – 12:30 PM', 25, 9),
-('iPhone Photography & Pro Video', '48MP Camera & Cinematic Editing', 'Dibrugarh', 'Brahmaputra Digital Studio, HS Road', '2026-12-12', '3:00 PM – 4:30 PM', 20, 6),
-('iPad & Apple Pencil for Business', 'Mobile Workflows & Team Notes', 'Jorhat', 'Upper Assam Tech Hub, Gar-Ali', '2026-12-19', '11:30 AM – 1:00 PM', 18, 4);
+INSERT INTO workshops (title, topic, trainer, city, venue, session_date, session_time, seats_total, seats_booked) VALUES
+('Getting Started with MacBook M4', 'Productivity & Apple Silicon Workflows', 'Rohan Sarma (Apple Channel Trainer)', 'Guwahati', 'GE Tradecom Experience Lounge, GS Road', '2026-12-05', '11:00 AM – 12:30 PM', 25, 9),
+('iPhone Photography & Pro Video', '48MP Camera & Cinematic Editing', 'Ananya Das (Creative Specialist)', 'Dibrugarh', 'Brahmaputra Digital Studio, HS Road', '2026-12-12', '3:00 PM – 4:30 PM', 20, 6),
+('iPad & Apple Pencil for Business', 'Mobile Workflows & Team Notes', 'Kangkan Bora (B2B Solutions Lead)', 'Jorhat', 'Upper Assam Tech Hub, Gar-Ali', '2026-12-19', '11:30 AM – 1:00 PM', 18, 4);
+
+-- Seed Sample Approved Campaigns
+INSERT INTO campaigns (title, segment, eligible_products, summary, terms, start_date, end_date) VALUES
+('Assam Enterprise Mac M4 Deployment Drive', 'SMEs & Institutions', 'MacBook Air M4, MacBook Pro M4 Pro', 'Structured consultation, team sizing, and partner-coordinated fleet fulfilment for Assam businesses and educational institutions.', 'Subject to corporate verification, stock allocation, and participating Assam channel partner commercial terms.', '2026-11-01', '2026-12-31'),
+('Verified Outlet Trade-In Evaluation Week', 'Individual & Business Upgrades', 'iPhone 17 Pro, MacBook Air M4, iPad Air', 'Bring eligible existing devices for physical inspection and upgrade guidance at participating verified GE Tradecom partner outlets.', 'Valuation depends on physical inspection, working condition, and participating partner programme rules.', '2026-11-15', '2026-12-20');
+
+-- Seed Sample Service Centres
+INSERT INTO service_centres (centre_name, city, address, phone, services_offered, hours) VALUES
+('Guwahati Authorised Service Desk', 'Guwahati', 'GS Road, Christian Basti, Guwahati, Assam 781005', '+91 361 234 5699', 'Hardware Diagnostics, Battery Service, Warranty Verification', '10:00 AM – 6:30 PM (Mon–Sat)'),
+('Upper Assam Care Point', 'Dibrugarh', 'HS Road, Dibrugarh, Assam 786001', '+91 373 232 4199', 'iPhone & Mac Diagnostics, Software Support, Escalation Intake', '10:00 AM – 6:00 PM (Mon–Sat)');

@@ -28,7 +28,7 @@ $finishes = array_filter(array_map('trim', explode(',', $product['colors'] ?? ''
 <section class="max-w-[1100px] mx-auto px-4 sm:px-6 py-12">
     <!-- Apple Breadcrumb -->
     <nav class="text-[12px] text-[#6e6e73] mb-8 flex items-center gap-2">
-        <a href="index.php" class="hover:text-[#0071e3] transition">Home</a>
+        <a href="index.php" class="hover:text-[#0071e3] transition">Portfolio</a>
         <span>/</span>
         <a href="products.php" class="hover:text-[#0071e3] transition">Products</a>
         <span>/</span>
@@ -102,28 +102,34 @@ $finishes = array_filter(array_map('trim', explode(',', $product['colors'] ?? ''
             <div class="bg-[#fbfbfd] border border-[#d2d2d7]/80 rounded-[28px] p-7 space-y-4">
                 <h2 class="font-display text-xl font-semibold text-[#1d1d1f]">Interested in <?= e($product['name']) ?>?</h2>
                 <p class="text-[13px] text-[#6e6e73] leading-relaxed">
-                    Connect with getradeCom product specialists for availability updates across Assam, business deployment queries, or to locate a participating channel partner.
+                    Connect with GE Tradecom specialists for Assam partner stock updates, configuration alerts, or business deployment enquiries.
                 </p>
 
                 <div class="flex flex-col sm:flex-row gap-3 pt-1">
                     <button id="product-enquire-btn"
                             onclick="openEnquiryModal('product', getSelectedProductLabel())"
-                            class="flex-1 py-3 px-6 rounded-full bg-[#0071e3] hover:bg-[#0077ed] text-white text-[14px] font-medium transition cursor-pointer">
+                            class="btn-tactile flex-1 py-3 px-5 rounded-full bg-[#0071e3] hover:bg-[#0077ed] text-white text-[13px] font-medium transition cursor-pointer">
                         Request Product Enquiry
                     </button>
+                    <button onclick="openEnquiryModal('stock_notify', getSelectedProductLabel())"
+                            class="btn-tactile flex-1 py-3 px-5 rounded-full bg-[#1d1d1f] hover:bg-black text-white text-[13px] font-medium transition cursor-pointer">
+                        Notify Stock Availability
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <a href="dealers.php"
-                       class="flex-1 text-center py-3 px-6 rounded-full bg-[#f5f5f7] hover:bg-[#e8e8ed] text-[#1d1d1f] border border-[#d2d2d7] text-[14px] font-medium transition">
+                       class="block text-center py-2.5 px-5 rounded-full bg-[#f5f5f7] hover:bg-[#e8e8ed] text-[#1d1d1f] border border-[#d2d2d7] text-[12px] font-medium transition">
                         Find Assam Dealers
+                    </a>
+                    <a href="business.php"
+                       class="block text-center py-2.5 px-5 rounded-full bg-[#1d1d1f]/[0.04] hover:bg-[#1d1d1f]/[0.08] text-[#0071e3] text-[12px] font-medium transition">
+                        Bulk / Business Enquiry &rarr;
                     </a>
                 </div>
 
-                <a href="business.php"
-                   class="block w-full text-center py-2.5 px-5 rounded-full bg-[#1d1d1f]/[0.04] hover:bg-[#1d1d1f]/[0.08] text-[#0071e3] text-[12px] font-medium transition">
-                    Bulk / Business Order Enquiry &rarr;
-                </a>
-
                 <p class="text-[11px] text-[#86868b] pt-2 border-t border-black/[0.06]">
-                    Stock and configuration availability vary by authorised partner outlet in Assam.
+                    Stock, pickup/delivery, and trade-in availability vary by verified participating partner outlet in Assam.
                 </p>
             </div>
         </div>

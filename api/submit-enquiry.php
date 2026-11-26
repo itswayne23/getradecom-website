@@ -36,13 +36,13 @@ if ($action === 'subscribe') {
     $stmt = $pdo->prepare("INSERT IGNORE INTO subscribers (email, consent_given) VALUES (:email, :consent)");
     $stmt->execute([':email' => $email, ':consent' => $consent]);
 
-    $_SESSION['flash_message'] = 'Subscribed! You will receive updates on GE Tradecom Assam launches, events, and approved campaigns.';
+    $_SESSION['flash_message'] = 'Subscribed! You will receive updates on GE Tradecom Assam launches, workshops, and approved campaigns.';
     header('Location: ' . $redirect_back);
     exit;
 }
 
-// Standard Enquiry / Specialist / Business / Trade-in / Workshop registration
-$allowed_types = ['product', 'specialist', 'business', 'trade_in', 'workshop', 'general'];
+// Standard Enquiry / Specialist / Business / Trade-in / Workshop / Stock Notification / Dealer Onboarding / Education
+$allowed_types = ['product', 'specialist', 'business', 'trade_in', 'workshop', 'stock_notify', 'dealer_onboarding', 'education', 'general'];
 $enquiry_type = in_array($_POST['enquiry_type'] ?? '', $allowed_types, true) ? $_POST['enquiry_type'] : 'general';
 
 $full_name = trim($_POST['full_name'] ?? '');
@@ -88,6 +88,6 @@ if ($enquiry_type === 'workshop' && !empty($_POST['workshop_id'])) {
     $upd->execute([':id' => $ws_id]);
 }
 
-$_SESSION['flash_message'] = 'Thank you, ' . $full_name . '! Your enquiry has been recorded and routed for GE Tradecom Assam follow-up.';
+$_SESSION['flash_message'] = 'Thank you, ' . $full_name . '! Your request has been recorded and routed for GE Tradecom Assam follow-up.';
 header('Location: ' . $redirect_back);
 exit;

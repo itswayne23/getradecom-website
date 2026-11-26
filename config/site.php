@@ -3,7 +3,8 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-define('SITE_NAME', 'getradeCom');
+define('SITE_NAME', 'GE Tradecom Pvt Ltd');
+define('SITE_SHORT', 'getradeCom');
 define('SITE_TAGLINE', 'Authorised Apple Product Distribution & Channel Network — Assam');
 define('OFFICIAL_PHONE', '+91 361 000 0000');       // Replace with approved company number
 define('OFFICIAL_WHATSAPP', '919864000000');        // Country code + number, no +
