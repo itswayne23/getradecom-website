@@ -19,8 +19,11 @@ if ($selected_category !== 'All') {
 }
 
 if ($search !== '') {
-    $sql .= " AND (name LIKE :q OR tagline LIKE :q OR key_specs LIKE :q)";
-    $params[':q'] = '%' . $search . '%';
+    $sql .= " AND (name LIKE :q1 OR tagline LIKE :q2 OR key_specs LIKE :q3)";
+    $like = '%' . $search . '%';
+    $params[':q1'] = $like;
+    $params[':q2'] = $like;
+    $params[':q3'] = $like;
 }
 
 $sql .= " ORDER BY is_featured DESC, id ASC";

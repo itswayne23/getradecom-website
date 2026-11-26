@@ -68,18 +68,35 @@ $stmt = $pdo->prepare("
         (:enquiry_type, :full_name, :phone, :email, :company_name, :district, :product_interest, :quantity, :message, :consent_given)
 ");
 
-$stmt->execute([
-    ':enquiry_type' => $enquiry_type,
-    ':full_name' => $full_name,
-    ':phone' => $phone,
-    ':email' => $email,
-    ':company_name' => $company_name,
-    ':district' => $district,
-    ':product_interest' => $product_interest,
-    ':quantity' => $quantity,
-    ':message' => $message,
-    ':consent_given' => $consent_given,
-]);
+try {
+    $stmt->execute([
+        ':enquiry_type' => $enquiry_type,
+        ':full_name' => $full_name,
+        ':phone' => $phone,
+        ':email' => $email,
+        ':company_name' => $company_name,
+        ':district' => $district,
+        ':product_interest' => $product_interest,
+        ':quantity' => $quantity,
+        ':message' => $message,
+        ':consent_given' => $consent_given,
+    ]);
+} catch (PDOException $e) {
+    // Graceful fallback if an un-migrated DB lacks newer ENUM values
+    $taggedInterest = '[' . $enquiry_type . '] ' . ($product_interest ?? '');
+    $stmt->execute([
+        ':enquiry_type' => 'general',
+        ':full_name' => $full_name,
+        ':phone' => $phone,
+        ':email' => $email,
+        ':company_name' => $company_name,
+        ':district' => $district,
+        ':product_interest' => trim($taggedInterest),
+        ':quantity' => $quantity,
+        ':message' => $message,
+        ':consent_given' => $consent_given,
+    ]);
+}
 
 // If registering for a specific workshop, increment booked seats safely
 if ($enquiry_type === 'workshop' && !empty($_POST['workshop_id'])) {

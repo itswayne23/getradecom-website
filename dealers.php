@@ -19,8 +19,12 @@ if ($district !== '' && $district !== 'All') {
 }
 
 if ($search !== '') {
-    $sql .= " AND (store_name LIKE :q OR town LIKE :q OR pin_code LIKE :q OR address LIKE :q)";
-    $params[':q'] = '%' . $search . '%';
+    $sql .= " AND (store_name LIKE :q1 OR town LIKE :q2 OR pin_code LIKE :q3 OR address LIKE :q4)";
+    $like = '%' . $search . '%';
+    $params[':q1'] = $like;
+    $params[':q2'] = $like;
+    $params[':q3'] = $like;
+    $params[':q4'] = $like;
 }
 
 $sql .= " ORDER BY district ASC, store_name ASC";
