@@ -40,12 +40,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Login | <?= e(SITE_NAME) ?></title>
+    <link rel="icon" type="image/png" href="../assets/images/getradecom-logo.png">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="../assets/css/custom.css?v=<?= @filemtime(__DIR__ . '/../assets/css/custom.css') ?: '2' ?>">
 </head>
 <body class="bg-[#f5f5f7] min-h-screen flex items-center justify-center p-4">
     <div class="bg-white border border-black/[0.06] rounded-[30px] max-w-md w-full p-8 sm:p-10 shadow-sm">
-        <span class="text-[11px] font-semibold uppercase tracking-widest text-[#0071e3]">getradeCom Admin</span>
+        <img src="../assets/images/getradecom-logo.png" alt="GE Tradecom Pvt. Ltd." class="h-9 w-auto object-contain mb-4">
+        <span class="text-[11px] font-semibold uppercase tracking-widest text-[#0071e3]">Admin Console</span>
         <h1 class="font-display text-2xl font-semibold text-[#1d1d1f] mt-1 mb-1">Partner &amp; Lead Console</h1>
         <p class="text-[12px] text-[#6e6e73] mb-6">Sign in to review enquiries, subscribers, and Assam dealer status.</p>
 

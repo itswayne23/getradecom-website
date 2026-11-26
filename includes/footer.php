@@ -4,7 +4,8 @@
 <footer class="bg-[#f5f5f7] border-t border-[#d2d2d7]/60 mt-24 text-[12px] text-[#6e6e73]">
     <div class="max-w-[1080px] mx-auto px-4 sm:px-6 pt-12 pb-20">
         <!-- Distributor Governance & Compliance Footnote -->
-        <div class="pb-6 mb-8 border-b border-[#d2d2d7] leading-relaxed text-[11px] text-[#6e6e73] space-y-2">
+        <div class="pb-6 mb-8 border-b border-[#d2d2d7] leading-relaxed text-[11px] text-[#6e6e73] space-y-3">
+            <img src="assets/images/getradecom-logo.png" alt="GE Tradecom Pvt. Ltd." class="h-9 w-auto object-contain">
             <p>
                 <strong class="font-semibold text-[#1d1d1f]">Distributor Corporate Governance Notice:</strong>
                 <?= e(SITE_NAME) ?> operates as an Assam Apple distribution and channel network portal focused on public product discovery, verified dealer routing, B2B consultation, training workshops, and authorised service discovery. Trade-in valuations, financing/EMI terms, education eligibility verification, and store pickup or delivery options are fulfilled exclusively through verified participating dealer or service partners, subject to approved partner terms.

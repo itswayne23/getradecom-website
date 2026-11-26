@@ -10,6 +10,7 @@ $current_cat = $_GET['category'] ?? '';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= isset($page_title) ? e($page_title) . ' | ' . SITE_NAME : SITE_NAME . ' — ' . TERRITORY ?></title>
+    <link rel="icon" type="image/png" href="assets/images/getradecom-logo.png">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="assets/css/custom.css?v=<?= @filemtime(__DIR__ . '/../assets/css/custom.css') ?: '2' ?>">
 </head>
@@ -41,9 +42,8 @@ $current_cat = $_GET['category'] ?? '';
     <div class="max-w-[1080px] mx-auto px-4 sm:px-6">
         <div class="flex justify-between items-center h-12">
             <!-- Brand Wordmark -->
-            <a href="index.php" class="flex items-center gap-2.5 group shrink-0">
-                <span class="w-6 h-6 rounded-full bg-[#1d1d1f] text-white flex items-center justify-center text-[11px] font-semibold tracking-tight group-hover:bg-[#0071e3] group-hover:scale-105 transition-all duration-300">g</span>
-                <span class="font-display text-[17px] font-semibold tracking-tight text-[#1d1d1f]">getradeCom</span>
+            <a href="index.php" class="flex items-center group shrink-0" aria-label="GE Tradecom Pvt. Ltd. Home">
+                <img src="assets/images/getradecom-logo.png" alt="GE Tradecom Pvt. Ltd." class="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.03]">
             </a>
 
             <!-- Centered Single-Row Navigation with Gliding Hover Pill -->

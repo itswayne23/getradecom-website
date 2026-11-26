@@ -68,6 +68,7 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard | <?= e(SITE_NAME) ?></title>
+    <link rel="icon" type="image/png" href="../assets/images/getradecom-logo.png">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="../assets/css/custom.css?v=<?= @filemtime(__DIR__ . '/../assets/css/custom.css') ?: '2' ?>">
 </head>
@@ -75,7 +76,8 @@ try {
     <header class="glass-nav border-b border-black/[0.08] sticky top-0 z-30">
         <div class="max-w-[1200px] mx-auto px-4 sm:px-6 h-14 flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <span class="font-display font-semibold text-lg tracking-tight">GE Tradecom Admin</span>
+                <img src="../assets/images/getradecom-logo.png" alt="GE Tradecom Pvt. Ltd." class="h-7 w-auto object-contain">
+                <span class="font-display font-semibold text-base tracking-tight hidden sm:inline">Admin</span>
                 <span class="text-[11px] bg-[#0071e3]/10 text-[#0071e3] px-2.5 py-0.5 rounded-full font-semibold">Assam Operations</span>
             </div>
             <div class="flex items-center gap-4 text-xs">
