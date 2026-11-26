@@ -21,11 +21,6 @@ unset($_SESSION['flash_message']);
 <!-- Hero 1: GE Tradecom Pvt Ltd Executive Portfolio Stage -->
 <section class="hero-titanium-glow text-white overflow-hidden border-b border-white/10">
     <div class="max-w-[1080px] mx-auto px-4 sm:px-6 pt-16 sm:pt-24 pb-14 text-center">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/[0.08] border border-white/15 text-[11px] font-medium tracking-wide text-[#f5f5f7] mb-5">
-            <span class="w-1.5 h-1.5 rounded-full bg-[#2997ff] animate-pulse"></span>
-            <span>GE Tradecom Pvt Ltd &middot; Authorised Assam Channel Portfolio</span>
-        </div>
-
         <h1 class="font-display text-4xl sm:text-6xl lg:text-[68px] font-semibold tracking-tight leading-[1.05] mb-4">
             Apple Distribution <span class="text-[#86868b] font-normal">for</span> <span class="ai-gradient-text">Assam</span>
         </h1>
