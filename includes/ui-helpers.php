@@ -89,6 +89,11 @@ function get_product_color_images(string $slug): array {
             'Silver'   => 'assets/images/products/iphone-18-pro-silver.png',
             'Black'    => 'assets/images/products/iphone-18-pro-black.png',
         ],
+        'iphone-air' => [
+            'Sky Blue'    => 'assets/images/products/iphone-air-sky-blue.png',
+            'Cloud White' => 'assets/images/products/iphone-air-cloud-white.png',
+            'Space Black' => 'assets/images/products/iphone-air-space-black.png',
+        ],
         'iphone-17' => [
             'Lavender'  => 'assets/images/products/iphone-17-lavender.png',
             'Sage'      => 'assets/images/products/iphone-17-sage.png',
