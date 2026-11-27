@@ -34,7 +34,7 @@ unset($_SESSION['flash_message']);
             <span class="text-[11px] font-semibold uppercase tracking-wider text-[#0071e3]">01 / Productivity</span>
             <h2 class="font-display text-xl font-semibold text-[#1d1d1f] mt-2 mb-2">Modern Workstations</h2>
             <p class="text-[13px] text-[#6e6e73] leading-relaxed">
-                Equip teams with MacBook Air M4, MacBook Pro, and iPad fleets built for long battery life and dependable daily workflows.
+                Equip teams with MacBook Neo, MacBook Air, MacBook Pro (M6), and iPad fleets built for long battery life and dependable daily workflows.
             </p>
         </div>
 

@@ -55,7 +55,7 @@ unset($_SESSION['flash_message']);
     <div class="bg-[#161617] text-white rounded-[32px] p-9 sm:p-12 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
         <div class="max-w-2xl">
             <span class="text-[11px] font-semibold uppercase tracking-widest text-[#2997ff]">Eligible Study &amp; Research Hardware</span>
-            <h2 class="font-display text-3xl font-semibold tracking-tight mt-1.5 mb-3">MacBook Air M4, iPad Air &amp; Apple Pencil Pro</h2>
+            <h2 class="font-display text-3xl font-semibold tracking-tight mt-1.5 mb-3">MacBook Neo, MacBook Air, iPad Air (M4) &amp; Apple Pencil Pro</h2>
             <p class="text-[#a1a1a6] text-[14px] leading-relaxed">
                 Programme availability, verification document requirements, and applicable terms vary by active campaign period and participating Assam outlet approval.
             </p>

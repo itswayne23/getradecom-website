@@ -103,7 +103,7 @@
         </div>
 
         <form action="products.php" method="GET" class="flex gap-2 mb-5">
-            <input id="spotlight-input" type="text" name="q" placeholder="Search iPhone 17 Pro, MacBook Air M4, iPad..."
+            <input id="spotlight-input" type="text" name="q" placeholder="Search iPhone Duo, iPhone 18 Pro, MacBook Neo, iPad..."
                    class="flex-1 px-4 py-3 rounded-2xl bg-white border border-[#d2d2d7] text-sm text-[#1d1d1f] focus:outline-none focus:border-[#0071e3]">
             <button type="submit" class="px-5 py-3 rounded-2xl bg-[#0071e3] hover:bg-[#0077ed] text-white text-sm font-medium transition cursor-pointer">
                 Search
@@ -216,8 +216,9 @@ const CURTAIN_DATA = {
         primaryTitle: 'Explore Mac',
         primary: [
             { label: 'Explore All Mac', href: 'products.php?category=Mac' },
-            { label: 'MacBook Air M4', href: 'product-details.php?slug=macbook-air-m4' },
-            { label: 'MacBook Pro M4 Pro', href: 'product-details.php?slug=macbook-pro-m4-pro' },
+            { label: 'MacBook Neo', href: 'product-details.php?slug=macbook-neo' },
+            { label: 'MacBook Air', href: 'product-details.php?slug=macbook-air' },
+            { label: 'MacBook Pro 14-inch (M6)', href: 'product-details.php?slug=macbook-pro-14-m6' },
             { label: 'Mac for Business Fleets', href: 'business.php' }
         ],
         secondaryTitle: 'Assam Channel',
@@ -229,7 +230,7 @@ const CURTAIN_DATA = {
         tertiaryTitle: 'Programmes & Support',
         tertiary: [
             { label: 'Student & Teacher Programme', href: 'education.php' },
-            { label: 'Mac M4 Workshops', href: 'workshops.php' },
+            { label: 'Mac Workshops', href: 'workshops.php' },
             { label: 'Talk to a Specialist', action: "openEnquiryModal('specialist', 'Mac Consultation')" }
         ]
     },
@@ -237,7 +238,8 @@ const CURTAIN_DATA = {
         primaryTitle: 'Explore iPad',
         primary: [
             { label: 'Explore All iPad', href: 'products.php?category=iPad' },
-            { label: 'iPad Air', href: 'product-details.php?slug=ipad-air' },
+            { label: 'iPad Pro 11-inch (M5)', href: 'product-details.php?slug=ipad-pro-11-m5' },
+            { label: 'iPad Air 11-inch (M4)', href: 'product-details.php?slug=ipad-air-11-m4' },
             { label: 'Apple Pencil Pro', href: 'product-details.php?slug=apple-pencil-pro' },
             { label: 'iPad for Education', href: 'education.php' }
         ],
@@ -250,14 +252,16 @@ const CURTAIN_DATA = {
         tertiaryTitle: 'More from GE Tradecom',
         tertiary: [
             { label: 'iPad Creative Workshops', href: 'workshops.php' },
-            { label: 'Stock Availability Alert', action: "openEnquiryModal('stock_notify', 'iPad Air')" }
+            { label: 'Stock Availability Alert', action: "openEnquiryModal('stock_notify', 'iPad Pro 11-inch (M5)')" }
         ]
     },
     iPhone: {
         primaryTitle: 'Explore iPhone',
         primary: [
             { label: 'Explore All iPhone', href: 'products.php?category=iPhone' },
-            { label: 'iPhone 17 Pro', href: 'product-details.php?slug=iphone-17-pro' },
+            { label: 'iPhone Duo', href: 'product-details.php?slug=iphone-duo' },
+            { label: 'iPhone 18 Pro', href: 'product-details.php?slug=iphone-18-pro' },
+            { label: 'iPhone Air', href: 'product-details.php?slug=iphone-air' },
             { label: 'iPhone for Business Mobility', href: 'business.php' }
         ],
         secondaryTitle: 'Assam Channel',
@@ -269,15 +273,16 @@ const CURTAIN_DATA = {
         tertiaryTitle: 'Concierge',
         tertiary: [
             { label: 'iPhone Photography Workshops', href: 'workshops.php' },
-            { label: 'Stock Notification', action: "openEnquiryModal('stock_notify', 'iPhone 17 Pro')" },
-            { label: 'Talk to a Specialist', action: "openEnquiryModal('product', 'iPhone 17 Pro')" }
+            { label: 'Stock Notification', action: "openEnquiryModal('stock_notify', 'iPhone 18 Pro')" },
+            { label: 'Talk to a Specialist', action: "openEnquiryModal('product', 'iPhone 18 Pro')" }
         ]
     },
     Watch: {
         primaryTitle: 'Explore Watch',
         primary: [
             { label: 'Explore All Apple Watch', href: 'products.php?category=Watch' },
-            { label: 'Apple Watch Series 11', href: 'product-details.php?slug=apple-watch-series-11' }
+            { label: 'Apple Watch Series 12', href: 'product-details.php?slug=apple-watch-series-12' },
+            { label: 'Apple Watch Ultra 4', href: 'product-details.php?slug=apple-watch-ultra-4' }
         ],
         secondaryTitle: 'Assam Channel',
         secondary: [
@@ -286,14 +291,16 @@ const CURTAIN_DATA = {
         ],
         tertiaryTitle: 'Concierge',
         tertiary: [
-            { label: 'Enquire About Watch', action: "openEnquiryModal('product', 'Apple Watch Series 11')" }
+            { label: 'Enquire About Watch', action: "openEnquiryModal('product', 'Apple Watch Series 12')" }
         ]
     },
     AirPods: {
         primaryTitle: 'Explore AirPods',
         primary: [
             { label: 'Explore All AirPods', href: 'products.php?category=AirPods' },
-            { label: 'AirPods Pro (2nd Gen)', href: 'product-details.php?slug=airpods-pro-2' }
+            { label: 'AirPods Pro 3', href: 'product-details.php?slug=airpods-pro-3' },
+            { label: 'AirPods 5', href: 'product-details.php?slug=airpods-5' },
+            { label: 'AirPods Max 2', href: 'product-details.php?slug=airpods-max-2' }
         ],
         secondaryTitle: 'Assam Channel',
         secondary: [
@@ -302,7 +309,7 @@ const CURTAIN_DATA = {
         ],
         tertiaryTitle: 'Concierge',
         tertiary: [
-            { label: 'Ask a Specialist', action: "openEnquiryModal('product', 'AirPods Pro (2nd Gen)')" }
+            { label: 'Ask a Specialist', action: "openEnquiryModal('product', 'AirPods Pro 3')" }
         ]
     },
     Accessories: {
