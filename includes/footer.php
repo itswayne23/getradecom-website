@@ -217,8 +217,8 @@ const CURTAIN_DATA = {
         primary: [
             { label: 'Explore All Mac', href: 'products.php?category=Mac' },
             { label: 'MacBook Neo', href: 'product-details.php?slug=macbook-neo' },
-            { label: 'MacBook Air', href: 'product-details.php?slug=macbook-air' },
-            { label: 'MacBook Pro 14-inch (M6)', href: 'product-details.php?slug=macbook-pro-14-m6' },
+            { label: 'MacBook Air 13" & 15"', href: 'product-details.php?slug=macbook-air' },
+            { label: 'MacBook Pro 14" & 16"', href: 'product-details.php?slug=macbook-pro' },
             { label: 'Mac for Business Fleets', href: 'business.php' }
         ],
         secondaryTitle: 'Assam Channel',
@@ -238,8 +238,8 @@ const CURTAIN_DATA = {
         primaryTitle: 'Explore iPad',
         primary: [
             { label: 'Explore All iPad', href: 'products.php?category=iPad' },
-            { label: 'iPad Pro 11-inch (M5)', href: 'product-details.php?slug=ipad-pro-11-m5' },
-            { label: 'iPad Air 11-inch (M4)', href: 'product-details.php?slug=ipad-air-11-m4' },
+            { label: 'iPad Pro', href: 'product-details.php?slug=ipad-pro' },
+            { label: 'iPad Air', href: 'product-details.php?slug=ipad-air' },
             { label: 'Apple Pencil Pro', href: 'product-details.php?slug=apple-pencil-pro' },
             { label: 'iPad for Education', href: 'education.php' }
         ],
@@ -252,7 +252,7 @@ const CURTAIN_DATA = {
         tertiaryTitle: 'More from GE Tradecom',
         tertiary: [
             { label: 'iPad Creative Workshops', href: 'workshops.php' },
-            { label: 'Stock Availability Alert', action: "openEnquiryModal('stock_notify', 'iPad Pro 11-inch (M5)')" }
+            { label: 'Stock Availability Alert', action: "openEnquiryModal('stock_notify', 'iPad Pro')" }
         ]
     },
     iPhone: {
