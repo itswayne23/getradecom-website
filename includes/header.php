@@ -72,14 +72,8 @@ $current_cat = $_GET['category'] ?? '';
                         class="hidden sm:inline-flex items-center px-3.5 py-1.5 rounded-full bg-[#0071e3] hover:bg-[#0077ed] text-white text-[12px] font-medium transition shadow-[0_1px_2px_rgba(0,113,227,0.3)] cursor-pointer whitespace-nowrap">
                     Talk to a Specialist
                 </button>
-                <span class="hidden md:inline-block h-4 w-px bg-black/15 mx-1" aria-hidden="true"></span>
-                <div class="hidden md:inline-flex items-center gap-2 text-[#1d1d1f] shrink-0">
-                    <svg class="w-4 h-4 fill-current text-[#1d1d1f] shrink-0" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/>
-                    </svg>
-                    <span class="h-3.5 w-px bg-black/20" aria-hidden="true"></span>
-                    <span class="text-[12px] font-medium tracking-tight text-[#1d1d1f] whitespace-nowrap">Apple Authorised Dealer</span>
-                </div>
+                <span class="hidden md:inline-block h-5 w-px bg-black/15 mx-1.5" aria-hidden="true"></span>
+                <img src="assets/images/apple-authorised-distributor.png" alt="Apple Authorised Distributor" class="hidden md:block h-7 w-auto object-contain shrink-0">
                 <button id="mobile-menu-btn" aria-label="Toggle Menu" aria-expanded="false"
                         class="lg:hidden p-2 rounded-full text-[#1d1d1f] hover:bg-black/[0.05] transition cursor-pointer">
                     <div id="apple-burger" class="apple-burger">
