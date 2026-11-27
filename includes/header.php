@@ -39,9 +39,9 @@ $current_cat = $_GET['category'] ?? '';
 
 <!-- Official Apple-Style Frosted Sticky Navigation -->
 <header id="main-navbar" class="sticky top-0 z-40 glass-nav border-b border-black/[0.08]">
-    <div class="max-w-[1080px] mx-auto px-4 sm:px-6">
-        <div class="flex justify-between items-center h-12">
-            <!-- Brand Wordmark -->
+    <div class="max-w-[1280px] mx-auto px-4 sm:px-6">
+        <div class="flex justify-between items-center h-12 gap-3">
+            <!-- Brand Wordmark (Left) -->
             <a href="index.php" class="flex items-center group shrink-0" aria-label="GE Tradecom Pvt. Ltd. Home">
                 <img src="assets/images/getradecom-logo.png" alt="GE Tradecom Pvt. Ltd." class="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.03]">
             </a>
@@ -49,29 +49,37 @@ $current_cat = $_GET['category'] ?? '';
             <!-- Centered Single-Row Navigation with Gliding Hover Pill -->
             <nav id="desktop-nav" class="hidden lg:flex items-center relative text-[12px] font-normal text-[#1d1d1f]/85">
                 <div id="nav-hover-pill"></div>
-                <a href="products.php?category=Mac" data-curtain="Mac" class="nav-trigger relative z-10 px-2.5 py-1.5 hover:text-[#1d1d1f] transition <?= $current_page === 'products.php' && $current_cat === 'Mac' ? 'text-[#0071e3] font-medium' : '' ?>">Mac</a>
-                <a href="products.php?category=iPad" data-curtain="iPad" class="nav-trigger relative z-10 px-2.5 py-1.5 hover:text-[#1d1d1f] transition <?= $current_page === 'products.php' && $current_cat === 'iPad' ? 'text-[#0071e3] font-medium' : '' ?>">iPad</a>
-                <a href="products.php?category=iPhone" data-curtain="iPhone" class="nav-trigger relative z-10 px-2.5 py-1.5 hover:text-[#1d1d1f] transition <?= $current_page === 'products.php' && $current_cat === 'iPhone' ? 'text-[#0071e3] font-medium' : '' ?>">iPhone</a>
-                <a href="products.php?category=Watch" data-curtain="Watch" class="nav-trigger relative z-10 px-2.5 py-1.5 hover:text-[#1d1d1f] transition <?= $current_page === 'products.php' && $current_cat === 'Watch' ? 'text-[#0071e3] font-medium' : '' ?>">Watch</a>
-                <a href="products.php?category=AirPods" data-curtain="AirPods" class="nav-trigger relative z-10 px-2.5 py-1.5 hover:text-[#1d1d1f] transition <?= $current_page === 'products.php' && $current_cat === 'AirPods' ? 'text-[#0071e3] font-medium' : '' ?>">AirPods</a>
-                <a href="products.php?category=Accessories" data-curtain="Accessories" class="nav-trigger relative z-10 px-2.5 py-1.5 hover:text-[#1d1d1f] transition <?= $current_page === 'products.php' && $current_cat === 'Accessories' ? 'text-[#0071e3] font-medium' : '' ?>">Accessories</a>
+                <a href="products.php?category=Mac" data-curtain="Mac" class="nav-trigger relative z-10 px-2 xl:px-2.5 py-1.5 hover:text-[#1d1d1f] transition <?= $current_page === 'products.php' && $current_cat === 'Mac' ? 'text-[#0071e3] font-medium' : '' ?>">Mac</a>
+                <a href="products.php?category=iPad" data-curtain="iPad" class="nav-trigger relative z-10 px-2 xl:px-2.5 py-1.5 hover:text-[#1d1d1f] transition <?= $current_page === 'products.php' && $current_cat === 'iPad' ? 'text-[#0071e3] font-medium' : '' ?>">iPad</a>
+                <a href="products.php?category=iPhone" data-curtain="iPhone" class="nav-trigger relative z-10 px-2 xl:px-2.5 py-1.5 hover:text-[#1d1d1f] transition <?= $current_page === 'products.php' && $current_cat === 'iPhone' ? 'text-[#0071e3] font-medium' : '' ?>">iPhone</a>
+                <a href="products.php?category=Watch" data-curtain="Watch" class="nav-trigger relative z-10 px-2 xl:px-2.5 py-1.5 hover:text-[#1d1d1f] transition <?= $current_page === 'products.php' && $current_cat === 'Watch' ? 'text-[#0071e3] font-medium' : '' ?>">Watch</a>
+                <a href="products.php?category=AirPods" data-curtain="AirPods" class="nav-trigger relative z-10 px-2 xl:px-2.5 py-1.5 hover:text-[#1d1d1f] transition <?= $current_page === 'products.php' && $current_cat === 'AirPods' ? 'text-[#0071e3] font-medium' : '' ?>">AirPods</a>
+                <a href="products.php?category=Accessories" data-curtain="Accessories" class="nav-trigger relative z-10 px-2 xl:px-2.5 py-1.5 hover:text-[#1d1d1f] transition <?= $current_page === 'products.php' && $current_cat === 'Accessories' ? 'text-[#0071e3] font-medium' : '' ?>">Accessories</a>
                 <span class="text-black/15 px-1 select-none">|</span>
-                <a href="dealers.php" data-curtain="Dealers" class="nav-trigger relative z-10 px-2.5 py-1.5 hover:text-[#1d1d1f] transition <?= $current_page === 'dealers.php' ? 'text-[#0071e3] font-medium' : '' ?>">Dealers</a>
-                <a href="business.php" data-curtain="Business" class="nav-trigger relative z-10 px-2.5 py-1.5 hover:text-[#1d1d1f] transition <?= $current_page === 'business.php' ? 'text-[#0071e3] font-medium' : '' ?>">Business</a>
-                <a href="services.php" data-curtain="Services" class="nav-trigger relative z-10 px-2.5 py-1.5 hover:text-[#1d1d1f] transition <?= $current_page === 'services.php' ? 'text-[#0071e3] font-medium' : '' ?>">Services</a>
-                <a href="workshops.php" data-curtain="Workshops" class="nav-trigger relative z-10 px-2.5 py-1.5 hover:text-[#1d1d1f] transition <?= $current_page === 'workshops.php' ? 'text-[#0071e3] font-medium' : '' ?>">Workshops</a>
+                <a href="dealers.php" data-curtain="Dealers" class="nav-trigger relative z-10 px-2 xl:px-2.5 py-1.5 hover:text-[#1d1d1f] transition <?= $current_page === 'dealers.php' ? 'text-[#0071e3] font-medium' : '' ?>">Dealers</a>
+                <a href="business.php" data-curtain="Business" class="nav-trigger relative z-10 px-2 xl:px-2.5 py-1.5 hover:text-[#1d1d1f] transition <?= $current_page === 'business.php' ? 'text-[#0071e3] font-medium' : '' ?>">Business</a>
+                <a href="services.php" data-curtain="Services" class="nav-trigger relative z-10 px-2 xl:px-2.5 py-1.5 hover:text-[#1d1d1f] transition <?= $current_page === 'services.php' ? 'text-[#0071e3] font-medium' : '' ?>">Services</a>
+                <a href="workshops.php" data-curtain="Workshops" class="nav-trigger relative z-10 px-2 xl:px-2.5 py-1.5 hover:text-[#1d1d1f] transition <?= $current_page === 'workshops.php' ? 'text-[#0071e3] font-medium' : '' ?>">Workshops</a>
             </nav>
 
-            <!-- Action Controls -->
+            <!-- Action Controls & Official Apple Authorised Dealer Lockup (Right) -->
             <div class="flex items-center gap-2 shrink-0">
                 <button onclick="openSpotlightModal()" aria-label="Quick Search" title="Search products or Assam dealers (Ctrl+K)"
                         class="p-1.5 rounded-full text-[#1d1d1f]/80 hover:text-[#1d1d1f] hover:bg-black/[0.06] transition cursor-pointer">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35m1.85-5.15a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
                 </button>
                 <button onclick="openEnquiryModal('specialist', 'General Product Consultation')"
-                        class="hidden sm:inline-flex items-center px-3.5 py-1.5 rounded-full bg-[#0071e3] hover:bg-[#0077ed] text-white text-[12px] font-medium transition shadow-[0_1px_2px_rgba(0,113,227,0.3)] cursor-pointer">
+                        class="hidden sm:inline-flex items-center px-3.5 py-1.5 rounded-full bg-[#0071e3] hover:bg-[#0077ed] text-white text-[12px] font-medium transition shadow-[0_1px_2px_rgba(0,113,227,0.3)] cursor-pointer whitespace-nowrap">
                     Talk to a Specialist
                 </button>
+                <span class="hidden md:inline-block h-4 w-px bg-black/15 mx-1" aria-hidden="true"></span>
+                <div class="hidden md:inline-flex items-center gap-2 text-[#1d1d1f] shrink-0">
+                    <svg class="w-4 h-4 fill-current text-[#1d1d1f] shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/>
+                    </svg>
+                    <span class="h-3.5 w-px bg-black/20" aria-hidden="true"></span>
+                    <span class="text-[12px] font-medium tracking-tight text-[#1d1d1f] whitespace-nowrap">Apple Authorised Dealer</span>
+                </div>
                 <button id="mobile-menu-btn" aria-label="Toggle Menu" aria-expanded="false"
                         class="lg:hidden p-2 rounded-full text-[#1d1d1f] hover:bg-black/[0.05] transition cursor-pointer">
                     <div id="apple-burger" class="apple-burger">
