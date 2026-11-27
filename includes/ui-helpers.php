@@ -78,19 +78,17 @@ function get_finish_hex(string $finishName): string {
 }
 
 function get_product_color_images(string $slug): array {
-    $pro18 = [
-        'Burgundy' => 'assets/images/products/iphone-18-pro-burgundy.png',
-        'Glacier'  => 'assets/images/products/iphone-18-pro-glacier.png',
-        'Silver'   => 'assets/images/products/iphone-18-pro-silver.png',
-        'Black'    => 'assets/images/products/iphone-18-pro-black.png',
-    ];
     $map = [
         'iphone-duo' => [
             'Star White' => 'assets/images/products/iphone-duo-star-white.png',
             'Night Sky'  => 'assets/images/products/iphone-duo-night-sky.png',
         ],
-        'iphone-18-pro'     => $pro18,
-        'iphone-18-pro-max' => $pro18,
+        'iphone-18-pro' => [
+            'Burgundy' => 'assets/images/products/iphone-18-pro-burgundy.png',
+            'Glacier'  => 'assets/images/products/iphone-18-pro-glacier.png',
+            'Silver'   => 'assets/images/products/iphone-18-pro-silver.png',
+            'Black'    => 'assets/images/products/iphone-18-pro-black.png',
+        ],
         'iphone-17' => [
             'Lavender'  => 'assets/images/products/iphone-17-lavender.png',
             'Sage'      => 'assets/images/products/iphone-17-sage.png',
