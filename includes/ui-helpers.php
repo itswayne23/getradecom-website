@@ -80,16 +80,16 @@ function get_finish_hex(string $finishName): string {
 function get_product_color_images(string $slug): array {
     $map = [
         'iphone-16' => [
-            'Black'       => 'assets/images/products/iphone-16-black.webp',
-            'Pink'        => 'assets/images/products/iphone-16-pink.webp',
-            'White'       => 'assets/images/products/iphone-16-white.webp',
-            'Teal'        => 'assets/images/products/iphone-16-teal.webp',
-            'Ultramarine' => 'assets/images/products/iphone-16-ultramarine.webp',
+            'Black'       => 'assets/images/products/iphone-16-black.png',
+            'Pink'        => 'assets/images/products/iphone-16-pink.png',
+            'White'       => 'assets/images/products/iphone-16-white.png',
+            'Teal'        => 'assets/images/products/iphone-16-teal.png',
+            'Ultramarine' => 'assets/images/products/iphone-16-ultramarine.png',
         ],
         'iphone-17e' => [
-            'Soft Pink'   => 'assets/images/products/iphone-17e-soft-pink.webp',
-            'White'       => 'assets/images/products/iphone-17e-white.webp',
-            'Black'       => 'assets/images/products/iphone-17e-black.webp',
+            'Soft Pink'   => 'assets/images/products/iphone-17e-soft-pink.png',
+            'White'       => 'assets/images/products/iphone-17e-white.png',
+            'Black'       => 'assets/images/products/iphone-17e-black.png',
         ],
     ];
     return $map[$slug] ?? [];
@@ -153,12 +153,10 @@ function render_category_icon(string $category): string {
 function render_product_visual(string $category, bool $dark = false, ?string $imageUrl = null, string $alt = '', string $visualId = '', string $size = 'card'): string {
     if ($imageUrl && !str_contains($imageUrl, 'placeholder-product.png')) {
         $idAttr = $visualId !== '' ? ' id="' . htmlspecialchars($visualId, ENT_QUOTES, 'UTF-8') . '"' : '';
-        $wrapH = $size === 'detail' ? 'h-[320px] sm:h-[360px]' : 'h-[230px]';
+        $imgH = $size === 'detail' ? 'h-[240px] sm:h-[270px]' : 'h-[196px]';
         $safeSrc = htmlspecialchars($imageUrl, ENT_QUOTES, 'UTF-8');
         $safeAlt = htmlspecialchars($alt ?: $category, ENT_QUOTES, 'UTF-8');
-        return '<div class="w-full ' . $wrapH . ' flex items-center justify-center overflow-hidden rounded-2xl">'
-             . '<img' . $idAttr . ' src="' . $safeSrc . '" alt="' . $safeAlt . '" class="w-full h-full object-contain scale-[1.48] mix-blend-multiply transition-opacity duration-200">'
-             . '</div>';
+        return '<img' . $idAttr . ' src="' . $safeSrc . '" alt="' . $safeAlt . '" class="' . $imgH . ' w-auto object-contain mx-auto drop-shadow-[0_18px_32px_rgba(0,0,0,0.16)] transition-opacity duration-200">';
     }
     $wrapId = $visualId !== '' ? ' id="' . htmlspecialchars($visualId, ENT_QUOTES, 'UTF-8') . '"' : '';
     $stroke = $dark ? '#f5f5f7' : '#1d1d1f';
