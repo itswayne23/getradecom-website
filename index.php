@@ -19,11 +19,63 @@ unset($_SESSION['flash_message']);
 <?php endif; ?>
 
 <!-- Hero 1: GE Tradecom Pvt Ltd Executive Portfolio Stage -->
-<section class="hero-titanium-glow text-white overflow-hidden border-b border-white/10">
-    <div class="max-w-[1080px] mx-auto px-4 sm:px-6 pt-16 sm:pt-24 pb-14 text-center">
-        <p class="text-[12px] sm:text-[13px] font-semibold uppercase tracking-[0.18em] text-[#2997ff] mb-3">
-            Apple Authorised Dealer
-        </p>
+<section class="relative bg-[#020308] text-white overflow-hidden border-b border-white/10">
+    <!-- Sweeping Blue & Magenta Wave Background -->
+    <svg class="absolute inset-0 w-full h-full pointer-events-none select-none" viewBox="0 0 1440 680" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+            <linearGradient id="wave-blue-fill" x1="0%" y1="0%" x2="70%" y2="85%">
+                <stop offset="0%" stop-color="#0055cc" stop-opacity="0.72"/>
+                <stop offset="45%" stop-color="#0071e3" stop-opacity="0.32"/>
+                <stop offset="100%" stop-color="#020308" stop-opacity="0"/>
+            </linearGradient>
+            <linearGradient id="wave-blue-rim" x1="0%" y1="55%" x2="55%" y2="0%">
+                <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.95"/>
+                <stop offset="55%" stop-color="#0ea5e9" stop-opacity="0.45"/>
+                <stop offset="100%" stop-color="#0071e3" stop-opacity="0"/>
+            </linearGradient>
+            <linearGradient id="wave-purple-fill" x1="100%" y1="100%" x2="35%" y2="35%">
+                <stop offset="0%" stop-color="#86198f" stop-opacity="0.78"/>
+                <stop offset="45%" stop-color="#6b21a8" stop-opacity="0.38"/>
+                <stop offset="100%" stop-color="#020308" stop-opacity="0"/>
+            </linearGradient>
+            <linearGradient id="wave-purple-rim" x1="42%" y1="100%" x2="100%" y2="30%">
+                <stop offset="0%" stop-color="#c026d3" stop-opacity="0"/>
+                <stop offset="45%" stop-color="#e879f9" stop-opacity="0.65"/>
+                <stop offset="100%" stop-color="#f0abfc" stop-opacity="0.95"/>
+            </linearGradient>
+            <filter id="wave-blur-lg" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="42"/>
+            </filter>
+            <filter id="wave-blur-sm" x="-10%" y="-10%" width="120%" height="120%">
+                <feGaussianBlur stdDeviation="2.5"/>
+            </filter>
+        </defs>
+
+        <rect width="1440" height="680" fill="#020308"/>
+
+        <!-- Top-left luminous blue wave -->
+        <path d="M-80,360 C180,210 380,95 660,-40 L-80,-40 Z" fill="url(#wave-blue-fill)" filter="url(#wave-blur-lg)"/>
+        <path d="M-60,340 C160,215 360,115 620,-20 L560,140 C320,250 150,360 -60,520 Z" fill="url(#wave-blue-fill)" opacity="0.75" filter="url(#wave-blur-lg)"/>
+        <path d="M-40,335 C175,205 370,105 615,-15" fill="none" stroke="url(#wave-blue-rim)" stroke-width="4" filter="url(#wave-blur-sm)"/>
+        <path d="M-40,335 C175,205 370,105 615,-15" fill="none" stroke="url(#wave-blue-rim)" stroke-width="1.5"/>
+
+        <!-- Bottom-right luminous magenta/purple wave -->
+        <path d="M1520,210 C1230,360 980,500 620,720 L1520,720 Z" fill="url(#wave-purple-fill)" filter="url(#wave-blur-lg)"/>
+        <path d="M1500,225 C1210,375 960,515 650,700" fill="none" stroke="url(#wave-purple-rim)" stroke-width="4.5" filter="url(#wave-blur-sm)"/>
+        <path d="M1500,225 C1210,375 960,515 650,700" fill="none" stroke="url(#wave-purple-rim)" stroke-width="1.5"/>
+    </svg>
+
+    <div class="relative z-10 max-w-[1080px] mx-auto px-4 sm:px-6 pt-8 sm:pt-10 pb-14 text-center">
+        <!-- Apple Authorised Distributor Lockup -->
+        <div class="flex justify-end mb-8 sm:mb-10">
+            <div class="inline-flex items-center gap-3 text-[#f5f5f7]">
+                <svg class="w-5 h-5 fill-current text-white shrink-0" viewBox="0 0 170 170" aria-hidden="true">
+                    <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.13-1.9-14.34-6.08-3.69-3.03-7.61-7.82-11.77-14.37-5.05-7.88-9.21-17.01-12.47-27.39-3.26-10.38-4.89-20.38-4.89-30.01 0-11.33 2.75-20.99 8.26-28.98 5.51-7.99 12.66-12.23 21.44-12.73 4.71 0 10.09 1.46 16.16 4.37 6.06 2.91 9.97 4.41 11.71 4.52 1.41 0 5.62-1.71 12.65-5.12 7.03-3.41 12.97-4.87 17.83-4.37 13.21 1.06 23.16 6.24 29.85 15.53-11.82 7.16-17.64 17.16-17.46 29.99.18 9.99 3.82 18.29 10.92 24.89 5.01 4.65 10.89 7.6 17.63 8.84-.66 2.27-1.41 4.48-2.25 6.62zM119.22 31.01c0 7.77-2.85 14.99-8.54 21.65-6.86 7.99-15.17 12.61-24.19 11.88-.12-.95-.18-1.96-.18-3.02 0-7.45 3.25-15.42 9.03-21.95 2.89-3.3 6.57-6.04 11.03-8.22 4.46-2.18 8.68-3.39 12.66-3.63.13 1.12.19 2.22.19 3.29z"/>
+                </svg>
+                <span class="h-4 w-px bg-white/25" aria-hidden="true"></span>
+                <span class="text-[13px] sm:text-[14px] font-normal tracking-tight text-white/90">Apple Authorised Distributor</span>
+            </div>
+        </div>
 
         <h1 class="font-display text-4xl sm:text-6xl lg:text-[68px] font-semibold tracking-tight leading-[1.05] mb-4">
             Apple Distribution <span class="text-[#86868b] font-normal">for</span> <span class="ai-gradient-text">Assam</span>
