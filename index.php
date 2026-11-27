@@ -291,8 +291,12 @@ unset($_SESSION['flash_message']);
                     <?php endif; ?>
                 </div>
 
+                <?php
+                    $homeColorImgs = get_product_color_images($p['slug']);
+                    $homeImg = !empty($homeColorImgs) ? reset($homeColorImgs) : ($p['image_url'] ?? '');
+                ?>
                 <div class="py-4 mb-5 flex items-center justify-center min-h-[175px]">
-                    <?= render_product_visual($p['category']) ?>
+                    <?= render_product_visual($p['category'], false, $homeImg, $p['name'], '', 'card') ?>
                 </div>
 
                 <h3 class="font-display text-2xl font-semibold tracking-tight text-[#1d1d1f] mb-1"><?= e($p['name']) ?></h3>

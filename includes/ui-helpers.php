@@ -78,18 +78,37 @@ function get_finish_hex(string $finishName): string {
 }
 
 function get_product_color_images(string $slug): array {
+    $pro18 = [
+        'Burgundy' => 'assets/images/products/iphone-18-pro-burgundy.png',
+        'Glacier'  => 'assets/images/products/iphone-18-pro-glacier.png',
+        'Silver'   => 'assets/images/products/iphone-18-pro-silver.png',
+        'Black'    => 'assets/images/products/iphone-18-pro-black.png',
+    ];
     $map = [
+        'iphone-duo' => [
+            'Star White' => 'assets/images/products/iphone-duo-star-white.png',
+            'Night Sky'  => 'assets/images/products/iphone-duo-night-sky.png',
+        ],
+        'iphone-18-pro'     => $pro18,
+        'iphone-18-pro-max' => $pro18,
+        'iphone-17' => [
+            'Lavender'  => 'assets/images/products/iphone-17-lavender.png',
+            'Sage'      => 'assets/images/products/iphone-17-sage.png',
+            'Mist Blue' => 'assets/images/products/iphone-17-mist-blue.png',
+            'White'     => 'assets/images/products/iphone-17-white.png',
+            'Black'     => 'assets/images/products/iphone-17-black.png',
+        ],
+        'iphone-17e' => [
+            'Soft Pink'   => 'assets/images/products/iphone-17e-soft-pink.png',
+            'White'       => 'assets/images/products/iphone-17e-white.png',
+            'Black'       => 'assets/images/products/iphone-17e-black.png',
+        ],
         'iphone-16' => [
             'Black'       => 'assets/images/products/iphone-16-black.png',
             'Pink'        => 'assets/images/products/iphone-16-pink.png',
             'White'       => 'assets/images/products/iphone-16-white.png',
             'Teal'        => 'assets/images/products/iphone-16-teal.png',
             'Ultramarine' => 'assets/images/products/iphone-16-ultramarine.png',
-        ],
-        'iphone-17e' => [
-            'Soft Pink'   => 'assets/images/products/iphone-17e-soft-pink.png',
-            'White'       => 'assets/images/products/iphone-17e-white.png',
-            'Black'       => 'assets/images/products/iphone-17e-black.png',
         ],
     ];
     return $map[$slug] ?? [];
