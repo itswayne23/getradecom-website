@@ -20,7 +20,12 @@ unset($_SESSION['flash_message']);
 
 <!-- Hero 1: GE Tradecom Pvt Ltd Executive Portfolio Stage -->
 <section class="hero-titanium-glow text-white overflow-hidden border-b border-white/10">
-    <div class="max-w-[1080px] mx-auto px-4 sm:px-6 pt-16 sm:pt-24 pb-14 text-center">
+    <div class="max-w-[1080px] mx-auto px-4 sm:px-6 pt-14 sm:pt-20 pb-14 text-center">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.07] border border-white/15 backdrop-blur-md text-[12px] font-medium tracking-wide text-[#f5f5f7] mb-6">
+            <svg class="w-3.5 h-3.5 text-[#2997ff] shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            <span>Apple Authorised Dealer</span>
+        </div>
+
         <h1 class="font-display text-4xl sm:text-6xl lg:text-[68px] font-semibold tracking-tight leading-[1.05] mb-4">
             Apple Distribution <span class="text-[#86868b] font-normal">for</span> <span class="ai-gradient-text">Assam</span>
         </h1>
