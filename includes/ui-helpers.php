@@ -65,6 +65,8 @@ function get_finish_hex(string $finishName): string {
         'orange'           => '#e87a3d',
         'white'            => '#f5f5f7',
         'black'            => '#1d1d1f',
+        'teal'             => '#6db6b0',
+        'ultramarine'      => '#7c8ef4',
         'gold'             => '#d8be8d',
     ];
     foreach ($map as $key => $hex) {
@@ -75,19 +77,43 @@ function get_finish_hex(string $finishName): string {
     return '#8e8e93';
 }
 
-function render_color_swatches(?string $colorsStr, bool $showLabels = false): string {
+function get_product_color_images(string $slug): array {
+    $map = [
+        'iphone-16' => [
+            'Black'       => 'assets/images/products/iphone-16-black.webp',
+            'Pink'        => 'assets/images/products/iphone-16-pink.webp',
+            'White'       => 'assets/images/products/iphone-16-white.webp',
+            'Teal'        => 'assets/images/products/iphone-16-teal.webp',
+            'Ultramarine' => 'assets/images/products/iphone-16-ultramarine.webp',
+        ],
+    ];
+    return $map[$slug] ?? [];
+}
+
+function render_color_swatches(?string $colorsStr, bool $showLabels = false, string $slug = '', string $visualId = ''): string {
     if (!$colorsStr) {
         return '';
     }
-    $items = array_filter(array_map('trim', explode(',', $colorsStr)));
+    $items = array_values(array_filter(array_map('trim', explode(',', $colorsStr))));
     if (empty($items)) {
         return '';
     }
-    $html = '<div class="flex flex-wrap items-center gap-2">';
-    foreach ($items as $color) {
+    $colorImages = $slug !== '' ? get_product_color_images($slug) : [];
+    $html = '<div class="flex flex-wrap items-center gap-2" data-swatch-group>';
+    foreach ($items as $idx => $color) {
         $hex = get_finish_hex($color);
         $safeColor = htmlspecialchars($color, ENT_QUOTES, 'UTF-8');
-        if ($showLabels) {
+        $imgUrl = $colorImages[$color] ?? '';
+        $safeImg = htmlspecialchars($imgUrl, ENT_QUOTES, 'UTF-8');
+        if ($showLabels && $visualId !== '') {
+            $activeCls = $idx === 0 ? 'border-[#0071e3] ring-1 ring-[#0071e3]/30' : 'border-black/[0.08] hover:border-[#0071e3]/50';
+            $html .= '<button type="button"'
+                   . ' onclick="selectCardFinish(this, \'' . htmlspecialchars($visualId, ENT_QUOTES, 'UTF-8') . '\', \'' . $safeColor . '\', \'' . htmlspecialchars($hex, ENT_QUOTES, 'UTF-8') . '\', \'' . $safeImg . '\')"'
+                   . ' class="card-swatch inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white border ' . $activeCls . ' text-[11px] font-medium text-[#1d1d1f] shadow-[0_1px_2px_rgba(0,0,0,0.03)] transition cursor-pointer">'
+                   . '<span class="w-3 h-3 rounded-full border border-black/15 shadow-inner shrink-0" style="background-color:' . $hex . '"></span>'
+                   . $safeColor
+                   . '</button>';
+        } elseif ($showLabels) {
             $html .= '<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white border border-black/[0.06] text-[11px] font-medium text-[#1d1d1f] shadow-[0_1px_2px_rgba(0,0,0,0.03)]">'
                    . '<span class="w-3 h-3 rounded-full border border-black/15 shadow-inner shrink-0" style="background-color:' . $hex . '"></span>'
                    . $safeColor
@@ -119,11 +145,19 @@ function render_category_icon(string $category): string {
     }
 }
 
-function render_product_visual(string $category, bool $dark = false): string {
+function render_product_visual(string $category, bool $dark = false, ?string $imageUrl = null, string $alt = '', string $visualId = '', string $size = 'card'): string {
+    if ($imageUrl && !str_contains($imageUrl, 'placeholder-product.png')) {
+        $idAttr = $visualId !== '' ? ' id="' . htmlspecialchars($visualId, ENT_QUOTES, 'UTF-8') . '"' : '';
+        $maxH = $size === 'detail' ? 'max-h-[280px]' : 'max-h-[196px]';
+        $safeSrc = htmlspecialchars($imageUrl, ENT_QUOTES, 'UTF-8');
+        $safeAlt = htmlspecialchars($alt ?: $category, ENT_QUOTES, 'UTF-8');
+        return '<img' . $idAttr . ' src="' . $safeSrc . '" alt="' . $safeAlt . '" class="' . $maxH . ' w-auto object-contain mx-auto rounded-2xl transition-opacity duration-200">';
+    }
+    $wrapId = $visualId !== '' ? ' id="' . htmlspecialchars($visualId, ENT_QUOTES, 'UTF-8') . '"' : '';
     $stroke = $dark ? '#f5f5f7' : '#1d1d1f';
     switch ($category) {
         case 'iPhone':
-            return '
+            $html = '
             <div class="relative mx-auto w-[108px] h-[196px] rounded-[26px] border-[3.5px] border-[#484540] bg-gradient-to-br from-[#161822] via-[#262f46] to-[#0b0b0f] shadow-[0_22px_40px_-14px_rgba(0,0,0,0.45)] flex flex-col justify-between p-2.5 hardware-sheen">
                 <div class="absolute -right-[5px] top-12 w-[2px] h-7 rounded-r bg-[#68645e]"></div>
                 <div class="absolute -left-[5px] top-10 w-[2px] h-4 rounded-l bg-[#68645e]"></div>
@@ -140,15 +174,16 @@ function render_product_visual(string $category, bool $dark = false): string {
                 </div>
                 <div class="mx-auto w-10 h-[3px] rounded-full bg-white/45 relative z-10"></div>
             </div>';
+            break;
         case 'Mac':
-            return '
+            $html = '
             <div class="relative mx-auto w-60 pt-2 pb-1">
                 <div class="mx-auto w-[204px] h-[126px] rounded-t-[12px] border-[3.5px] border-[#26262a] bg-gradient-to-br from-[#121626] via-[#1b2b4e] to-[#090a0e] shadow-[0_18px_36px_-12px_rgba(0,0,0,0.4)] relative overflow-hidden flex flex-col items-center justify-between py-2 hardware-sheen">
                     <div class="w-6 h-1.5 bg-black rounded-b-sm absolute top-0 left-1/2 -translate-x-1/2"></div>
                     <div class="absolute inset-0 bg-[radial-gradient(circle_at_68%_28%,rgba(41,151,255,0.48),transparent_58%),radial-gradient(circle_at_24%_75%,rgba(255,55,95,0.3),transparent_55%)]"></div>
                     <div class="relative z-10 my-auto text-center">
                         <div class="text-[9px] font-semibold tracking-[0.22em] uppercase text-[#2997ff]">Apple Silicon</div>
-                        <div class="font-display text-sm font-semibold text-white/95 tracking-tight">M4 Series</div>
+                        <div class="font-display text-sm font-semibold text-white/95 tracking-tight">M-Series</div>
                     </div>
                     <div class="relative z-10 flex items-center gap-1 px-2 py-0.5 rounded-full bg-white/15 backdrop-blur-md border border-white/20">
                         <span class="w-1.5 h-1.5 rounded-full bg-[#2997ff]"></span>
@@ -161,8 +196,9 @@ function render_product_visual(string $category, bool $dark = false): string {
                     <div class="w-12 h-1 rounded-b bg-[#86868b]/60"></div>
                 </div>
             </div>';
+            break;
         case 'iPad':
-            return '
+            $html = '
             <div class="relative mx-auto flex flex-col items-center gap-2">
                 <div class="relative w-48 h-[132px] rounded-[16px] border-[3.5px] border-[#28282c] bg-gradient-to-br from-[#171f36] via-[#2b3c6c] to-[#0f1118] shadow-[0_20px_38px_-14px_rgba(0,0,0,0.4)] p-2 flex items-center justify-center hardware-sheen">
                     <div class="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(90,200,250,0.5),transparent_55%),radial-gradient(circle_at_80%_80%,rgba(175,82,222,0.42),transparent_55%)]"></div>
@@ -172,8 +208,9 @@ function render_product_visual(string $category, bool $dark = false): string {
                 </div>
                 <div class="w-32 h-1.5 rounded-full bg-gradient-to-r from-[#e5e5ea] via-[#ffffff] to-[#d1d1d6] border border-black/10 shadow-sm"></div>
             </div>';
+            break;
         case 'Watch':
-            return '
+            $html = '
             <div class="relative mx-auto flex flex-col items-center">
                 <div class="w-11 h-5 rounded-t-xl bg-gradient-to-b from-[#252529] to-[#343438]"></div>
                 <div class="relative w-24 h-28 rounded-[24px] border-[3.5px] border-[#424247] bg-black shadow-[0_20px_38px_-14px_rgba(0,0,0,0.45)] flex items-center justify-center hardware-sheen">
@@ -187,17 +224,21 @@ function render_product_visual(string $category, bool $dark = false): string {
                 </div>
                 <div class="w-11 h-5 rounded-b-xl bg-gradient-to-t from-[#252529] to-[#343438]"></div>
             </div>';
+            break;
         case 'AirPods':
-            return '
+            $html = '
             <div class="relative mx-auto w-32 h-32 rounded-[30px] bg-gradient-to-b from-[#ffffff] via-[#f7f7fa] to-[#e4e4ea] border border-black/10 shadow-[0_20px_38px_-16px_rgba(0,0,0,0.25)] flex flex-col items-center justify-center gap-2.5 hardware-sheen">
                 <div class="w-20 h-[2px] bg-black/10 rounded-full"></div>
                 <div class="w-2.5 h-2.5 rounded-full bg-[#30d158] shadow-[0_0_10px_#30d158]"></div>
                 <span class="text-[10px] font-semibold tracking-wider uppercase text-[#6e6e73]">Spatial Audio</span>
             </div>';
+            break;
         default:
-            return '
+            $html = '
             <div class="relative mx-auto w-36 h-32 rounded-[28px] bg-gradient-to-br from-[#ffffff] to-[#e6e6eb] border border-black/10 shadow-[0_18px_34px_-16px_rgba(0,0,0,0.22)] flex items-center justify-center text-[' . $stroke . '] hardware-sheen">
                 ' . render_category_icon($category) . '
             </div>';
+            break;
     }
+    return '<div' . $wrapId . ' data-mockup-wrap class="transition-all duration-300">' . $html . '</div>';
 }

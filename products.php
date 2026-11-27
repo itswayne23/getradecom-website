@@ -122,8 +122,13 @@ unset($_SESSION['flash_message']);
                         </div>
                     </div>
 
+                    <?php
+                        $visualId = 'product-visual-' . (int)$p['id'];
+                        $colorImgs = get_product_color_images($p['slug']);
+                        $firstImg = !empty($colorImgs) ? reset($colorImgs) : ($p['image_url'] ?? '');
+                    ?>
                     <div class="py-4 mb-5 flex items-center justify-center min-h-[160px]">
-                        <?= render_product_visual($p['category']) ?>
+                        <?= render_product_visual($p['category'], false, $firstImg, $p['name'], $visualId, 'card') ?>
                     </div>
 
                     <h2 class="font-display text-2xl font-semibold tracking-tight text-[#1d1d1f] mb-1"><?= e($p['name']) ?></h2>
@@ -138,7 +143,7 @@ unset($_SESSION['flash_message']);
                     <?php if (!empty($p['colors'])): ?>
                     <div class="mb-6">
                         <div class="text-[10px] font-semibold uppercase tracking-wider text-[#86868b] mb-2">Finishes</div>
-                        <?= render_color_swatches($p['colors'], true) ?>
+                        <?= render_color_swatches($p['colors'], true, $p['slug'], $visualId) ?>
                     </div>
                     <?php endif; ?>
                 </div>
@@ -256,6 +261,32 @@ function openCompareModal() {
     `).join('');
     wrap.innerHTML = `<div class="grid grid-cols-1 md:grid-cols-${compareList.length} gap-4">${cols}</div>`;
     showSpringModal(document.getElementById('compare-modal'));
+}
+
+function selectCardFinish(btn, visualId, colorName, hex, imgUrl) {
+    const group = btn.closest('[data-swatch-group]');
+    if (group) {
+        group.querySelectorAll('.card-swatch').forEach(el => {
+            el.classList.remove('border-[#0071e3]', 'ring-1', 'ring-[#0071e3]/30');
+            el.classList.add('border-black/[0.08]');
+        });
+        btn.classList.remove('border-black/[0.08]');
+        btn.classList.add('border-[#0071e3]', 'ring-1', 'ring-[#0071e3]/30');
+    }
+
+    const visual = document.getElementById(visualId);
+    if (!visual) return;
+    if (visual.tagName === 'IMG' && imgUrl) {
+        visual.style.opacity = '0.45';
+        visual.src = imgUrl;
+        visual.onload = () => { visual.style.opacity = '1'; };
+    } else if (hex) {
+        const frame = visual.querySelector('div');
+        if (frame) {
+            frame.style.borderColor = hex;
+            frame.style.boxShadow = `0 20px 38px -14px ${hex}66`;
+        }
+    }
 }
 
 function closeCompareModal() {

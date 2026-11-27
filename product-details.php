@@ -40,9 +40,14 @@ $finishes = array_filter(array_map('trim', explode(',', $product['colors'] ?? ''
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
         <!-- Sticky Hardware Showcase Stage -->
         <div class="lg:col-span-5 lg:sticky lg:top-20">
+            <?php
+                $colorImages = get_product_color_images($product['slug']);
+                $initialFinish = $finishes[0] ?? '';
+                $initialDetailImg = $colorImages[$initialFinish] ?? ($product['image_url'] ?? '');
+            ?>
             <div data-tilt-stage class="tilt-stage hardware-stage bg-[#f5f5f7] border border-black/[0.04] rounded-[32px] p-10 text-center flex flex-col items-center justify-center min-h-[360px]">
                 <div class="mb-6">
-                    <?= render_product_visual($product['category']) ?>
+                    <?= render_product_visual($product['category'], false, $initialDetailImg, $product['name'], 'detail-product-visual', 'detail') ?>
                 </div>
                 <?php if (!empty($finishes)): ?>
                 <div class="mt-4 pt-5 border-t border-black/[0.06] w-full">
@@ -52,9 +57,10 @@ $finishes = array_filter(array_map('trim', explode(',', $product['colors'] ?? ''
                     <div class="flex flex-wrap justify-center gap-2.5">
                         <?php foreach ($finishes as $idx => $fin):
                             $hex = get_finish_hex($fin);
+                            $finImg = $colorImages[$fin] ?? '';
                         ?>
                         <button type="button"
-                                onclick="selectProductFinish('<?= e($fin) ?>', this)"
+                                onclick="selectProductFinish('<?= e($fin) ?>', this, '<?= e($finImg) ?>', '<?= e($hex) ?>')"
                                 title="<?= e($fin) ?>"
                                 class="finish-dot w-7 h-7 rounded-full border-2 transition cursor-pointer <?= $idx === 0 ? 'border-[#0071e3] scale-110' : 'border-black/15 hover:scale-105' ?>"
                                 style="background-color: <?= e($hex) ?>">
@@ -155,7 +161,7 @@ $finishes = array_filter(array_map('trim', explode(',', $product['colors'] ?? ''
 let activeProductFinish = <?= json_encode($finishes[0] ?? '') ?>;
 const baseProductName = <?= json_encode($product['name']) ?>;
 
-function selectProductFinish(finish, btn) {
+function selectProductFinish(finish, btn, imgUrl, hex) {
     activeProductFinish = finish;
     const label = document.getElementById('selected-finish-label');
     if (label) label.textContent = finish;
@@ -165,6 +171,20 @@ function selectProductFinish(finish, btn) {
     });
     btn.classList.remove('border-black/15');
     btn.classList.add('border-[#0071e3]', 'scale-110');
+
+    const visual = document.getElementById('detail-product-visual');
+    if (!visual) return;
+    if (visual.tagName === 'IMG' && imgUrl) {
+        visual.style.opacity = '0.45';
+        visual.src = imgUrl;
+        visual.onload = () => { visual.style.opacity = '1'; };
+    } else if (hex) {
+        const frame = visual.querySelector('div');
+        if (frame) {
+            frame.style.borderColor = hex;
+            frame.style.boxShadow = `0 22px 44px -14px ${hex}66`;
+        }
+    }
 }
 
 function getSelectedProductLabel() {
