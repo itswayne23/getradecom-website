@@ -46,7 +46,7 @@ $finishes = array_filter(array_map('trim', explode(',', $product['colors'] ?? ''
                 $initialDetailImg = $colorImages[$initialFinish] ?? ($product['image_url'] ?? '');
             ?>
             <div data-tilt-stage class="tilt-stage hardware-stage bg-[#f5f5f7] border border-black/[0.04] rounded-[32px] p-10 text-center flex flex-col items-center justify-center min-h-[360px]">
-                <div class="mb-6">
+                <div class="mb-6 w-full">
                     <?= render_product_visual($product['category'], false, $initialDetailImg, $product['name'], 'detail-product-visual', 'detail') ?>
                 </div>
                 <?php if (!empty($finishes)): ?>
