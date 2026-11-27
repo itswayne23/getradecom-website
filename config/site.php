@@ -6,9 +6,9 @@ if (session_status() === PHP_SESSION_NONE) {
 define('SITE_NAME', 'GE Tradecom Pvt Ltd');
 define('SITE_SHORT', 'getradeCom');
 define('SITE_TAGLINE', 'Authorised Apple Product Distribution & Channel Network — Assam');
-define('OFFICIAL_PHONE', '+91 361 000 0000');       // Replace with approved company number
-define('OFFICIAL_WHATSAPP', '919864000000');        // Country code + number, no +
-define('OFFICIAL_EMAIL', 'enquiries@getradecom.com');
+define('OFFICIAL_PHONE', '+91 60020 91639');
+define('OFFICIAL_WHATSAPP', '916002091639');        // Country code + number, no +
+define('OFFICIAL_EMAIL', 'reachus@getradecom.in');
 define('TERRITORY', 'Assam, India');
 
 // CSRF Token Helper
