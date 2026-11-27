@@ -86,6 +86,11 @@ function get_product_color_images(string $slug): array {
             'Teal'        => 'assets/images/products/iphone-16-teal.webp',
             'Ultramarine' => 'assets/images/products/iphone-16-ultramarine.webp',
         ],
+        'iphone-17e' => [
+            'Soft Pink'   => 'assets/images/products/iphone-17e-soft-pink.webp',
+            'White'       => 'assets/images/products/iphone-17e-white.webp',
+            'Black'       => 'assets/images/products/iphone-17e-black.webp',
+        ],
     ];
     return $map[$slug] ?? [];
 }
@@ -148,10 +153,12 @@ function render_category_icon(string $category): string {
 function render_product_visual(string $category, bool $dark = false, ?string $imageUrl = null, string $alt = '', string $visualId = '', string $size = 'card'): string {
     if ($imageUrl && !str_contains($imageUrl, 'placeholder-product.png')) {
         $idAttr = $visualId !== '' ? ' id="' . htmlspecialchars($visualId, ENT_QUOTES, 'UTF-8') . '"' : '';
-        $maxH = $size === 'detail' ? 'max-h-[280px]' : 'max-h-[196px]';
+        $wrapH = $size === 'detail' ? 'h-[320px] sm:h-[360px]' : 'h-[230px]';
         $safeSrc = htmlspecialchars($imageUrl, ENT_QUOTES, 'UTF-8');
         $safeAlt = htmlspecialchars($alt ?: $category, ENT_QUOTES, 'UTF-8');
-        return '<img' . $idAttr . ' src="' . $safeSrc . '" alt="' . $safeAlt . '" class="' . $maxH . ' w-auto object-contain mx-auto rounded-2xl transition-opacity duration-200">';
+        return '<div class="w-full ' . $wrapH . ' flex items-center justify-center overflow-hidden rounded-2xl">'
+             . '<img' . $idAttr . ' src="' . $safeSrc . '" alt="' . $safeAlt . '" class="w-full h-full object-contain scale-[1.48] mix-blend-multiply transition-opacity duration-200">'
+             . '</div>';
     }
     $wrapId = $visualId !== '' ? ' id="' . htmlspecialchars($visualId, ENT_QUOTES, 'UTF-8') . '"' : '';
     $stroke = $dark ? '#f5f5f7' : '#1d1d1f';
