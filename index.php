@@ -292,9 +292,10 @@ unset($_SESSION['flash_message']);
                 <?php
                     $homeColorImgs = get_product_color_images($p['slug']);
                     $homeImg = !empty($homeColorImgs) ? reset($homeColorImgs) : ($p['image_url'] ?? '');
+                    $homeVisualId = 'home-visual-' . (int)$p['id'];
                 ?>
                 <div class="py-4 mb-5 flex items-center justify-center min-h-[175px]">
-                    <?= render_product_visual($p['category'], false, $homeImg, $p['name'], '', 'card') ?>
+                    <?= render_product_visual($p['category'], false, $homeImg, $p['name'], $homeVisualId, 'card') ?>
                 </div>
 
                 <h3 class="font-display text-2xl font-semibold tracking-tight text-[#1d1d1f] mb-1"><?= e($p['name']) ?></h3>
@@ -302,7 +303,7 @@ unset($_SESSION['flash_message']);
 
                 <?php if (!empty($p['colors'])): ?>
                 <div class="mb-4">
-                    <?= render_color_swatches($p['colors']) ?>
+                    <?= render_color_swatches($p['colors'], true, $p['slug'], $homeVisualId) ?>
                 </div>
                 <?php endif; ?>
 

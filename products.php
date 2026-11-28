@@ -263,32 +263,6 @@ function openCompareModal() {
     showSpringModal(document.getElementById('compare-modal'));
 }
 
-function selectCardFinish(btn, visualId, colorName, hex, imgUrl) {
-    const group = btn.closest('[data-swatch-group]');
-    if (group) {
-        group.querySelectorAll('.card-swatch').forEach(el => {
-            el.classList.remove('border-[#0071e3]', 'ring-1', 'ring-[#0071e3]/30');
-            el.classList.add('border-black/[0.08]');
-        });
-        btn.classList.remove('border-black/[0.08]');
-        btn.classList.add('border-[#0071e3]', 'ring-1', 'ring-[#0071e3]/30');
-    }
-
-    const visual = document.getElementById(visualId);
-    if (!visual) return;
-    if (visual.tagName === 'IMG' && imgUrl) {
-        visual.style.opacity = '0.45';
-        visual.src = imgUrl;
-        visual.onload = () => { visual.style.opacity = '1'; };
-    } else if (hex) {
-        const frame = visual.querySelector('div');
-        if (frame) {
-            frame.style.borderColor = hex;
-            frame.style.boxShadow = `0 20px 38px -14px ${hex}66`;
-        }
-    }
-}
-
 function closeCompareModal() {
     hideSpringModal(document.getElementById('compare-modal'));
 }
