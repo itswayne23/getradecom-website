@@ -207,6 +207,27 @@ function get_product_color_images(string $slug): array {
             'Space Black' => 'assets/images/products/macbook-pro-proled-xdr-space-black.png',
             'Silver'      => 'assets/images/products/macbook-pro-proled-xdr-silver.png',
         ],
+        'imac' => [
+            'Blue'   => 'assets/images/products/imac-blue.png',
+            'Purple' => 'assets/images/products/imac-purple.png',
+            'Pink'   => 'assets/images/products/imac-pink.png',
+            'Orange' => 'assets/images/products/imac-orange.png',
+            'Yellow' => 'assets/images/products/imac-yellow.png',
+            'Green'  => 'assets/images/products/imac-green.png',
+            'Silver' => 'assets/images/products/imac-silver.png',
+        ],
+        'mac-mini' => [
+            'Silver' => 'assets/images/products/mac-mini.png',
+        ],
+        'mac-studio' => [
+            'Silver' => 'assets/images/products/mac-studio.png',
+        ],
+        'studio-display' => [
+            'Silver' => 'assets/images/products/studio-display.png',
+        ],
+        'studio-display-xdr' => [
+            'Silver' => 'assets/images/products/studio-display-xdr.png',
+        ],
     ];
     return $map[$slug] ?? [];
 }
