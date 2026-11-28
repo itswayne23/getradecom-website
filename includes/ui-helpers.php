@@ -187,6 +187,26 @@ function get_product_color_images(string $slug): array {
             'Midnight' => 'assets/images/products/homepod-midnight.png',
             'White'    => 'assets/images/products/homepod-white.png',
         ],
+        'macbook-neo' => [
+            'Silver' => 'assets/images/products/macbook-neo-silver.png',
+            'Blush'  => 'assets/images/products/macbook-neo-blush.png',
+            'Citrus' => 'assets/images/products/macbook-neo-citrus.png',
+            'Indigo' => 'assets/images/products/macbook-neo-indigo.png',
+        ],
+        'macbook-air' => [
+            'Sky Blue'  => 'assets/images/products/macbook-air-sky-blue.png',
+            'Starlight' => 'assets/images/products/macbook-air-starlight.png',
+            'Midnight'  => 'assets/images/products/macbook-air-midnight.png',
+            'Silver'    => 'assets/images/products/macbook-air-silver.png',
+        ],
+        'macbook-pro' => [
+            'Space Black' => 'assets/images/products/macbook-pro-space-black.png',
+            'Silver'      => 'assets/images/products/macbook-pro-silver.png',
+        ],
+        'macbook-pro-proled-xdr' => [
+            'Space Black' => 'assets/images/products/macbook-pro-proled-xdr-space-black.png',
+            'Silver'      => 'assets/images/products/macbook-pro-proled-xdr-silver.png',
+        ],
     ];
     return $map[$slug] ?? [];
 }
