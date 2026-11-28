@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Approved Campaigns &amp; Product Launches | GE Tradecom Pvt Ltd</title>
+    <link rel="icon" type="image/png" href="assets/images/getradecom-logo.png">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="assets/css/custom.css?v=1795867787">
+</head>
+<body class="bg-white text-[#1d1d1f] flex flex-col min-h-screen selection:bg-[#0071e3]/15 selection:text-[#0071e3]">
+
+<!-- Top Corporate & Territory Ribbon -->
+<div id="top-territory-bar" class="bg-[#161617] text-[#a1a1a6] text-[11px] leading-tight py-2 px-4 border-b border-white/10">
+    <div class="max-w-[1080px] mx-auto flex flex-wrap justify-between items-center gap-2">
+        <div class="flex items-center gap-3">
+            <span class="font-medium text-[#f5f5f7] tracking-tight">GE Tradecom Pvt Ltd &middot; Assam</span>
+            <span class="hidden sm:inline text-white/20">|</span>
+            <a href="about.html" class="hover:text-white transition inline-flex items-center gap-1">
+                <svg class="w-3 h-3 text-[#2997ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                <span>About GE Tradecom</span>
+            </a>
+        </div>
+        <div class="flex items-center gap-4">
+            <a href="business.html" class="hover:text-white transition">Small Business</a>
+            <a href="education.html" class="hidden md:inline hover:text-white transition">Education</a>
+            <a href="promotions.html" class="hidden sm:inline hover:text-white transition">Campaigns</a>
+            <a href="contact.html" class="hidden sm:inline hover:text-white transition">Contact</a>
+        </div>
+    </div>
+</div>
+
+<!-- Official Apple-Style Frosted Sticky Navigation -->
+<header id="main-navbar" class="sticky top-0 z-40 glass-nav border-b border-black/[0.08]">
+    <div class="max-w-[1280px] mx-auto px-4 sm:px-6">
+        <div class="flex justify-between items-center h-12 gap-3">
+            <!-- Brand Wordmark (Left) -->
+            <a href="index.html" class="flex items-center group shrink-0" aria-label="GE Tradecom Pvt. Ltd. Home">
+                <img src="assets/images/getradecom-logo.png" alt="GE Tradecom Pvt. Ltd." class="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.03]">
+            </a>
+
+            <!-- Centered Single-Row Navigation with Gliding Hover Pill -->
+            <nav id="desktop-nav" class="hidden lg:flex items-center relative text-[12px] font-normal text-[#1d1d1f]/85">
+                <div id="nav-hover-pill"></div>
+                <a href="products.html?category=Mac" data-curtain="Mac" class="nav-trigger relative z-10 px-2 xl:px-2.5 py-1.5 hover:text-[#1d1d1f] transition ">Mac</a>
+                <a href="products.html?category=iPad" data-curtain="iPad" class="nav-trigger relative z-10 px-2 xl:px-2.5 py-1.5 hover:text-[#1d1d1f] transition ">iPad</a>
+                <a href="products.html?category=iPhone" data-curtain="iPhone" class="nav-trigger relative z-10 px-2 xl:px-2.5 py-1.5 hover:text-[#1d1d1f] transition ">iPhone</a>
+                <a href="products.html?category=Watch" data-curtain="Watch" class="nav-trigger relative z-10 px-2 xl:px-2.5 py-1.5 hover:text-[#1d1d1f] transition ">Watch</a>
+                <a href="products.html?category=AirPods" data-curtain="AirPods" class="nav-trigger relative z-10 px-2 xl:px-2.5 py-1.5 hover:text-[#1d1d1f] transition ">AirPods</a>
+                <a href="products.html?category=TV+%26+Home" data-curtain="TVHome" class="nav-trigger relative z-10 px-2 xl:px-2.5 py-1.5 hover:text-[#1d1d1f] transition ">TV &amp; Home</a>
+                <span class="text-black/15 px-1 select-none">|</span>
+                <a href="about.html" data-curtain="About" class="nav-trigger relative z-10 px-2 xl:px-2.5 py-1.5 hover:text-[#1d1d1f] transition ">About Us</a>
+                <a href="business.html" data-curtain="Business" class="nav-trigger relative z-10 px-2 xl:px-2.5 py-1.5 hover:text-[#1d1d1f] transition ">Business</a>
+                <a href="services.html" data-curtain="Services" class="nav-trigger relative z-10 px-2 xl:px-2.5 py-1.5 hover:text-[#1d1d1f] transition ">Services</a>
+            </nav>
+
+            <!-- Action Controls & Official Apple Authorised Dealer Lockup (Right) -->
+            <div class="flex items-center gap-2 shrink-0">
+                <button onclick="openSpotlightModal()" aria-label="Quick Search" title="Search products or programmes (Ctrl+K)"
+                        class="p-1.5 rounded-full text-[#1d1d1f]/80 hover:text-[#1d1d1f] hover:bg-black/[0.06] transition cursor-pointer">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35m1.85-5.15a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                </button>
+                <button onclick="openEnquiryModal('specialist', 'General Product Consultation')"
+                        class="hidden sm:inline-flex items-center px-3.5 py-1.5 rounded-full bg-[#0071e3] hover:bg-[#0077ed] text-white text-[12px] font-medium transition shadow-[0_1px_2px_rgba(0,113,227,0.3)] cursor-pointer whitespace-nowrap">
+                    Talk to a Specialist
+                </button>
+                <span class="hidden md:inline-block h-5 w-px bg-black/15 mx-1.5" aria-hidden="true"></span>
+                <img src="assets/images/apple-authorised-distributor.png" alt="Apple Authorised Distributor" class="hidden md:block h-7 w-auto object-contain shrink-0">
+                <button id="mobile-menu-btn" aria-label="Toggle Menu" aria-expanded="false"
+                        class="lg:hidden p-2 rounded-full text-[#1d1d1f] hover:bg-black/[0.05] transition cursor-pointer">
+                    <div id="apple-burger" class="apple-burger">
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Animated Apple Drawer -->
+    <div id="mobile-menu" class="lg:hidden bg-[#fbfbfd]/95 backdrop-blur-xl border-t border-black/[0.06] px-5">
+        <div class="mobile-drawer-inner">
+            <div class="py-4 space-y-1 text-[17px] font-semibold font-display">
+                <a href="products.html" class="mobile-nav-item block py-2 border-b border-black/[0.06] text-[#1d1d1f]" style="transition-delay: 40ms;">All Products</a>
+                <a href="products.html?category=iPhone" class="mobile-nav-item block py-1.5 text-[#424245]" style="transition-delay: 80ms;">iPhone</a>
+                <a href="products.html?category=Mac" class="mobile-nav-item block py-1.5 text-[#424245]" style="transition-delay: 120ms;">Mac</a>
+                <a href="products.html?category=iPad" class="mobile-nav-item block py-1.5 text-[#424245]" style="transition-delay: 160ms;">iPad</a>
+                <a href="products.html?category=Watch" class="mobile-nav-item block py-1.5 text-[#424245]" style="transition-delay: 200ms;">Watch</a>
+                <a href="products.html?category=AirPods" class="mobile-nav-item block py-1.5 text-[#424245]" style="transition-delay: 240ms;">AirPods</a>
+                <a href="products.html?category=TV+%26+Home" class="mobile-nav-item block py-1.5 text-[#424245]" style="transition-delay: 280ms;">TV &amp; Home</a>
+                <div class="pt-3 mt-2 border-t border-black/[0.06] space-y-1 text-[15px] font-medium">
+                    <a href="about.html" class="mobile-nav-item block py-1.5 text-[#0071e3]" style="transition-delay: 320ms;">About Us &amp; Moments &rarr;</a>
+                    <a href="business.html" class="mobile-nav-item block py-1.5 text-[#1d1d1f]" style="transition-delay: 350ms;">Small Business Solutions</a>
+                    <a href="services.html" class="mobile-nav-item block py-1.5 text-[#1d1d1f]" style="transition-delay: 380ms;">Services, Trade-In &amp; Support</a>
+                    <a href="education.html" class="mobile-nav-item block py-1.5 text-[#1d1d1f]" style="transition-delay: 440ms;">Student &amp; Teacher Programme</a>
+                    <a href="promotions.html" class="mobile-nav-item block py-1.5 text-[#1d1d1f]" style="transition-delay: 470ms;">Approved Campaigns</a>
+                    <a href="contact.html" class="mobile-nav-item block py-1.5 text-[#1d1d1f]" style="transition-delay: 500ms;">Contact Us</a>
+                </div>
+                <div class="pt-3 pb-2 mobile-nav-item" style="transition-delay: 530ms;">
+                    <button onclick="openEnquiryModal('specialist', 'General Product Consultation')" class="w-full py-2.5 rounded-full bg-[#0071e3] text-white text-sm font-medium cursor-pointer">
+                        Talk to a Specialist
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Apple Global Nav Curtain Backdrop & Flyout Mega-Menu -->
+<div id="nav-curtain-backdrop" aria-hidden="true"></div>
+<div id="apple-nav-curtain" role="region" aria-label="Category Menu">
+    <div class="curtain-inner">
+        <div class="max-w-[1080px] mx-auto px-6 py-10">
+            <div id="curtain-content" class="grid grid-cols-12 gap-8"></div>
+        </div>
+    </div>
+</div>
+
+<main class="flex-grow">
+
+
+<section class="hero-light-stage border-b border-black/[0.06] py-14">
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-6">
+        <span class="text-[11px] font-semibold uppercase tracking-widest text-[#0071e3]">GE Tradecom Assam &middot; Campaigns</span>
+        <h1 class="font-display text-4xl sm:text-5xl font-semibold tracking-tight text-[#1d1d1f] mt-1">Approved Campaigns &amp; Launches</h1>
+        <p class="text-[#6e6e73] text-[15px] sm:text-[17px] mt-2 max-w-2xl">
+            Official channel campaigns, product launch briefings, and partner-backed initiatives active across Assam with transparent validity dates and terms.
+        </p>
+    </div>
+</section>
+
+<section class="max-w-[1200px] mx-auto px-4 sm:px-6 py-14">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <article class="reveal-card motion-card bg-[#f5f5f7] border border-black/[0.04] rounded-[28px] p-8 flex flex-col justify-between">
+                <div>
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                        <span class="text-[11px] font-semibold uppercase tracking-wider text-[#0071e3] bg-white px-3 py-1 rounded-full border border-black/[0.05]">
+                            SMEs &amp; Institutions                        </span>
+                        <span class="text-[11px] font-medium text-[#6e6e73]">
+                            Valid 01 Nov 2026 &ndash; 31 Dec 2026                        </span>
+                    </div>
+
+                    <h2 class="font-display text-2xl font-semibold text-[#1d1d1f] mb-2">Assam Enterprise Mac Deployment Drive</h2>
+                    <p class="text-[14px] text-[#424245] leading-relaxed mb-4">Structured consultation, team sizing, and partner-coordinated fleet fulfilment for Assam businesses and educational institutions.</p>
+
+                    <div class="bg-white/85 rounded-2xl p-4 border border-black/[0.04] text-[12px] space-y-2 mb-6">
+                        <p><strong class="text-[#1d1d1f]">Eligible Lineup:</strong> MacBook Neo, MacBook Air, MacBook Pro 14-inch (M6)</p>
+                        <p class="text-[#6e6e73]"><strong class="text-[#1d1d1f]">Terms:</strong> Subject to corporate verification, stock allocation, and participating Assam channel partner commercial terms.</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap gap-3">
+                    <button onclick="openEnquiryModal('specialist', 'Campaign: Assam Enterprise Mac Deployment Drive')"
+                            class="btn-tactile px-6 py-2.5 rounded-full bg-[#0071e3] hover:bg-[#0077ed] text-white text-[13px] font-medium transition cursor-pointer">
+                        Enquire About Campaign
+                    </button>
+                    <a href="about.html" class="btn-tactile px-5 py-2.5 rounded-full bg-white hover:bg-[#e8e8ed] text-[#1d1d1f] border border-[#d2d2d7] text-[13px] font-medium transition">
+                        About GE Tradecom
+                    </a>
+                </div>
+            </article>
+                        <article class="reveal-card motion-card bg-[#f5f5f7] border border-black/[0.04] rounded-[28px] p-8 flex flex-col justify-between">
+                <div>
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                        <span class="text-[11px] font-semibold uppercase tracking-wider text-[#0071e3] bg-white px-3 py-1 rounded-full border border-black/[0.05]">
+                            Individual &amp; Business Upgrades                        </span>
+                        <span class="text-[11px] font-medium text-[#6e6e73]">
+                            Valid 15 Nov 2026 &ndash; 20 Dec 2026                        </span>
+                    </div>
+
+                    <h2 class="font-display text-2xl font-semibold text-[#1d1d1f] mb-2">Verified Outlet Trade-In Evaluation Week</h2>
+                    <p class="text-[14px] text-[#424245] leading-relaxed mb-4">Bring eligible existing devices for physical inspection and upgrade guidance at participating verified GE Tradecom partner outlets.</p>
+
+                    <div class="bg-white/85 rounded-2xl p-4 border border-black/[0.04] text-[12px] space-y-2 mb-6">
+                        <p><strong class="text-[#1d1d1f]">Eligible Lineup:</strong> iPhone 18 Pro, MacBook Air, iPad Air 11-inch (M4)</p>
+                        <p class="text-[#6e6e73]"><strong class="text-[#1d1d1f]">Terms:</strong> Valuation depends on physical inspection, working condition, and participating partner programme rules.</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap gap-3">
+                    <button onclick="openEnquiryModal('specialist', 'Campaign: Verified Outlet Trade-In Evaluation Week')"
+                            class="btn-tactile px-6 py-2.5 rounded-full bg-[#0071e3] hover:bg-[#0077ed] text-white text-[13px] font-medium transition cursor-pointer">
+                        Enquire About Campaign
+                    </button>
+                    <a href="about.html" class="btn-tactile px-5 py-2.5 rounded-full bg-white hover:bg-[#e8e8ed] text-[#1d1d1f] border border-[#d2d2d7] text-[13px] font-medium transition">
+                        About GE Tradecom
+                    </a>
+                </div>
+            </article>
+                    </div>
+    </section>
+
+</main>
+
+<!-- Official Apple-Inspired Corporate Portfolio Footer -->
+<footer class="bg-[#f5f5f7] border-t border-[#d2d2d7]/60 mt-24 text-[12px] text-[#6e6e73]">
+    <div class="max-w-[1080px] mx-auto px-4 sm:px-6 pt-12 pb-20">
+        <!-- Distributor Governance & Compliance Footnote -->
+        <div class="pb-6 mb-8 border-b border-[#d2d2d7] leading-relaxed text-[11px] text-[#6e6e73] space-y-3">
+            <img src="assets/images/getradecom-logo.png" alt="GE Tradecom Pvt. Ltd." class="h-9 w-auto object-contain">
+            <p>
+                <strong class="font-semibold text-[#1d1d1f]">Distributor Corporate Governance Notice:</strong>
+                GE Tradecom Pvt Ltd operates as an Apple Authorised Distributor in Assam focused on public product discovery, B2B consultation, education eligibility guidance, approved campaigns, and authorised service discovery. Trade-in evaluations, financing/EMI terms, and after-sales support are subject to official Apple &amp; partner programme terms.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
+            <div>
+                <h4 class="font-semibold text-[#1d1d1f] mb-3 tracking-tight">Product Portfolio</h4>
+                <ul class="space-y-2">
+                    <li><a href="products.html?category=iPhone" class="hover:text-[#1d1d1f] hover:underline transition">iPhone</a></li>
+                    <li><a href="products.html?category=Mac" class="hover:text-[#1d1d1f] hover:underline transition">Mac</a></li>
+                    <li><a href="products.html?category=iPad" class="hover:text-[#1d1d1f] hover:underline transition">iPad</a></li>
+                    <li><a href="products.html?category=Watch" class="hover:text-[#1d1d1f] hover:underline transition">Apple Watch</a></li>
+                    <li><a href="products.html?category=AirPods" class="hover:text-[#1d1d1f] hover:underline transition">AirPods</a></li>
+                    <li><a href="products.html?category=TV+%26+Home" class="hover:text-[#1d1d1f] hover:underline transition">TV &amp; Home</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-[#1d1d1f] mb-3 tracking-tight">GE Tradecom &amp; Programmes</h4>
+                <ul class="space-y-2">
+                    <li><a href="about.html" class="hover:text-[#1d1d1f] hover:underline transition">About Us &amp; Story</a></li>
+                    <li><a href="about.html#moments" class="hover:text-[#1d1d1f] hover:underline transition">Meetings &amp; Milestones</a></li>
+                    <li><a href="business.html" class="hover:text-[#1d1d1f] hover:underline transition">Small Business Solutions</a></li>
+                    <li><a href="education.html" class="hover:text-[#1d1d1f] hover:underline transition">Student &amp; Teacher Programme</a></li>
+                    <li><a href="promotions.html" class="hover:text-[#1d1d1f] hover:underline transition">Approved Campaigns</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-[#1d1d1f] mb-3 tracking-tight">Services &amp; Support</h4>
+                <ul class="space-y-2">
+                    <li><a href="services.html#trade-in" class="hover:text-[#1d1d1f] hover:underline transition">Trade-In &amp; Upgrade Info</a></li>
+                    <li><a href="services.html#financing" class="hover:text-[#1d1d1f] hover:underline transition">Financing &amp; EMI Info</a></li>
+                    <li><a href="services.html#service-centres" class="hover:text-[#1d1d1f] hover:underline transition">Service-Centre Discovery</a></li>
+                    <li><a href="services.html#faqs" class="hover:text-[#1d1d1f] hover:underline transition">FAQs &amp; Warranty Guidance</a></li>
+                    <li><a href="contact.html" class="hover:text-[#1d1d1f] hover:underline transition">Contact &amp; Escalation Desk</a></li>
+                    <li><button onclick="openEnquiryModal('specialist', 'Product Specialist')" class="hover:text-[#1d1d1f] hover:underline transition cursor-pointer text-left">Talk to a Product Specialist</button></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-[#1d1d1f] mb-3 tracking-tight">Launch &amp; Campaign Updates</h4>
+                <p class="mb-3 text-[11px] leading-relaxed">Opt in for new Apple launches and approved Assam campaigns.</p>
+                <form action="api/submit-enquiry.php" method="POST" class="space-y-2.5">
+                    <input type="hidden" name="csrf_token" value="68e698e481b5f6711e6d34cced794005f56dcf5819a84e9b1b38a8dcfc112c5f">                    <input type="hidden" name="action" value="subscribe">
+                    <input type="email" name="email" required placeholder="name@example.com"
+                           class="w-full px-3.5 py-2 rounded-xl border border-[#d2d2d7] bg-white text-[#1d1d1f] text-[12px] focus:outline-none focus:border-[#0071e3]">
+                    <label class="flex items-start gap-2 text-[11px] leading-snug">
+                        <input type="checkbox" name="consent" required class="mt-0.5 accent-[#0071e3]">
+                        <span>I consent to receive product and event updates from GE Tradecom Pvt Ltd. Unsubscribe anytime.</span>
+                    </label>
+                    <button type="submit" class="w-full py-2 rounded-full bg-[#1d1d1f] hover:bg-black text-white text-[12px] font-medium transition cursor-pointer">
+                        Subscribe
+                    </button>
+                </form>
+                <div class="mt-4 pt-3 border-t border-[#d2d2d7] text-[11px] space-y-1 text-[#424245]">
+                    <div>Phone: +91 60020 91639</div>
+                    <div>Email: reachus@getradecom.in</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pt-5 border-t border-[#d2d2d7] flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 text-[11px]">
+            <p>Copyright &copy; 2026 GE Tradecom Pvt Ltd &mdash; Assam, India. All rights reserved.</p>
+            <div class="flex flex-wrap items-center gap-4">
+                <a href="services.html#privacy" class="hover:text-[#1d1d1f] hover:underline">Privacy Controls</a>
+                <span class="text-[#d2d2d7]">|</span>
+                <a href="services.html#faqs" class="hover:text-[#1d1d1f] hover:underline">Channel Terms</a>
+                <span class="text-[#d2d2d7]">|</span>
+                <a href="about.html" class="hover:text-[#1d1d1f] hover:underline">About Us</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Floating WhatsApp Quick Concierge -->
+<a href="https://wa.me/916002091639?text=Hello%20GE%20Tradecom%20Assam%2C%20I%20have%20an%20enquiry." target="_blank" rel="noopener"
+   class="fixed bottom-5 right-5 z-40 group flex items-center gap-2.5 bg-white/95 hover:bg-white backdrop-blur-xl text-[#1d1d1f] pl-1.5 pr-2 sm:pr-4 py-1.5 rounded-full shadow-[0_8px_28px_rgba(0,0,0,0.12)] hover:shadow-[0_12px_34px_rgba(0,0,0,0.16)] border border-black/[0.08] transition-all duration-300 hover:-translate-y-0.5"
+   aria-label="Chat on WhatsApp" title="Chat with GE Tradecom on WhatsApp">
+    <span class="w-8 h-8 rounded-full bg-[#25D366] text-white flex items-center justify-center shrink-0 shadow-sm group-hover:scale-105 transition-transform duration-300">
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/></svg>
+    </span>
+    <span class="hidden sm:inline text-[13px] font-medium tracking-tight">Chat on WhatsApp</span>
+</a>
+
+<!-- Spotlight Quick Search Modal (Spring Animated) -->
+<div id="spotlight-modal" class="apple-modal-overlay fixed inset-0 z-50 hidden bg-black/40 flex items-start justify-center pt-20 px-4">
+    <div class="apple-modal-panel bg-[#fbfbfd] border border-black/10 rounded-[28px] max-w-xl w-full p-6 shadow-2xl relative">
+        <div class="flex items-center justify-between mb-4">
+            <span class="text-[11px] font-semibold uppercase tracking-widest text-[#6e6e73]">Quick Search &mdash; GE Tradecom Assam</span>
+            <button onclick="closeSpotlightModal()" class="p-1.5 rounded-full hover:bg-black/5 text-[#6e6e73] cursor-pointer" aria-label="Close search">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+        </div>
+
+        <form action="products.html" method="GET" class="flex gap-2 mb-5">
+            <input id="spotlight-input" type="text" name="q" placeholder="Search iPhone Duo, iPhone 18 Pro, MacBook Neo, iPad..."
+                   class="flex-1 px-4 py-3 rounded-2xl bg-white border border-[#d2d2d7] text-sm text-[#1d1d1f] focus:outline-none focus:border-[#0071e3]">
+            <button type="submit" class="px-5 py-3 rounded-2xl bg-[#0071e3] hover:bg-[#0077ed] text-white text-sm font-medium transition cursor-pointer">
+                Search
+            </button>
+        </form>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+            <div>
+                <div class="text-[11px] font-semibold text-[#86868b] uppercase tracking-wider mb-2">Portfolio Categories</div>
+                <ul class="space-y-1.5 text-[#1d1d1f]">
+                    <li><a href="products.html?category=iPhone" class="block px-3 py-1.5 rounded-lg hover:bg-black/[0.04]">iPhone &rarr;</a></li>
+                    <li><a href="products.html?category=Mac" class="block px-3 py-1.5 rounded-lg hover:bg-black/[0.04]">MacBook Air &amp; Pro &rarr;</a></li>
+                    <li><a href="products.html?category=iPad" class="block px-3 py-1.5 rounded-lg hover:bg-black/[0.04]">iPad &amp; Apple Pencil &rarr;</a></li>
+                    <li><a href="products.html?category=Watch" class="block px-3 py-1.5 rounded-lg hover:bg-black/[0.04]">Apple Watch &rarr;</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="text-[11px] font-semibold text-[#86868b] uppercase tracking-wider mb-2">Assam Channel Shortcuts</div>
+                <ul class="space-y-1.5 text-[#1d1d1f]">
+                    <li><a href="about.html" class="block px-3 py-1.5 rounded-lg hover:bg-black/[0.04]">About GE Tradecom &amp; Moments &rarr;</a></li>
+                    <li><a href="business.html" class="block px-3 py-1.5 rounded-lg hover:bg-black/[0.04]">Small Business Solutions &rarr;</a></li>
+                    <li><a href="education.html" class="block px-3 py-1.5 rounded-lg hover:bg-black/[0.04]">Student &amp; Teacher Programme &rarr;</a></li>
+                    <li><a href="promotions.html" class="block px-3 py-1.5 rounded-lg hover:bg-black/[0.04]">Approved Campaigns &rarr;</a></li>
+                    <li><a href="services.html#service-centres" class="block px-3 py-1.5 rounded-lg hover:bg-black/[0.04]">Authorised Service Centres &rarr;</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Reusable Product / Specialist / Stock Notification / Dealer Onboarding / Workshop Enquiry Modal -->
+<div id="enquiry-modal" class="apple-modal-overlay fixed inset-0 z-50 hidden bg-black/45 flex items-center justify-center p-4">
+    <div class="apple-modal-panel bg-white rounded-[28px] max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-black/5 relative">
+        <button onclick="closeEnquiryModal()" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-[#f5f5f7] hover:bg-[#e8e8ed] flex items-center justify-center text-[#6e6e73] hover:text-[#1d1d1f] transition cursor-pointer" aria-label="Close modal">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+        <span id="modal-badge" class="text-[11px] font-semibold uppercase tracking-widest text-[#0071e3]">GE Tradecom Concierge</span>
+        <h3 id="modal-title" class="font-display text-2xl font-semibold tracking-tight text-[#1d1d1f] mt-1 mb-1">Talk to a Product Specialist</h3>
+        <p id="modal-subtitle" class="text-[13px] text-[#6e6e73] mb-6">We will route your request directly to our Assam specialist team in Guwahati.</p>
+
+        <form action="api/submit-enquiry.php" method="POST" class="space-y-4">
+            <input type="hidden" name="csrf_token" value="68e698e481b5f6711e6d34cced794005f56dcf5819a84e9b1b38a8dcfc112c5f">            <input type="hidden" name="action" value="enquiry">
+            <input type="hidden" name="enquiry_type" id="modal-enquiry-type" value="specialist">
+            <input type="hidden" name="product_interest" id="modal-product-interest" value="">
+            <input type="hidden" name="workshop_id" id="modal-workshop-id" value="">
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                <input type="text" name="full_name" required placeholder="Full Name *"
+                       class="w-full px-4 py-2.5 rounded-xl border border-[#d2d2d7] text-sm focus:outline-none focus:border-[#0071e3]">
+                <input type="tel" name="phone" required placeholder="Mobile Number *"
+                       class="w-full px-4 py-2.5 rounded-xl border border-[#d2d2d7] text-sm focus:outline-none focus:border-[#0071e3]">
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                <input type="email" name="email" required placeholder="Email Address *"
+                       class="w-full px-4 py-2.5 rounded-xl border border-[#d2d2d7] text-sm focus:outline-none focus:border-[#0071e3]">
+                <select name="district" required class="w-full px-4 py-2.5 rounded-xl border border-[#d2d2d7] text-sm bg-white focus:outline-none focus:border-[#0071e3]">
+                    <option value="">Select Assam District *</option>
+                    <option>Kamrup Metropolitan (Guwahati)</option>
+                    <option>Nagaon</option>
+                    <option>Dibrugarh</option>
+                    <option>Jorhat</option>
+                    <option>Cachar (Silchar)</option>
+                    <option>Sonitpur (Tezpur)</option>
+                    <option>Tinsukia</option>
+                    <option>Other Assam District</option>
+                </select>
+            </div>
+            <textarea name="message" rows="3" placeholder="Tell us your requirements (configuration, storage, quantity, or questions)..."
+                      class="w-full px-4 py-2.5 rounded-xl border border-[#d2d2d7] text-sm focus:outline-none focus:border-[#0071e3]"></textarea>
+
+            <label class="flex items-start gap-2 text-[11px] text-[#6e6e73] leading-snug">
+                <input type="checkbox" name="consent" required class="mt-0.5 accent-[#0071e3]">
+                <span>I agree to be contacted by GE Tradecom Pvt Ltd or an authorised Assam partner regarding this request.</span>
+            </label>
+
+            <button type="submit" class="w-full py-3 rounded-full bg-[#0071e3] hover:bg-[#0077ed] text-white font-medium text-sm transition cursor-pointer">
+                Submit Request
+            </button>
+        </form>
+    </div>
+</div>
+
+<script>
+// 1. Scroll-Reactive Navbar Shadow
+const mainNavbar = document.getElementById('main-navbar');
+function syncNavMetrics() {
+    if (!mainNavbar) return;
+    const rect = mainNavbar.getBoundingClientRect();
+    document.documentElement.style.setProperty('--nav-bottom', Math.max(0, rect.bottom) + 'px');
+    mainNavbar.classList.toggle('is-scrolled', window.scrollY > 12);
+}
+window.addEventListener('scroll', syncNavMetrics, { passive: true });
+window.addEventListener('resize', syncNavMetrics);
+syncNavMetrics();
+
+// 2. Mobile Apple Animated Drawer + 2-Line Burger Morph
+const mobileBtn = document.getElementById('mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+const appleBurger = document.getElementById('apple-burger');
+mobileBtn?.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('is-open');
+    appleBurger?.classList.toggle('is-open', isOpen);
+    mobileBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+});
+
+// 3. Official Apple-Style Global Nav Curtain + Gliding Hover Pill
+const CURTAIN_DATA = {
+    Mac: {
+        primaryTitle: 'Explore Mac',
+        primary: [
+            { label: 'Explore All Mac', href: 'products.html?category=Mac' },
+            { label: 'MacBook Neo', href: 'product-details.html?slug=macbook-neo' },
+            { label: 'MacBook Air 13" & 15"', href: 'product-details.html?slug=macbook-air' },
+            { label: 'MacBook Pro 14" & 16"', href: 'product-details.html?slug=macbook-pro' },
+            { label: 'Mac for Business Fleets', href: 'business.html' }
+        ],
+        secondaryTitle: 'Assam Channel',
+        secondary: [
+            { label: 'About GE Tradecom', href: 'about.html' },
+            { label: 'Trade-In & Upgrade Info', href: 'services.html#trade-in' },
+            { label: 'Financing & EMI Info', href: 'services.html#financing' }
+        ],
+        tertiaryTitle: 'Programmes & Support',
+        tertiary: [
+            { label: 'Student & Teacher Programme', href: 'education.html' },
+            { label: 'Contact & Escalation Desk', href: 'contact.html' },
+            { label: 'Talk to a Specialist', action: "openEnquiryModal('specialist', 'Mac Consultation')" }
+        ]
+    },
+    iPad: {
+        primaryTitle: 'Explore iPad',
+        primary: [
+            { label: 'Explore All iPad', href: 'products.html?category=iPad' },
+            { label: 'iPad Pro', href: 'product-details.html?slug=ipad-pro' },
+            { label: 'iPad Air', href: 'product-details.html?slug=ipad-air' },
+            { label: 'Apple Pencil Pro', href: 'product-details.html?slug=apple-pencil-pro' },
+            { label: 'iPad for Education', href: 'education.html' }
+        ],
+        secondaryTitle: 'Assam Channel',
+        secondary: [
+            { label: 'About GE Tradecom', href: 'about.html' },
+            { label: 'Trade-In Guidance', href: 'services.html#trade-in' },
+            { label: 'Partner Financing', href: 'services.html#financing' }
+        ],
+        tertiaryTitle: 'More from GE Tradecom',
+        tertiary: [
+            { label: 'Meetings & Milestones', href: 'about.html#moments' },
+            { label: 'Stock Availability Alert', action: "openEnquiryModal('stock_notify', 'iPad Pro')" }
+        ]
+    },
+    iPhone: {
+        primaryTitle: 'Explore iPhone',
+        primary: [
+            { label: 'Explore All iPhone', href: 'products.html?category=iPhone' },
+            { label: 'iPhone Duo', href: 'product-details.html?slug=iphone-duo' },
+            { label: 'iPhone 18 Pro', href: 'product-details.html?slug=iphone-18-pro' },
+            { label: 'iPhone Air', href: 'product-details.html?slug=iphone-air' },
+            { label: 'iPhone for Business Mobility', href: 'business.html' }
+        ],
+        secondaryTitle: 'Assam Channel',
+        secondary: [
+            { label: 'About GE Tradecom', href: 'about.html' },
+            { label: 'Trade-In Evaluation Info', href: 'services.html#trade-in' },
+            { label: 'Approved Campaigns', href: 'promotions.html' }
+        ],
+        tertiaryTitle: 'Concierge',
+        tertiary: [
+            { label: 'Meetings & Milestones', href: 'about.html#moments' },
+            { label: 'Stock Notification', action: "openEnquiryModal('stock_notify', 'iPhone 18 Pro')" },
+            { label: 'Talk to a Specialist', action: "openEnquiryModal('product', 'iPhone 18 Pro')" }
+        ]
+    },
+    Watch: {
+        primaryTitle: 'Explore Watch',
+        primary: [
+            { label: 'Explore All Apple Watch', href: 'products.html?category=Watch' },
+            { label: 'Apple Watch Series 12', href: 'product-details.html?slug=apple-watch-series-12' },
+            { label: 'Apple Watch Ultra 4', href: 'product-details.html?slug=apple-watch-ultra-4' }
+        ],
+        secondaryTitle: 'Assam Channel',
+        secondary: [
+            { label: 'About GE Tradecom', href: 'about.html' },
+            { label: 'Authorised Service Centres', href: 'services.html#service-centres' }
+        ],
+        tertiaryTitle: 'Concierge',
+        tertiary: [
+            { label: 'Enquire About Watch', action: "openEnquiryModal('product', 'Apple Watch Series 12')" }
+        ]
+    },
+    AirPods: {
+        primaryTitle: 'Explore AirPods',
+        primary: [
+            { label: 'Explore All AirPods', href: 'products.html?category=AirPods' },
+            { label: 'AirPods Pro 3', href: 'product-details.html?slug=airpods-pro-3' },
+            { label: 'AirPods 5', href: 'product-details.html?slug=airpods-5' },
+            { label: 'AirPods Max 2', href: 'product-details.html?slug=airpods-max-2' }
+        ],
+        secondaryTitle: 'Assam Channel',
+        secondary: [
+            { label: 'About GE Tradecom', href: 'about.html' },
+            { label: 'TV & Home', href: 'products.html?category=TV+%26+Home' }
+        ],
+        tertiaryTitle: 'Concierge',
+        tertiary: [
+            { label: 'Ask a Specialist', action: "openEnquiryModal('product', 'AirPods Pro 3')" }
+        ]
+    },
+    TVHome: {
+        primaryTitle: 'Explore TV & Home',
+        primary: [
+            { label: 'Explore All TV & Home', href: 'products.html?category=TV+%26+Home' },
+            { label: 'Apple HomeView', href: 'product-details.html?slug=apple-homeview' },
+            { label: 'Apple TV 4K', href: 'product-details.html?slug=apple-tv-4k' },
+            { label: 'HomePod mini 2', href: 'product-details.html?slug=homepod-mini-2' },
+            { label: 'HomePod', href: 'product-details.html?slug=homepod' }
+        ],
+        secondaryTitle: 'Assam Channel',
+        secondary: [
+            { label: 'About GE Tradecom', href: 'about.html' },
+            { label: 'Bulk Corporate Orders', href: 'business.html' }
+        ],
+        tertiaryTitle: 'Support',
+        tertiary: [
+            { label: 'Ask a Specialist', action: "openEnquiryModal('product', 'Apple HomeView')" }
+        ]
+    },
+    About: {
+        primaryTitle: 'About GE Tradecom',
+        primary: [
+            { label: 'Our Story & Mission', href: 'about.html' },
+            { label: 'Meetings & Milestones', href: 'about.html#moments' },
+            { label: 'Leadership & Values', href: 'about.html#values' },
+            { label: 'Contact Us', href: 'contact.html' }
+        ],
+        secondaryTitle: 'Programmes',
+        secondary: [
+            { label: 'Small Business Solutions', href: 'business.html' },
+            { label: 'Student & Teacher Programme', href: 'education.html' },
+            { label: 'Approved Campaigns', href: 'promotions.html' }
+        ],
+        tertiaryTitle: 'Connect',
+        tertiary: [
+            { label: 'Talk to a Specialist', action: "openEnquiryModal('specialist', 'Corporate Consultation')" }
+        ]
+    },
+    Business: {
+        primaryTitle: 'Business & Education',
+        primary: [
+            { label: 'Small Business Solutions', href: 'business.html' },
+            { label: 'Student & Teacher Programme', href: 'education.html' },
+            { label: 'Approved Assam Campaigns', href: 'promotions.html' }
+        ],
+        secondaryTitle: 'Enterprise Services',
+        secondary: [
+            { label: 'Bulk Deployment Enquiry', href: 'business.html#b2b-form' },
+            { label: 'Compare Portfolio Models', href: 'products.html' }
+        ],
+        tertiaryTitle: 'Concierge',
+        tertiary: [
+            { label: 'Request B2B Consultation', action: "openEnquiryModal('business', 'Corporate / Institutional Enquiry')" }
+        ]
+    },
+    Services: {
+        primaryTitle: 'Services & Governance',
+        primary: [
+            { label: 'Services Overview', href: 'services.html' },
+            { label: 'Trade-In & Upgrade Info', href: 'services.html#trade-in' },
+            { label: 'Financing & EMI Info', href: 'services.html#financing' },
+            { label: 'Service-Centre Discovery', href: 'services.html#service-centres' }
+        ],
+        secondaryTitle: 'Support & Policies',
+        secondary: [
+            { label: 'Pickup & Delivery Info', href: 'services.html#pickup-delivery' },
+            { label: 'FAQs & Warranty Guidance', href: 'services.html#faqs' },
+            { label: 'Contact & Escalation', href: 'contact.html' }
+        ],
+        tertiaryTitle: 'Quick Requests',
+        tertiary: [
+            { label: 'Request Trade-In Guidance', action: "openEnquiryModal('trade_in', 'Trade-In / Upgrade Enquiry')" }
+        ]
+    }
+};
+
+const desktopNav = document.getElementById('desktop-nav');
+const hoverPill = document.getElementById('nav-hover-pill');
+const navCurtain = document.getElementById('apple-nav-curtain');
+const curtainBackdrop = document.getElementById('nav-curtain-backdrop');
+const curtainContent = document.getElementById('curtain-content');
+let curtainCloseTimer = null;
+let curtainOpenTimer = null;
+let curtainSwitchTimer = null;
+let activeCurtainKey = null;
+
+function renderCurtainLinks(items, isPrimary) {
+    return items.map((item, idx) => {
+        const delay = (idx * 55) + 'ms';
+        const cls = isPrimary
+            ? 'curtain-stagger block font-display text-[22px] font-semibold tracking-tight text-[#1d1d1f] hover:text-[#0071e3] transition-colors py-1'
+            : 'curtain-stagger block text-[13px] font-medium text-[#424245] hover:text-[#0071e3] transition-colors py-1';
+        if (item.action) {
+            return `<button type="button" onclick="closeNavCurtain(); ${item.action}" class="${cls} text-left cursor-pointer" style="transition-delay:${delay}">${item.label} &rarr;</button>`;
+        }
+        return `<a href="${item.href}" class="${cls}" style="transition-delay:${delay}">${item.label}</a>`;
+    }).join('');
+}
+
+function buildCurtainHTML(data) {
+    return `
+        <div class="col-span-5">
+            <div class="text-[11px] font-semibold uppercase tracking-wider text-[#86868b] mb-3 curtain-stagger">${data.primaryTitle}</div>
+            <div class="space-y-0.5">${renderCurtainLinks(data.primary, true)}</div>
+        </div>
+        <div class="col-span-4 border-l border-black/[0.06] pl-8">
+            <div class="text-[11px] font-semibold uppercase tracking-wider text-[#86868b] mb-3 curtain-stagger" style="transition-delay:60ms">${data.secondaryTitle}</div>
+            <div class="space-y-1">${renderCurtainLinks(data.secondary, false)}</div>
+        </div>
+        <div class="col-span-3 border-l border-black/[0.06] pl-8">
+            <div class="text-[11px] font-semibold uppercase tracking-wider text-[#86868b] mb-3 curtain-stagger" style="transition-delay:120ms">${data.tertiaryTitle}</div>
+            <div class="space-y-1">${renderCurtainLinks(data.tertiary, false)}</div>
+        </div>
+    `;
+}
+
+function moveNavPill(triggerEl) {
+    if (!hoverPill || !triggerEl || !desktopNav) return;
+    const navRect = desktopNav.getBoundingClientRect();
+    const elRect = triggerEl.getBoundingClientRect();
+    const wasVisible = hoverPill.classList.contains('is-visible');
+
+    if (!wasVisible) {
+        hoverPill.style.transition = 'none';
+        hoverPill.style.width = elRect.width + 'px';
+        hoverPill.style.transform = `translate3d(${elRect.left - navRect.left}px, -50%, 0)`;
+        void hoverPill.offsetWidth;
+        hoverPill.style.transition = '';
+        hoverPill.classList.add('is-visible');
+    } else {
+        hoverPill.style.width = elRect.width + 'px';
+        hoverPill.style.transform = `translate3d(${elRect.left - navRect.left}px, -50%, 0)`;
+    }
+}
+
+function openNavCurtain(key, triggerEl) {
+    clearTimeout(curtainCloseTimer);
+    clearTimeout(curtainOpenTimer);
+    syncNavMetrics();
+    moveNavPill(triggerEl);
+
+    const data = CURTAIN_DATA[key];
+    if (!data || !navCurtain || !curtainContent) return;
+
+    const alreadyOpen = navCurtain.classList.contains('is-open');
+
+    if (alreadyOpen && activeCurtainKey !== key) {
+        clearTimeout(curtainSwitchTimer);
+        curtainContent.classList.add('is-switching');
+        curtainSwitchTimer = setTimeout(() => {
+            activeCurtainKey = key;
+            curtainContent.innerHTML = buildCurtainHTML(data);
+            void curtainContent.offsetWidth;
+            requestAnimationFrame(() => {
+                curtainContent.classList.remove('is-switching');
+            });
+        }, 110);
+        return;
+    }
+
+    if (!alreadyOpen) {
+        curtainOpenTimer = setTimeout(() => {
+            activeCurtainKey = key;
+            curtainContent.classList.remove('is-switching');
+            curtainContent.innerHTML = buildCurtainHTML(data);
+            void navCurtain.offsetWidth;
+            requestAnimationFrame(() => {
+                navCurtain.classList.add('is-open');
+                curtainBackdrop?.classList.add('is-open');
+                mainNavbar?.classList.add('curtain-open');
+            });
+        }, 45);
+    }
+}
+
+function scheduleCloseNavCurtain() {
+    clearTimeout(curtainOpenTimer);
+    clearTimeout(curtainCloseTimer);
+    curtainCloseTimer = setTimeout(closeNavCurtain, 180);
+}
+
+function closeNavCurtain() {
+    clearTimeout(curtainOpenTimer);
+    clearTimeout(curtainCloseTimer);
+    clearTimeout(curtainSwitchTimer);
+    activeCurtainKey = null;
+    navCurtain?.classList.remove('is-open');
+    curtainBackdrop?.classList.remove('is-open');
+    mainNavbar?.classList.remove('curtain-open');
+    hoverPill?.classList.remove('is-visible');
+}
+
+document.querySelectorAll('.nav-trigger').forEach(link => {
+    const key = link.getAttribute('data-curtain');
+    link.addEventListener('mouseenter', () => openNavCurtain(key, link));
+    link.addEventListener('focus', () => openNavCurtain(key, link));
+});
+
+desktopNav?.addEventListener('mouseleave', () => {
+    hoverPill?.classList.remove('is-visible');
+});
+mainNavbar?.addEventListener('mouseenter', () => clearTimeout(curtainCloseTimer));
+mainNavbar?.addEventListener('mouseleave', scheduleCloseNavCurtain);
+navCurtain?.addEventListener('mouseenter', () => clearTimeout(curtainCloseTimer));
+navCurtain?.addEventListener('mouseleave', scheduleCloseNavCurtain);
+curtainBackdrop?.addEventListener('mouseenter', closeNavCurtain);
+curtainBackdrop?.addEventListener('click', closeNavCurtain);
+
+// 4. Spring-Animated Enquiry & Spotlight Modals
+function showSpringModal(el) {
+    if (!el) return;
+    closeNavCurtain();
+    el.classList.remove('hidden');
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => el.classList.add('is-open'));
+    });
+}
+
+function hideSpringModal(el) {
+    if (!el || el.classList.contains('hidden')) return;
+    el.classList.remove('is-open');
+    setTimeout(() => el.classList.add('hidden'), 360);
+}
+
+function openEnquiryModal(type, productLabel, workshopId) {
+    const badgeEl = document.getElementById('modal-badge');
+    const subEl = document.getElementById('modal-subtitle');
+    document.getElementById('modal-enquiry-type').value = type || 'specialist';
+    document.getElementById('modal-product-interest').value = productLabel || '';
+    document.getElementById('modal-workshop-id').value = workshopId || '';
+
+    const labels = {
+        stock_notify: ['Stock Notification', 'Stock Alert: ' + (productLabel || 'Apple Product'), 'Register your details to be notified when this model or configuration becomes available via verified Assam partners.'],
+        dealer_onboarding: ['Partner Registration', 'Assam Dealer Partner Onboarding', 'Submit your business details for GE Tradecom verification and authorised channel onboarding across Assam.'],
+        education: ['Education Eligibility', 'Student & Teacher Verification', 'Submit institutional details for eligibility verification and partner-routed education guidance.'],
+        trade_in: ['Upgrade Evaluation', 'Trade-In / Upgrade Guidance', 'Request partner-led exchange guidance. Final valuation depends on physical inspection and eligible model terms.']
+    };
+
+    if (labels[type]) {
+        badgeEl.textContent = labels[type][0];
+        document.getElementById('modal-title').textContent = labels[type][1];
+        subEl.textContent = labels[type][2];
+    } else {
+        badgeEl.textContent = 'GE Tradecom Concierge';
+        document.getElementById('modal-title').textContent = productLabel ? 'Enquire: ' + productLabel : 'Talk to a Product Specialist';
+        subEl.textContent = 'We will route your request directly to our Assam specialist team in Guwahati.';
+    }
+
+    showSpringModal(document.getElementById('enquiry-modal'));
+}
+
+function closeEnquiryModal() {
+    hideSpringModal(document.getElementById('enquiry-modal'));
+}
+
+function selectCardFinish(btn, visualId, colorName, hex, imgUrl) {
+    const group = btn.closest('[data-swatch-group]');
+    if (group) {
+        group.querySelectorAll('.card-swatch').forEach(el => {
+            el.classList.remove('border-[#0071e3]', 'ring-1', 'ring-[#0071e3]/30');
+            el.classList.add('border-black/[0.08]');
+        });
+        btn.classList.remove('border-black/[0.08]');
+        btn.classList.add('border-[#0071e3]', 'ring-1', 'ring-[#0071e3]/30');
+    }
+
+    const visual = document.getElementById(visualId);
+    if (!visual) return;
+    if (visual.tagName === 'IMG' && imgUrl) {
+        visual.style.opacity = '0.45';
+        visual.src = imgUrl;
+        visual.onload = () => { visual.style.opacity = '1'; };
+    } else if (hex) {
+        const frame = visual.querySelector('div');
+        if (frame) {
+            frame.style.borderColor = hex;
+            frame.style.boxShadow = `0 20px 38px -14px ${hex}66`;
+        }
+    }
+}
+
+function openSpotlightModal() {
+    const modal = document.getElementById('spotlight-modal');
+    showSpringModal(modal);
+    setTimeout(() => document.getElementById('spotlight-input')?.focus(), 120);
+}
+
+function closeSpotlightModal() {
+    hideSpringModal(document.getElementById('spotlight-modal'));
+}
+
+document.getElementById('enquiry-modal')?.addEventListener('click', (e) => {
+    if (e.target.id === 'enquiry-modal') closeEnquiryModal();
+});
+document.getElementById('spotlight-modal')?.addEventListener('click', (e) => {
+    if (e.target.id === 'spotlight-modal') closeSpotlightModal();
+});
+document.addEventListener('keydown', (e) => {
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        openSpotlightModal();
+    } else if (e.key === 'Escape') {
+        closeNavCurtain();
+        closeEnquiryModal();
+        closeSpotlightModal();
+    }
+});
+
+// 5. Staggered Fluid Scroll Reveal Observer
+const revealObserver = new IntersectionObserver((entries) => {
+    let visibleInBatch = 0;
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.style.transitionDelay = (visibleInBatch * 85) + 'ms';
+            visibleInBatch++;
+            entry.target.classList.add('is-visible');
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal-card').forEach(el => revealObserver.observe(el));
+
+// 6. Silky rAF-Interpolated 3D Hardware Stage Tilt
+document.querySelectorAll('[data-tilt-stage]').forEach(stage => {
+    let targetX = 0, targetY = 0;
+    let currentX = 0, currentY = 0;
+    let rafId = null;
+
+    function tick() {
+        currentX += (targetX - currentX) * 0.085;
+        currentY += (targetY - currentY) * 0.085;
+        stage.style.transform = `perspective(1200px) rotateY(${currentX.toFixed(3)}deg) rotateX(${currentY.toFixed(3)}deg)`;
+
+        if (Math.abs(targetX - currentX) > 0.005 || Math.abs(targetY - currentY) > 0.005) {
+            rafId = requestAnimationFrame(tick);
+        } else {
+            rafId = null;
+        }
+    }
+
+    stage.addEventListener('mousemove', (e) => {
+        const rect = stage.getBoundingClientRect();
+        const nx = (e.clientX - rect.left) / rect.width - 0.5;
+        const ny = (e.clientY - rect.top) / rect.height - 0.5;
+        targetX = nx * 6.5;
+        targetY = -ny * 4.5;
+        if (!rafId) rafId = requestAnimationFrame(tick);
+    });
+
+    stage.addEventListener('mouseleave', () => {
+        targetX = 0;
+        targetY = 0;
+        if (!rafId) rafId = requestAnimationFrame(tick);
+    });
+});
+</script>
+
+<script src="assets/js/site-data.js?v=1795867792"></script>
+<script src="assets/js/gh-pages-runtime.js?v=1795867792"></script>
+</body>
+</html>
