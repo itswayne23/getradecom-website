@@ -124,9 +124,9 @@ $finishes = array_filter(array_map('trim', explode(',', $product['colors'] ?? ''
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <a href="dealers.php"
+                    <a href="about.php"
                        class="block text-center py-2.5 px-5 rounded-full bg-[#f5f5f7] hover:bg-[#e8e8ed] text-[#1d1d1f] border border-[#d2d2d7] text-[12px] font-medium transition">
-                        Find Assam Dealers
+                        About GE Tradecom
                     </a>
                     <a href="business.php"
                        class="block text-center py-2.5 px-5 rounded-full bg-[#1d1d1f]/[0.04] hover:bg-[#1d1d1f]/[0.08] text-[#0071e3] text-[12px] font-medium transition">

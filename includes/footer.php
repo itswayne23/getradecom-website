@@ -8,7 +8,7 @@
             <img src="assets/images/getradecom-logo.png" alt="GE Tradecom Pvt. Ltd." class="h-9 w-auto object-contain">
             <p>
                 <strong class="font-semibold text-[#1d1d1f]">Distributor Corporate Governance Notice:</strong>
-                <?= e(SITE_NAME) ?> operates as an Assam Apple distribution and channel network portal focused on public product discovery, verified dealer routing, B2B consultation, training workshops, and authorised service discovery. Trade-in valuations, financing/EMI terms, education eligibility verification, and store pickup or delivery options are fulfilled exclusively through verified participating dealer or service partners, subject to approved partner terms.
+                <?= e(SITE_NAME) ?> operates as an Apple Authorised Distributor in Assam focused on public product discovery, B2B consultation, education eligibility guidance, approved campaigns, and authorised service discovery. Trade-in evaluations, financing/EMI terms, and after-sales support are subject to official Apple &amp; partner programme terms.
             </p>
         </div>
 
@@ -26,14 +26,13 @@
                 </ul>
             </div>
             <div>
-                <h4 class="font-semibold text-[#1d1d1f] mb-3 tracking-tight">Assam Channel &amp; Programmes</h4>
+                <h4 class="font-semibold text-[#1d1d1f] mb-3 tracking-tight">GE Tradecom &amp; Programmes</h4>
                 <ul class="space-y-2">
-                    <li><a href="dealers.php" class="hover:text-[#1d1d1f] hover:underline transition">Assam Dealer Locator</a></li>
-                    <li><a href="dealers.php#partner-onboarding" class="hover:text-[#1d1d1f] hover:underline transition">Dealer Partner Onboarding</a></li>
+                    <li><a href="about.php" class="hover:text-[#1d1d1f] hover:underline transition">About Us &amp; Story</a></li>
+                    <li><a href="about.php#moments" class="hover:text-[#1d1d1f] hover:underline transition">Meetings &amp; Milestones</a></li>
                     <li><a href="business.php" class="hover:text-[#1d1d1f] hover:underline transition">Small Business Solutions</a></li>
                     <li><a href="education.php" class="hover:text-[#1d1d1f] hover:underline transition">Student &amp; Teacher Programme</a></li>
                     <li><a href="promotions.php" class="hover:text-[#1d1d1f] hover:underline transition">Approved Campaigns</a></li>
-                    <li><a href="workshops.php" class="hover:text-[#1d1d1f] hover:underline transition">Workshops &amp; Training</a></li>
                 </ul>
             </div>
             <div>
@@ -49,7 +48,7 @@
             </div>
             <div>
                 <h4 class="font-semibold text-[#1d1d1f] mb-3 tracking-tight">Launch &amp; Campaign Updates</h4>
-                <p class="mb-3 text-[11px] leading-relaxed">Opt in for new Apple launches, workshops, and approved Assam partner campaigns.</p>
+                <p class="mb-3 text-[11px] leading-relaxed">Opt in for new Apple launches and approved Assam campaigns.</p>
                 <form action="api/submit-enquiry.php" method="POST" class="space-y-2.5">
                     <?= csrf_field() ?>
                     <input type="hidden" name="action" value="subscribe">
@@ -77,7 +76,7 @@
                 <span class="text-[#d2d2d7]">|</span>
                 <a href="services.php#faqs" class="hover:text-[#1d1d1f] hover:underline">Channel Terms</a>
                 <span class="text-[#d2d2d7]">|</span>
-                <a href="dealers.php" class="hover:text-[#1d1d1f] hover:underline">Assam Network</a>
+                <a href="about.php" class="hover:text-[#1d1d1f] hover:underline">About Us</a>
             </div>
         </div>
     </div>
@@ -123,7 +122,7 @@
             <div>
                 <div class="text-[11px] font-semibold text-[#86868b] uppercase tracking-wider mb-2">Assam Channel Shortcuts</div>
                 <ul class="space-y-1.5 text-[#1d1d1f]">
-                    <li><a href="dealers.php" class="block px-3 py-1.5 rounded-lg hover:bg-black/[0.04]">Locate Assam Dealers &rarr;</a></li>
+                    <li><a href="about.php" class="block px-3 py-1.5 rounded-lg hover:bg-black/[0.04]">About GE Tradecom &amp; Moments &rarr;</a></li>
                     <li><a href="business.php" class="block px-3 py-1.5 rounded-lg hover:bg-black/[0.04]">Small Business Solutions &rarr;</a></li>
                     <li><a href="education.php" class="block px-3 py-1.5 rounded-lg hover:bg-black/[0.04]">Student &amp; Teacher Programme &rarr;</a></li>
                     <li><a href="promotions.php" class="block px-3 py-1.5 rounded-lg hover:bg-black/[0.04]">Approved Campaigns &rarr;</a></li>
@@ -223,14 +222,14 @@ const CURTAIN_DATA = {
         ],
         secondaryTitle: 'Assam Channel',
         secondary: [
-            { label: 'Locate an Assam Dealer', href: 'dealers.php' },
+            { label: 'About GE Tradecom', href: 'about.php' },
             { label: 'Trade-In & Upgrade Info', href: 'services.php#trade-in' },
             { label: 'Financing & EMI Info', href: 'services.php#financing' }
         ],
         tertiaryTitle: 'Programmes & Support',
         tertiary: [
             { label: 'Student & Teacher Programme', href: 'education.php' },
-            { label: 'Mac Workshops', href: 'workshops.php' },
+            { label: 'Contact & Escalation Desk', href: 'contact.php' },
             { label: 'Talk to a Specialist', action: "openEnquiryModal('specialist', 'Mac Consultation')" }
         ]
     },
@@ -245,13 +244,13 @@ const CURTAIN_DATA = {
         ],
         secondaryTitle: 'Assam Channel',
         secondary: [
-            { label: 'Find Authorised Dealers', href: 'dealers.php' },
+            { label: 'About GE Tradecom', href: 'about.php' },
             { label: 'Trade-In Guidance', href: 'services.php#trade-in' },
             { label: 'Partner Financing', href: 'services.php#financing' }
         ],
         tertiaryTitle: 'More from GE Tradecom',
         tertiary: [
-            { label: 'iPad Creative Workshops', href: 'workshops.php' },
+            { label: 'Meetings & Milestones', href: 'about.php#moments' },
             { label: 'Stock Availability Alert', action: "openEnquiryModal('stock_notify', 'iPad Pro')" }
         ]
     },
@@ -266,13 +265,13 @@ const CURTAIN_DATA = {
         ],
         secondaryTitle: 'Assam Channel',
         secondary: [
-            { label: 'Locate Nearest Outlet', href: 'dealers.php' },
+            { label: 'About GE Tradecom', href: 'about.php' },
             { label: 'Trade-In Evaluation Info', href: 'services.php#trade-in' },
             { label: 'Approved Campaigns', href: 'promotions.php' }
         ],
         tertiaryTitle: 'Concierge',
         tertiary: [
-            { label: 'iPhone Photography Workshops', href: 'workshops.php' },
+            { label: 'Meetings & Milestones', href: 'about.php#moments' },
             { label: 'Stock Notification', action: "openEnquiryModal('stock_notify', 'iPhone 18 Pro')" },
             { label: 'Talk to a Specialist', action: "openEnquiryModal('product', 'iPhone 18 Pro')" }
         ]
@@ -286,7 +285,7 @@ const CURTAIN_DATA = {
         ],
         secondaryTitle: 'Assam Channel',
         secondary: [
-            { label: 'Verified Assam Dealers', href: 'dealers.php' },
+            { label: 'About GE Tradecom', href: 'about.php' },
             { label: 'Authorised Service Centres', href: 'services.php#service-centres' }
         ],
         tertiaryTitle: 'Concierge',
@@ -304,7 +303,7 @@ const CURTAIN_DATA = {
         ],
         secondaryTitle: 'Assam Channel',
         secondary: [
-            { label: 'Find an Outlet in Assam', href: 'dealers.php' },
+            { label: 'About GE Tradecom', href: 'about.php' },
             { label: 'TV & Home', href: 'products.php?category=TV+%26+Home' }
         ],
         tertiaryTitle: 'Concierge',
@@ -321,7 +320,7 @@ const CURTAIN_DATA = {
         ],
         secondaryTitle: 'Assam Channel',
         secondary: [
-            { label: 'Check Outlet Availability', href: 'dealers.php' },
+            { label: 'About GE Tradecom', href: 'about.php' },
             { label: 'Bulk Corporate Orders', href: 'business.php' }
         ],
         tertiaryTitle: 'Support',
@@ -329,22 +328,23 @@ const CURTAIN_DATA = {
             { label: 'Contact Support Desk', href: 'contact.php' }
         ]
     },
-    Dealers: {
-        primaryTitle: 'Assam Dealer Network',
+    About: {
+        primaryTitle: 'About GE Tradecom',
         primary: [
-            { label: 'Find All Assam Dealers', href: 'dealers.php' },
-            { label: 'Guwahati (Kamrup Metro)', href: 'dealers.php?district=Kamrup+Metropolitan+(Guwahati)' },
-            { label: 'Dibrugarh & Jorhat', href: 'dealers.php?district=Dibrugarh' },
-            { label: 'Partner Onboarding', href: 'dealers.php#partner-onboarding' }
+            { label: 'Our Story & Mission', href: 'about.php' },
+            { label: 'Meetings & Milestones', href: 'about.php#moments' },
+            { label: 'Leadership & Values', href: 'about.php#values' },
+            { label: 'Contact Us', href: 'contact.php' }
         ],
-        secondaryTitle: 'Outlet Capabilities',
+        secondaryTitle: 'Programmes',
         secondary: [
-            { label: 'Store Pickup & Delivery Policy', href: 'services.php#pickup-delivery' },
-            { label: 'Authorised Service Centres', href: 'services.php#service-centres' }
+            { label: 'Small Business Solutions', href: 'business.php' },
+            { label: 'Student & Teacher Programme', href: 'education.php' },
+            { label: 'Approved Campaigns', href: 'promotions.php' }
         ],
-        tertiaryTitle: 'Dealer Registration',
+        tertiaryTitle: 'Connect',
         tertiary: [
-            { label: 'Register Dealer Interest', action: "openEnquiryModal('dealer_onboarding', 'Assam Dealer Partner Onboarding')" }
+            { label: 'Talk to a Specialist', action: "openEnquiryModal('specialist', 'Corporate Consultation')" }
         ]
     },
     Business: {
@@ -381,23 +381,6 @@ const CURTAIN_DATA = {
         tertiaryTitle: 'Quick Requests',
         tertiary: [
             { label: 'Request Trade-In Guidance', action: "openEnquiryModal('trade_in', 'Trade-In / Upgrade Enquiry')" }
-        ]
-    },
-    Workshops: {
-        primaryTitle: 'Learn & Enablement',
-        primary: [
-            { label: 'Upcoming Assam Workshops', href: 'workshops.php' },
-            { label: 'Approved Campaigns', href: 'promotions.php' },
-            { label: 'Corporate Team Training', href: 'business.php' }
-        ],
-        secondaryTitle: 'Programmes',
-        secondary: [
-            { label: 'Student & Teacher Offers', href: 'education.php' },
-            { label: 'Explore All Products', href: 'products.php' }
-        ],
-        tertiaryTitle: 'Updates',
-        tertiary: [
-            { label: 'Request Session Updates', action: "openEnquiryModal('workshop', 'Upcoming Workshop Notification')" }
         ]
     }
 };

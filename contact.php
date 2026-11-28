@@ -38,8 +38,8 @@ unset($_SESSION['flash_message']);
                     <p><strong class="text-[#1d1d1f]">Hours:</strong> 10:00 AM &ndash; 6:30 PM (Mon&ndash;Sat)</p>
                 </div>
                 <div class="mt-6 pt-5 border-t border-black/[0.06] flex flex-wrap gap-3">
-                    <a href="dealers.php" class="px-5 py-2.5 rounded-full bg-white hover:bg-[#e8e8ed] text-[#1d1d1f] border border-[#d2d2d7] text-[12px] font-medium transition">
-                        Find Assam Dealers
+                    <a href="about.php" class="px-5 py-2.5 rounded-full bg-white hover:bg-[#e8e8ed] text-[#1d1d1f] border border-[#d2d2d7] text-[12px] font-medium transition">
+                        About GE Tradecom
                     </a>
                     <a href="https://wa.me/<?= e(OFFICIAL_WHATSAPP) ?>?text=Hello%20GE%20Tradecom%20Assam%2C%20I%20would%20like%20to%20speak%20with%20a%20specialist." target="_blank" rel="noopener"
                        class="px-5 py-2.5 rounded-full bg-[#1d1d1f] hover:bg-black text-white text-[12px] font-medium transition inline-flex items-center gap-1.5">
@@ -51,9 +51,9 @@ unset($_SESSION['flash_message']);
 
             <div class="reveal-card motion-card bg-[#161617] text-white rounded-[28px] p-8">
                 <span class="text-[11px] font-semibold uppercase tracking-widest text-[#2997ff]">Channel Governance</span>
-                <h3 class="font-display text-lg font-semibold mt-1.5 mb-2">Dealer Onboarding &amp; Escalations</h3>
+                <h3 class="font-display text-lg font-semibold mt-1.5 mb-2">B2B, Campaigns &amp; Escalations</h3>
                 <p class="text-[13px] text-[#a1a1a6] leading-relaxed">
-                    Interested in Assam dealer onboarding, approved campaign coordination, or service escalation? Choose your topic in the form and our channel operations team will review and route it.
+                    Interested in enterprise deployments, approved campaign coordination, or service escalation? Choose your topic in the form and our Assam operations team will review and route it.
                 </p>
             </div>
         </div>
@@ -77,7 +77,6 @@ unset($_SESSION['flash_message']);
                             <option value="business">Business / Institutional Enquiry</option>
                             <option value="trade_in">Trade-In / Upgrade Guidance</option>
                             <option value="education">Student / Teacher Verification</option>
-                            <option value="dealer_onboarding">Assam Dealer Onboarding Interest</option>
                             <option value="general">Support Escalation / General Query</option>
                         </select>
                     </div>

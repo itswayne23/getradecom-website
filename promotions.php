@@ -68,8 +68,8 @@ unset($_SESSION['flash_message']);
                             class="btn-tactile px-6 py-2.5 rounded-full bg-[#0071e3] hover:bg-[#0077ed] text-white text-[13px] font-medium transition cursor-pointer">
                         Enquire About Campaign
                     </button>
-                    <a href="dealers.php" class="btn-tactile px-5 py-2.5 rounded-full bg-white hover:bg-[#e8e8ed] text-[#1d1d1f] border border-[#d2d2d7] text-[13px] font-medium transition">
-                        Participating Dealers
+                    <a href="about.php" class="btn-tactile px-5 py-2.5 rounded-full bg-white hover:bg-[#e8e8ed] text-[#1d1d1f] border border-[#d2d2d7] text-[13px] font-medium transition">
+                        About GE Tradecom
                     </a>
                 </div>
             </article>

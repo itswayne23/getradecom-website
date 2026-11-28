@@ -71,12 +71,12 @@ unset($_SESSION['flash_message']);
     <!-- Pickup / Delivery & Warranty / Returns -->
     <div id="pickup-delivery" class="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div class="reveal-card motion-card bg-[#fbfbfd] border border-[#d2d2d7]/70 rounded-[28px] p-8">
-            <h2 class="font-display text-xl font-semibold text-[#1d1d1f] mb-2">Store Pickup &amp; Delivery Availability</h2>
+            <h2 class="font-display text-xl font-semibold text-[#1d1d1f] mb-2">Fulfilment &amp; Delivery Guidance</h2>
             <p class="text-[14px] text-[#6e6e73] leading-relaxed mb-5">
-                GE Tradecom Pvt Ltd follows a distributor-first channel model across Assam. Store pickup or local delivery options apply strictly where a verified participating outlet supports and confirms them &mdash; avoiding unsupported delivery promises.
+                GE Tradecom Pvt Ltd follows a distributor-first channel model across Assam. Fulfilment and delivery timelines are confirmed directly by our specialist team based on stock allocation and location.
             </p>
-            <a href="dealers.php" class="text-[13px] font-medium text-[#0071e3] hover:underline apple-link-arrow">
-                <span>Check Verified Assam Dealers</span>
+            <a href="contact.php" class="text-[13px] font-medium text-[#0071e3] hover:underline apple-link-arrow">
+                <span>Contact Our Specialist Desk</span>
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
             </a>
         </div>
@@ -147,11 +147,11 @@ unset($_SESSION['flash_message']);
 
             <details class="py-4 group">
                 <summary class="flex justify-between items-center font-semibold text-[15px] text-[#1d1d1f] cursor-pointer list-none">
-                    <span>How do I find a dealer in my town or PIN code?</span>
+                    <span>How can I connect with GE Tradecom in Assam?</span>
                     <span class="text-[#6e6e73] text-lg group-open:rotate-45 transition-transform">+</span>
                 </summary>
                 <p class="text-[14px] text-[#6e6e73] mt-2 leading-relaxed">
-                    Visit the <a href="dealers.php" class="text-[#0071e3] hover:underline">Assam Dealer Locator</a> and filter by district or search by town, store name, or PIN code.
+                    Visit our <a href="contact.php" class="text-[#0071e3] hover:underline">Contact &amp; Escalation Desk</a> or explore <a href="about.php" class="text-[#0071e3] hover:underline">About GE Tradecom</a> to learn more about our Assam operations.
                 </p>
             </details>
 

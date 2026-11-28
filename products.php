@@ -49,7 +49,7 @@ unset($_SESSION['flash_message']);
                 <span class="text-[11px] font-semibold uppercase tracking-widest text-[#0071e3]">GE Tradecom Portfolio Lineup</span>
                 <h1 class="font-display text-4xl sm:text-5xl font-semibold tracking-tight text-[#1d1d1f] mt-1">Products &amp; Compare</h1>
                 <p class="text-[#6e6e73] text-[15px] sm:text-[17px] mt-2 max-w-2xl">
-                    Browse specifications across Apple categories, compare up to 3 models side by side, register for stock notifications, or locate a verified Assam dealer.
+                    Browse specifications across Apple categories, compare up to 3 models side by side, register for stock notifications, or connect with our specialist desk.
                 </p>
             </div>
 

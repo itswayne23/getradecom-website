@@ -50,8 +50,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 $enquiries = $pdo->query("SELECT * FROM enquiries ORDER BY created_at DESC")->fetchAll();
-$dealers = $pdo->query("SELECT * FROM dealers ORDER BY district ASC, id ASC")->fetchAll();
-$workshops = $pdo->query("SELECT * FROM workshops ORDER BY session_date ASC, id ASC")->fetchAll();
 $sub_count = (int)$pdo->query("SELECT COUNT(*) FROM subscribers")->fetchColumn();
 $prod_count = (int)$pdo->query("SELECT COUNT(*) FROM products WHERE is_active = 1")->fetchColumn();
 
@@ -90,22 +88,14 @@ try {
 
     <main class="max-w-[1200px] mx-auto px-4 sm:px-6 py-10 space-y-8">
         <!-- KPI Cards -->
-        <div class="grid grid-cols-2 lg:grid-cols-5 gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div class="bg-white border border-black/[0.05] rounded-[24px] p-6">
                 <div class="text-[12px] text-[#6e6e73]">Total Enquiries</div>
                 <div class="font-display text-3xl font-semibold mt-1"><?= count($enquiries) ?></div>
             </div>
             <div class="bg-white border border-black/[0.05] rounded-[24px] p-6">
-                <div class="text-[12px] text-[#6e6e73]">Assam Dealers</div>
-                <div class="font-display text-3xl font-semibold mt-1"><?= count($dealers) ?></div>
-            </div>
-            <div class="bg-white border border-black/[0.05] rounded-[24px] p-6">
                 <div class="text-[12px] text-[#6e6e73]">Active Products</div>
                 <div class="font-display text-3xl font-semibold mt-1"><?= $prod_count ?></div>
-            </div>
-            <div class="bg-white border border-black/[0.05] rounded-[24px] p-6">
-                <div class="text-[12px] text-[#6e6e73]">Workshops</div>
-                <div class="font-display text-3xl font-semibold mt-1"><?= count($workshops) ?></div>
             </div>
             <div class="bg-white border border-black/[0.05] rounded-[24px] p-6">
                 <div class="text-[12px] text-[#6e6e73]">Subscribers</div>
@@ -168,48 +158,6 @@ try {
                     </tbody>
                 </table>
             <?php endif; ?>
-        </section>
-
-        <!-- Assam Dealers Publication Control -->
-        <section class="bg-white border border-black/[0.05] rounded-[28px] p-7 overflow-x-auto">
-            <h2 class="font-display text-xl font-semibold mb-4">Assam Dealer Listings (Publication Control)</h2>
-            <table class="w-full text-left border-collapse text-xs">
-                <thead>
-                    <tr class="border-b border-black/[0.08] text-[#86868b] uppercase">
-                        <th class="py-3 pr-4">Store Name</th>
-                        <th class="py-3 pr-4">District &amp; PIN</th>
-                        <th class="py-3 pr-4">Phone</th>
-                        <th class="py-3 pr-4">Visibility</th>
-                        <th class="py-3">Action</th>
-                    </tr>
-                </thead>
-                <tbody class="divide-y divide-black/[0.05]">
-                    <?php foreach ($dealers as $dl): ?>
-                    <tr>
-                        <td class="py-3.5 pr-4 font-semibold text-[#1d1d1f]"><?= e($dl['store_name']) ?></td>
-                        <td class="py-3.5 pr-4"><?= e($dl['district']) ?> &mdash; <?= e($dl['pin_code']) ?></td>
-                        <td class="py-3.5 pr-4"><?= e($dl['phone']) ?></td>
-                        <td class="py-3.5 pr-4">
-                            <?php if ($dl['is_active']): ?>
-                            <span class="px-2.5 py-0.5 rounded-full bg-[#e9f9ee] text-[#1f7a3e] font-semibold">Published</span>
-                            <?php else: ?>
-                            <span class="px-2.5 py-0.5 rounded-full bg-[#f5f5f7] text-[#6e6e73] font-semibold">Hidden</span>
-                            <?php endif; ?>
-                        </td>
-                        <td class="py-3.5">
-                            <form method="POST" class="inline">
-                                <?= csrf_field() ?>
-                                <input type="hidden" name="admin_action" value="toggle_dealer">
-                                <input type="hidden" name="dealer_id" value="<?= (int)$dl['id'] ?>">
-                                <button type="submit" class="px-3.5 py-1 rounded-full border border-[#d2d2d7] hover:bg-[#f5f5f7] font-medium cursor-pointer transition">
-                                    <?= $dl['is_active'] ? 'Hide' : 'Publish' ?>
-                                </button>
-                            </form>
-                        </td>
-                    </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
         </section>
 
         <?php if (!empty($campaigns)): ?>

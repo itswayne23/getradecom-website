@@ -22,9 +22,9 @@ $current_cat = $_GET['category'] ?? '';
         <div class="flex items-center gap-3">
             <span class="font-medium text-[#f5f5f7] tracking-tight">GE Tradecom Pvt Ltd &middot; Assam</span>
             <span class="hidden sm:inline text-white/20">|</span>
-            <a href="dealers.php" class="hover:text-white transition inline-flex items-center gap-1">
-                <svg class="w-3 h-3 text-[#2997ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                <span>Assam Dealer Locator</span>
+            <a href="about.php" class="hover:text-white transition inline-flex items-center gap-1">
+                <svg class="w-3 h-3 text-[#2997ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                <span>About GE Tradecom</span>
             </a>
         </div>
         <div class="flex items-center gap-4">
@@ -56,10 +56,9 @@ $current_cat = $_GET['category'] ?? '';
                 <a href="products.php?category=AirPods" data-curtain="AirPods" class="nav-trigger relative z-10 px-2 xl:px-2.5 py-1.5 hover:text-[#1d1d1f] transition <?= $current_page === 'products.php' && $current_cat === 'AirPods' ? 'text-[#0071e3] font-medium' : '' ?>">AirPods</a>
                 <a href="products.php?category=Accessories" data-curtain="Accessories" class="nav-trigger relative z-10 px-2 xl:px-2.5 py-1.5 hover:text-[#1d1d1f] transition <?= $current_page === 'products.php' && $current_cat === 'Accessories' ? 'text-[#0071e3] font-medium' : '' ?>">Accessories</a>
                 <span class="text-black/15 px-1 select-none">|</span>
-                <a href="dealers.php" data-curtain="Dealers" class="nav-trigger relative z-10 px-2 xl:px-2.5 py-1.5 hover:text-[#1d1d1f] transition <?= $current_page === 'dealers.php' ? 'text-[#0071e3] font-medium' : '' ?>">Dealers</a>
+                <a href="about.php" data-curtain="About" class="nav-trigger relative z-10 px-2 xl:px-2.5 py-1.5 hover:text-[#1d1d1f] transition <?= $current_page === 'about.php' ? 'text-[#0071e3] font-medium' : '' ?>">About Us</a>
                 <a href="business.php" data-curtain="Business" class="nav-trigger relative z-10 px-2 xl:px-2.5 py-1.5 hover:text-[#1d1d1f] transition <?= $current_page === 'business.php' ? 'text-[#0071e3] font-medium' : '' ?>">Business</a>
                 <a href="services.php" data-curtain="Services" class="nav-trigger relative z-10 px-2 xl:px-2.5 py-1.5 hover:text-[#1d1d1f] transition <?= $current_page === 'services.php' ? 'text-[#0071e3] font-medium' : '' ?>">Services</a>
-                <a href="workshops.php" data-curtain="Workshops" class="nav-trigger relative z-10 px-2 xl:px-2.5 py-1.5 hover:text-[#1d1d1f] transition <?= $current_page === 'workshops.php' ? 'text-[#0071e3] font-medium' : '' ?>">Workshops</a>
             </nav>
 
             <!-- Action Controls & Official Apple Authorised Dealer Lockup (Right) -->
@@ -97,10 +96,9 @@ $current_cat = $_GET['category'] ?? '';
                 <a href="products.php?category=AirPods" class="mobile-nav-item block py-1.5 text-[#424245]" style="transition-delay: 240ms;">AirPods</a>
                 <a href="products.php?category=Accessories" class="mobile-nav-item block py-1.5 text-[#424245]" style="transition-delay: 280ms;">Accessories</a>
                 <div class="pt-3 mt-2 border-t border-black/[0.06] space-y-1 text-[15px] font-medium">
-                    <a href="dealers.php" class="mobile-nav-item block py-1.5 text-[#0071e3]" style="transition-delay: 320ms;">Assam Dealer Locator &rarr;</a>
+                    <a href="about.php" class="mobile-nav-item block py-1.5 text-[#0071e3]" style="transition-delay: 320ms;">About Us &amp; Moments &rarr;</a>
                     <a href="business.php" class="mobile-nav-item block py-1.5 text-[#1d1d1f]" style="transition-delay: 350ms;">Small Business Solutions</a>
                     <a href="services.php" class="mobile-nav-item block py-1.5 text-[#1d1d1f]" style="transition-delay: 380ms;">Services, Trade-In &amp; Support</a>
-                    <a href="workshops.php" class="mobile-nav-item block py-1.5 text-[#1d1d1f]" style="transition-delay: 410ms;">Workshops &amp; Training</a>
                     <a href="education.php" class="mobile-nav-item block py-1.5 text-[#1d1d1f]" style="transition-delay: 440ms;">Student &amp; Teacher Programme</a>
                     <a href="promotions.php" class="mobile-nav-item block py-1.5 text-[#1d1d1f]" style="transition-delay: 470ms;">Approved Campaigns</a>
                     <a href="contact.php" class="mobile-nav-item block py-1.5 text-[#1d1d1f]" style="transition-delay: 500ms;">Contact Us</a>

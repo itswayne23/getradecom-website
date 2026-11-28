@@ -403,6 +403,36 @@ a.btn-tactile:active {
     will-change: transform;
 }
 
+/* Smooth Dual-Row Gallery Marquee (About Us Moments) */
+@keyframes marqueeLeft {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-50%, 0, 0); }
+}
+
+@keyframes marqueeRight {
+    0% { transform: translate3d(-50%, 0, 0); }
+    100% { transform: translate3d(0, 0, 0); }
+}
+
+.marquee-track-left {
+    display: flex;
+    width: max-content;
+    animation: marqueeLeft 42s linear infinite;
+    will-change: transform;
+}
+
+.marquee-track-right {
+    display: flex;
+    width: max-content;
+    animation: marqueeRight 46s linear infinite;
+    will-change: transform;
+}
+
+.marquee-wrapper:hover .marquee-track-left,
+.marquee-wrapper:hover .marquee-track-right {
+    animation-play-state: paused;
+}
+
 @media (prefers-reduced-motion: reduce) {
     .reveal-card,
     .apple-card,

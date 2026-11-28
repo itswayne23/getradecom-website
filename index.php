@@ -78,8 +78,8 @@ unset($_SESSION['flash_message']);
             <a href="products.php" class="btn-tactile px-7 py-3 rounded-full bg-[#0071e3] hover:bg-[#0077ed] text-white font-medium text-[15px] transition shadow-[0_6px_24px_rgba(0,113,227,0.35)]">
                 Explore Product Portfolio
             </a>
-            <a href="dealers.php" class="btn-tactile px-7 py-3 rounded-full bg-transparent hover:bg-white/10 text-[#2997ff] border border-[#2997ff]/60 font-medium text-[15px] transition">
-                Assam Dealer Locator
+            <a href="about.php" class="btn-tactile px-7 py-3 rounded-full bg-transparent hover:bg-white/10 text-[#2997ff] border border-[#2997ff]/60 font-medium text-[15px] transition">
+                About GE Tradecom
             </a>
             <button onclick="openEnquiryModal('specialist', 'Executive Portfolio Consultation')" class="px-5 py-3 text-[15px] font-medium text-[#f5f5f7] hover:text-[#2997ff] apple-link-arrow transition cursor-pointer">
                 <span>Talk to a Specialist</span>
@@ -91,19 +91,19 @@ unset($_SESSION['flash_message']);
         <div class="pt-8 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-6 text-left">
             <div>
                 <div class="font-display text-2xl font-semibold text-white">Assam-Wide</div>
-                <div class="text-[12px] text-[#86868b] mt-0.5">Guwahati, Dibrugarh, Jorhat, Nagaon &amp; Silchar hubs</div>
+                <div class="text-[12px] text-[#86868b] mt-0.5">Guwahati, Dibrugarh, Jorhat, Nagaon &amp; Silchar reach</div>
             </div>
             <div>
                 <div class="font-display text-2xl font-semibold text-white">Distributor-First</div>
-                <div class="text-[12px] text-[#86868b] mt-0.5">Verified partner routing without unapproved retail promises</div>
+                <div class="text-[12px] text-[#86868b] mt-0.5">Official Apple Authorised Distributor channel governance</div>
             </div>
             <div>
                 <div class="font-display text-2xl font-semibold text-white">B2B &amp; Education</div>
                 <div class="text-[12px] text-[#86868b] mt-0.5">Enterprise fleet sizing, SMEs &amp; eligibility programmes</div>
             </div>
             <div>
-                <div class="font-display text-2xl font-semibold text-white">Enablement</div>
-                <div class="text-[12px] text-[#86868b] mt-0.5">Workshops, dealer training &amp; verified service discovery</div>
+                <div class="font-display text-2xl font-semibold text-white">Care &amp; Support</div>
+                <div class="text-[12px] text-[#86868b] mt-0.5">Trade-in guidance, EMI info &amp; authorised service care</div>
             </div>
         </div>
     </div>
@@ -132,16 +132,16 @@ unset($_SESSION['flash_message']);
             </div>
             <div class="reveal-card apple-card bg-white rounded-[26px] p-8 border border-black/[0.04]">
                 <span class="text-[11px] font-semibold uppercase tracking-wider text-[#0071e3]">02 / Channel Governance</span>
-                <h3 class="font-display text-xl font-semibold text-[#1d1d1f] mt-2 mb-2">Verified Partner Fulfilment</h3>
+                <h3 class="font-display text-xl font-semibold text-[#1d1d1f] mt-2 mb-2">Official Distribution &amp; Care</h3>
                 <p class="text-[14px] text-[#6e6e73] leading-relaxed">
-                    Trade-ins, financing plans, store pickup, and after-sales repairs are fulfilled strictly through verified Assam dealer and service partners.
+                    Genuine Apple hardware distribution, trade-in guidance, financing info, and authorised service discovery across Assam.
                 </p>
             </div>
             <div class="reveal-card apple-card bg-white rounded-[26px] p-8 border border-black/[0.04]">
-                <span class="text-[11px] font-semibold uppercase tracking-wider text-[#0071e3]">03 / Growth &amp; Training</span>
-                <h3 class="font-display text-xl font-semibold text-[#1d1d1f] mt-2 mb-2">B2B, Education &amp; Workshops</h3>
+                <span class="text-[11px] font-semibold uppercase tracking-wider text-[#0071e3]">03 / Enterprise &amp; Campus</span>
+                <h3 class="font-display text-xl font-semibold text-[#1d1d1f] mt-2 mb-2">B2B &amp; Education Solutions</h3>
                 <p class="text-[14px] text-[#6e6e73] leading-relaxed">
-                    Dedicated SME/institutional consultations, eligibility-led student/teacher guidance, and hands-on workshops across Assam cities.
+                    Dedicated SME/institutional consultations and eligibility-led student and teacher guidance across Assam.
                 </p>
             </div>
         </div>
@@ -162,9 +162,8 @@ unset($_SESSION['flash_message']);
             <!-- Segmented Journey Tabs -->
             <div class="inline-flex flex-wrap gap-1.5 bg-[#f5f5f7] p-1.5 rounded-full border border-black/[0.05]">
                 <button type="button" onclick="selectJourney('customer', this)" class="journey-tab px-4 py-1.5 rounded-full text-[12px] font-medium bg-[#1d1d1f] text-white transition cursor-pointer">Customer</button>
-                <button type="button" onclick="selectJourney('dealer', this)" class="journey-tab px-4 py-1.5 rounded-full text-[12px] font-medium text-[#424245] hover:text-[#1d1d1f] transition cursor-pointer">Dealer Partner</button>
                 <button type="button" onclick="selectJourney('business', this)" class="journey-tab px-4 py-1.5 rounded-full text-[12px] font-medium text-[#424245] hover:text-[#1d1d1f] transition cursor-pointer">Business Buyer</button>
-                <button type="button" onclick="selectJourney('workshop', this)" class="journey-tab px-4 py-1.5 rounded-full text-[12px] font-medium text-[#424245] hover:text-[#1d1d1f] transition cursor-pointer">Workshop Attendee</button>
+                <button type="button" onclick="selectJourney('education', this)" class="journey-tab px-4 py-1.5 rounded-full text-[12px] font-medium text-[#424245] hover:text-[#1d1d1f] transition cursor-pointer">Education</button>
             </div>
         </div>
 
@@ -215,31 +214,31 @@ unset($_SESSION['flash_message']);
 <!-- Two-Up Apple Promo Grid (Assam Network + B2B/Education) -->
 <section class="max-w-[1200px] mx-auto px-4 sm:px-6 pt-12">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <!-- Tile 1: Assam Verified Dealer Network -->
+        <!-- Tile 1: About GE Tradecom & Moments -->
         <div class="reveal-card apple-card rounded-[28px] bg-[#161617] text-white p-9 sm:p-11 flex flex-col justify-between min-h-[320px] relative overflow-hidden">
             <div class="absolute -right-12 -bottom-12 w-56 h-56 rounded-full bg-[#0071e3]/20 blur-3xl pointer-events-none"></div>
             <div class="relative z-10">
-                <span class="text-[11px] font-semibold uppercase tracking-widest text-[#2997ff]">Assam Territory</span>
-                <h3 class="font-display text-3xl font-semibold tracking-tight mt-2 mb-2">Authorised Dealer Network</h3>
+                <span class="text-[11px] font-semibold uppercase tracking-widest text-[#2997ff]">GE Tradecom Pvt Ltd</span>
+                <h3 class="font-display text-3xl font-semibold tracking-tight mt-2 mb-2">About Us &amp; Milestones</h3>
                 <p class="text-[15px] text-[#a1a1a6] max-w-md leading-relaxed mb-5">
-                    Search verified Assam outlets by district or PIN code, view outlet pickup/delivery support, or apply for dealer onboarding.
+                    Discover our journey as an Apple Authorised Distributor in Assam, leadership vision, and highlights from key partner meetings and events.
                 </p>
                 <div class="flex flex-wrap gap-2">
-                    <?php foreach (['Guwahati', 'Dibrugarh', 'Jorhat', 'Nagaon', 'Silchar'] as $hub): ?>
-                    <a href="dealers.php?q=<?= urlencode($hub) ?>" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.08] hover:bg-white/[0.15] border border-white/10 text-[11px] text-[#f5f5f7] transition">
+                    <?php foreach (['Leadership', 'Partner Summits', 'Assam Footprint', 'Events'] as $tag): ?>
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.08] border border-white/10 text-[11px] text-[#f5f5f7]">
                         <span class="w-1.5 h-1.5 rounded-full bg-[#30d158]"></span>
-                        <?= e($hub) ?>
-                    </a>
+                        <?= e($tag) ?>
+                    </span>
                     <?php endforeach; ?>
                 </div>
             </div>
             <div class="relative z-10 pt-8 flex flex-wrap gap-3">
-                <a href="dealers.php" class="btn-tactile px-5 py-2.5 rounded-full bg-[#0071e3] hover:bg-[#0077ed] text-white text-[13px] font-medium transition">
-                    Find a Dealer
+                <a href="about.php" class="btn-tactile px-5 py-2.5 rounded-full bg-[#0071e3] hover:bg-[#0077ed] text-white text-[13px] font-medium transition">
+                    Explore About Us
                 </a>
-                <button onclick="openEnquiryModal('dealer_onboarding', 'Assam Dealer Partner Registration')" class="btn-tactile px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-[13px] font-medium transition cursor-pointer">
-                    Partner Onboarding
-                </button>
+                <a href="about.php#moments" class="btn-tactile px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-[13px] font-medium transition">
+                    View Meeting Gallery
+                </a>
             </div>
         </div>
 
@@ -351,10 +350,10 @@ unset($_SESSION['flash_message']);
         </div>
 
         <div id="value-rail" class="flex gap-5 overflow-x-auto no-scrollbar snap-x snap-mandatory pb-2">
-            <a href="dealers.php" class="snap-start shrink-0 w-[290px] sm:w-[300px] apple-card bg-white rounded-[26px] p-7 block border border-black/[0.04]">
-                <span class="text-[11px] font-semibold uppercase tracking-wider text-[#0071e3]">Assam Network</span>
-                <h3 class="font-display text-xl font-semibold mt-2 mb-2 text-[#1d1d1f]">Verified Dealer Locator</h3>
-                <p class="text-[13px] text-[#6e6e73] leading-relaxed">Filter outlets across Guwahati, Nagaon, Dibrugarh, Jorhat &amp; Silchar with pickup/delivery visibility.</p>
+            <a href="about.php" class="snap-start shrink-0 w-[290px] sm:w-[300px] apple-card bg-white rounded-[26px] p-7 block border border-black/[0.04]">
+                <span class="text-[11px] font-semibold uppercase tracking-wider text-[#0071e3]">Our Story</span>
+                <h3 class="font-display text-xl font-semibold mt-2 mb-2 text-[#1d1d1f]">About GE Tradecom</h3>
+                <p class="text-[13px] text-[#6e6e73] leading-relaxed">Explore our Assam distribution heritage, leadership mission, and meeting &amp; event highlights.</p>
             </a>
 
             <a href="promotions.php" class="snap-start shrink-0 w-[290px] sm:w-[300px] apple-card bg-white rounded-[26px] p-7 block border border-black/[0.04]">
@@ -381,10 +380,10 @@ unset($_SESSION['flash_message']);
                 <p class="text-[13px] text-[#6e6e73] leading-relaxed">Verified service-centre locations, repair scope, hours, and escalation contacts.</p>
             </a>
 
-            <a href="workshops.php" class="snap-start shrink-0 w-[290px] sm:w-[300px] apple-card bg-white rounded-[26px] p-7 block border border-black/[0.04]">
-                <span class="text-[11px] font-semibold uppercase tracking-wider text-[#0071e3]">Learn &amp; Grow</span>
-                <h3 class="font-display text-xl font-semibold mt-2 mb-2 text-[#1d1d1f]">Expert Workshops</h3>
-                <p class="text-[13px] text-[#6e6e73] leading-relaxed">Reserve seats for hands-on sessions on Mac, iPad, and iPhone workflows across Assam.</p>
+            <a href="business.php" class="snap-start shrink-0 w-[290px] sm:w-[300px] apple-card bg-white rounded-[26px] p-7 block border border-black/[0.04]">
+                <span class="text-[11px] font-semibold uppercase tracking-wider text-[#0071e3]">Enterprise</span>
+                <h3 class="font-display text-xl font-semibold mt-2 mb-2 text-[#1d1d1f]">Small Business Solutions</h3>
+                <p class="text-[13px] text-[#6e6e73] leading-relaxed">Mac &amp; iPad fleet sizing, Apple Business Manager, and MDM deployment support.</p>
             </a>
         </div>
     </div>
@@ -405,8 +404,8 @@ unset($_SESSION['flash_message']);
             <button onclick="openEnquiryModal('specialist', 'Product Specialist Consultation')" class="btn-tactile px-6 py-3 rounded-full bg-[#0071e3] hover:bg-[#0077ed] text-white text-[14px] font-medium transition cursor-pointer">
                 Talk to a Specialist
             </button>
-            <a href="dealers.php" class="btn-tactile px-6 py-3 rounded-full bg-white text-[#1d1d1f] hover:bg-[#f5f5f7] text-[14px] font-medium transition">
-                Find a Dealer
+            <a href="about.php" class="btn-tactile px-6 py-3 rounded-full bg-white text-[#1d1d1f] hover:bg-[#f5f5f7] text-[14px] font-medium transition">
+                About GE Tradecom
             </a>
         </div>
     </div>
@@ -420,31 +419,24 @@ function scrollValueRail(delta) {
 const JOURNEYS = {
     customer: {
         badge: 'Customer Journey',
-        title: 'From Discovery to Verified Local Outlet',
-        steps: ['Browse Category Portfolio', 'Compare Specs & Finishes', 'Ask a Product Specialist', 'Locate Verified Assam Dealer', 'Visit or Contact Outlet'],
+        title: 'From Discovery to Specialist Guidance',
+        steps: ['Browse Category Portfolio', 'Compare Specs & Finishes', 'Ask a Product Specialist', 'Request Stock Alert', 'Connect with GE Tradecom'],
         ctaText: 'Explore & Compare Products',
         ctaHref: 'products.php'
-    },
-    dealer: {
-        badge: 'Dealer Partner Journey',
-        title: 'Onboarding Into the Assam Channel Network',
-        steps: ['Register Partner Interest', 'Submit Business & Outlet Details', 'GE Tradecom Verification', 'Verified Profile Publication', 'Receive Campaigns & Training'],
-        ctaText: 'Start Partner Onboarding',
-        ctaAction: "openEnquiryModal('dealer_onboarding', 'Assam Dealer Partner Registration')"
     },
     business: {
         badge: 'Business & Institutional Journey',
         title: 'Structured B2B Deployment Across Assam',
-        steps: ['Select Business Solution', 'Submit Fleet Requirements', 'Specialist Consultation', 'Demo / Partner Quotation', 'Authorised Channel Fulfilment'],
+        steps: ['Select Business Solution', 'Submit Fleet Requirements', 'Specialist Consultation', 'Demo / Proposal Review', 'Official Distribution Fulfilment'],
         ctaText: 'Submit Business Enquiry',
         ctaHref: 'business.php'
     },
-    workshop: {
-        badge: 'Workshop Attendee Journey',
-        title: 'Hands-On Learning Across Assam Cities',
-        steps: ['Select City / Venue', 'Review Topic & Trainer', 'Reserve Available Seat', 'Receive Confirmation', 'Attend Live Session'],
-        ctaText: 'Browse Workshop Calendar',
-        ctaHref: 'workshops.php'
+    education: {
+        badge: 'Education Journey',
+        title: 'Student, Teacher & Campus Enablement',
+        steps: ['Review Eligible Models', 'Verify Student / Faculty ID', 'Connect with Education Desk', 'Confirm Programme Terms', 'Institutional or Individual Fulfilment'],
+        ctaText: 'Explore Education Programme',
+        ctaHref: 'education.php'
     }
 };
 
