@@ -131,6 +131,22 @@ function get_product_color_images(string $slug): array {
             'Midnight'  => 'assets/images/products/watch-se3-midnight.png',
             'Starlight' => 'assets/images/products/watch-se3-starlight.png',
         ],
+        'airpods-5' => [
+            'White' => 'assets/images/products/airpods-5.png',
+        ],
+        'airpods-5-wireless-case' => [
+            'White' => 'assets/images/products/airpods-5-wireless-case.png',
+        ],
+        'airpods-pro-3' => [
+            'White' => 'assets/images/products/airpods-pro-3.png',
+        ],
+        'airpods-max-2' => [
+            'Midnight'  => 'assets/images/products/airpods-max-2-midnight.png',
+            'Starlight' => 'assets/images/products/airpods-max-2-starlight.png',
+            'Blue'      => 'assets/images/products/airpods-max-2-blue.png',
+            'Purple'    => 'assets/images/products/airpods-max-2-purple.png',
+            'Orange'    => 'assets/images/products/airpods-max-2-orange.png',
+        ],
     ];
     return $map[$slug] ?? [];
 }
