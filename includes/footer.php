@@ -22,7 +22,6 @@
                     <li><a href="products.php?category=Watch" class="hover:text-[#1d1d1f] hover:underline transition">Apple Watch</a></li>
                     <li><a href="products.php?category=AirPods" class="hover:text-[#1d1d1f] hover:underline transition">AirPods</a></li>
                     <li><a href="products.php?category=TV+%26+Home" class="hover:text-[#1d1d1f] hover:underline transition">TV &amp; Home</a></li>
-                    <li><a href="products.php?category=Accessories" class="hover:text-[#1d1d1f] hover:underline transition">Accessories</a></li>
                 </ul>
             </div>
             <div>
@@ -311,12 +310,14 @@ const CURTAIN_DATA = {
             { label: 'Ask a Specialist', action: "openEnquiryModal('product', 'AirPods Pro 3')" }
         ]
     },
-    Accessories: {
-        primaryTitle: 'Explore Accessories',
+    TVHome: {
+        primaryTitle: 'Explore TV & Home',
         primary: [
-            { label: 'All Accessories', href: 'products.php?category=Accessories' },
-            { label: 'Apple Pencil Pro', href: 'product-details.php?slug=apple-pencil-pro' },
-            { label: 'TV & Home', href: 'products.php?category=TV+%26+Home' }
+            { label: 'Explore All TV & Home', href: 'products.php?category=TV+%26+Home' },
+            { label: 'Apple HomeView', href: 'product-details.php?slug=apple-homeview' },
+            { label: 'Apple TV 4K', href: 'product-details.php?slug=apple-tv-4k' },
+            { label: 'HomePod mini 2', href: 'product-details.php?slug=homepod-mini-2' },
+            { label: 'HomePod', href: 'product-details.php?slug=homepod' }
         ],
         secondaryTitle: 'Assam Channel',
         secondary: [
@@ -325,7 +326,7 @@ const CURTAIN_DATA = {
         ],
         tertiaryTitle: 'Support',
         tertiary: [
-            { label: 'Contact Support Desk', href: 'contact.php' }
+            { label: 'Ask a Specialist', action: "openEnquiryModal('product', 'Apple HomeView')" }
         ]
     },
     About: {

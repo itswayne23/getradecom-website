@@ -186,7 +186,7 @@ unset($_SESSION['flash_message']);
             </a>
         </div>
 
-        <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3.5">
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3.5">
             <?php
             $categories = [
                 ['name' => 'iPhone', 'sub' => 'Titanium & Pro'],
@@ -195,7 +195,6 @@ unset($_SESSION['flash_message']);
                 ['name' => 'Watch', 'sub' => 'Health & Fitness'],
                 ['name' => 'AirPods', 'sub' => 'Spatial Audio'],
                 ['name' => 'TV & Home', 'sub' => 'Smart Living'],
-                ['name' => 'Accessories', 'sub' => 'Cases & Chargers'],
             ];
             foreach ($categories as $cat): ?>
             <a href="products.php?category=<?= urlencode($cat['name']) ?>"

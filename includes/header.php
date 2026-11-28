@@ -54,7 +54,7 @@ $current_cat = $_GET['category'] ?? '';
                 <a href="products.php?category=iPhone" data-curtain="iPhone" class="nav-trigger relative z-10 px-2 xl:px-2.5 py-1.5 hover:text-[#1d1d1f] transition <?= $current_page === 'products.php' && $current_cat === 'iPhone' ? 'text-[#0071e3] font-medium' : '' ?>">iPhone</a>
                 <a href="products.php?category=Watch" data-curtain="Watch" class="nav-trigger relative z-10 px-2 xl:px-2.5 py-1.5 hover:text-[#1d1d1f] transition <?= $current_page === 'products.php' && $current_cat === 'Watch' ? 'text-[#0071e3] font-medium' : '' ?>">Watch</a>
                 <a href="products.php?category=AirPods" data-curtain="AirPods" class="nav-trigger relative z-10 px-2 xl:px-2.5 py-1.5 hover:text-[#1d1d1f] transition <?= $current_page === 'products.php' && $current_cat === 'AirPods' ? 'text-[#0071e3] font-medium' : '' ?>">AirPods</a>
-                <a href="products.php?category=Accessories" data-curtain="Accessories" class="nav-trigger relative z-10 px-2 xl:px-2.5 py-1.5 hover:text-[#1d1d1f] transition <?= $current_page === 'products.php' && $current_cat === 'Accessories' ? 'text-[#0071e3] font-medium' : '' ?>">Accessories</a>
+                <a href="products.php?category=TV+%26+Home" data-curtain="TVHome" class="nav-trigger relative z-10 px-2 xl:px-2.5 py-1.5 hover:text-[#1d1d1f] transition <?= $current_page === 'products.php' && $current_cat === 'TV & Home' ? 'text-[#0071e3] font-medium' : '' ?>">TV &amp; Home</a>
                 <span class="text-black/15 px-1 select-none">|</span>
                 <a href="about.php" data-curtain="About" class="nav-trigger relative z-10 px-2 xl:px-2.5 py-1.5 hover:text-[#1d1d1f] transition <?= $current_page === 'about.php' ? 'text-[#0071e3] font-medium' : '' ?>">About Us</a>
                 <a href="business.php" data-curtain="Business" class="nav-trigger relative z-10 px-2 xl:px-2.5 py-1.5 hover:text-[#1d1d1f] transition <?= $current_page === 'business.php' ? 'text-[#0071e3] font-medium' : '' ?>">Business</a>
@@ -94,7 +94,7 @@ $current_cat = $_GET['category'] ?? '';
                 <a href="products.php?category=iPad" class="mobile-nav-item block py-1.5 text-[#424245]" style="transition-delay: 160ms;">iPad</a>
                 <a href="products.php?category=Watch" class="mobile-nav-item block py-1.5 text-[#424245]" style="transition-delay: 200ms;">Watch</a>
                 <a href="products.php?category=AirPods" class="mobile-nav-item block py-1.5 text-[#424245]" style="transition-delay: 240ms;">AirPods</a>
-                <a href="products.php?category=Accessories" class="mobile-nav-item block py-1.5 text-[#424245]" style="transition-delay: 280ms;">Accessories</a>
+                <a href="products.php?category=TV+%26+Home" class="mobile-nav-item block py-1.5 text-[#424245]" style="transition-delay: 280ms;">TV &amp; Home</a>
                 <div class="pt-3 mt-2 border-t border-black/[0.06] space-y-1 text-[15px] font-medium">
                     <a href="about.php" class="mobile-nav-item block py-1.5 text-[#0071e3]" style="transition-delay: 320ms;">About Us &amp; Moments &rarr;</a>
                     <a href="business.php" class="mobile-nav-item block py-1.5 text-[#1d1d1f]" style="transition-delay: 350ms;">Small Business Solutions</a>

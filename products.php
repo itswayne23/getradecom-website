@@ -3,7 +3,7 @@ require_once 'config/db.php';
 $page_title = 'Product Portfolio & Compare';
 require_once 'includes/header.php';
 
-$categories = ['All', 'iPhone', 'Mac', 'iPad', 'Watch', 'AirPods', 'TV & Home', 'Accessories'];
+$categories = ['All', 'iPhone', 'Mac', 'iPad', 'Watch', 'AirPods', 'TV & Home'];
 $selected_category = $_GET['category'] ?? 'All';
 if (!in_array($selected_category, $categories, true)) {
     $selected_category = 'All';
