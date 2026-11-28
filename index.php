@@ -115,10 +115,10 @@ unset($_SESSION['flash_message']);
         <div class="max-w-3xl mb-10">
             <span class="text-[11px] font-semibold uppercase tracking-widest text-[#0071e3]">Corporate Profile &middot; GE Tradecom Pvt Ltd</span>
             <h2 class="font-display text-3xl sm:text-4xl font-semibold tracking-tight text-[#1d1d1f] mt-1 mb-3">
-                Built on clarity, partner verification, and Assam-first enablement.
+                Genuine Apple hardware and specialist support across Assam.
             </h2>
             <p class="text-[15px] sm:text-[17px] text-[#6e6e73] leading-relaxed">
-                GE Tradecom Pvt Ltd serves as a structured distribution and specialist enablement gateway across Assam &mdash; bridging Apple product discovery with corporate buyers, institutions, and authorised service desks.
+                Official Apple distribution, business fleet supply, and specialist support across Assam &mdash; connecting individuals, businesses, and schools with genuine Apple products and authorised service.
             </p>
         </div>
 
@@ -127,7 +127,7 @@ unset($_SESSION['flash_message']);
                 <span class="text-[11px] font-semibold uppercase tracking-wider text-[#0071e3]">01 / Product Discovery</span>
                 <h3 class="font-display text-xl font-semibold text-[#1d1d1f] mt-2 mb-2">Verified Portfolio &amp; Specs</h3>
                 <p class="text-[14px] text-[#6e6e73] leading-relaxed">
-                    Browse the Apple lineup across 7 categories, compare specifications side by side, and register for back-in-stock notifications.
+                    Browse the Apple lineup across 6 categories, compare specifications side by side, and register for back-in-stock notifications.
                 </p>
             </div>
             <div class="reveal-card apple-card bg-white rounded-[26px] p-8 border border-black/[0.04]">
