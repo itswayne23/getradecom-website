@@ -167,6 +167,26 @@ function get_product_color_images(string $slug): array {
             'Space Grey' => 'assets/images/products/ipad-mini-space-grey.png',
             'Starlight'  => 'assets/images/products/ipad-mini-starlight.png',
         ],
+        'apple-homeview' => [
+            'Silver'     => 'assets/images/products/apple-homeview-silver.png',
+            'Light Pink' => 'assets/images/products/apple-homeview-light-pink.png',
+            'Starlight'  => 'assets/images/products/apple-homeview-starlight.png',
+            'Natural'    => 'assets/images/products/apple-homeview-natural.png',
+        ],
+        'apple-tv-4k' => [
+            'Black' => 'assets/images/products/apple-tv-4k-black.png',
+        ],
+        'homepod-mini-2' => [
+            'Dark Green' => 'assets/images/products/homepod-mini-2-dark-green.png',
+            'White'      => 'assets/images/products/homepod-mini-2-white.png',
+            'Dark Blue'  => 'assets/images/products/homepod-mini-2-dark-blue.png',
+            'Light Pink' => 'assets/images/products/homepod-mini-2-light-pink.png',
+            'Midnight'   => 'assets/images/products/homepod-mini-2-midnight.png',
+        ],
+        'homepod' => [
+            'Midnight' => 'assets/images/products/homepod-midnight.png',
+            'White'    => 'assets/images/products/homepod-white.png',
+        ],
     ];
     return $map[$slug] ?? [];
 }
