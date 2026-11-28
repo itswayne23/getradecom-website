@@ -32,7 +32,6 @@ $current_cat = $_GET['category'] ?? '';
             <a href="education.php" class="hidden md:inline hover:text-white transition">Education</a>
             <a href="promotions.php" class="hidden sm:inline hover:text-white transition">Campaigns</a>
             <a href="contact.php" class="hidden sm:inline hover:text-white transition">Contact</a>
-            <a href="admin/login.php" class="text-[#86868b] hover:text-white transition">Partner Admin</a>
         </div>
     </div>
 </div>
