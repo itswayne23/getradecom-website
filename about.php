@@ -137,26 +137,14 @@ $moments = [
 <!-- Animated Meetings, Events & Milestones Gallery -->
 <section id="moments" class="bg-[#fbfbfd] border-y border-black/[0.06] py-16 overflow-hidden">
     <div class="max-w-[1200px] mx-auto px-4 sm:px-6 mb-10">
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
-            <div>
-                <span class="text-[11px] font-semibold uppercase tracking-widest text-[#0071e3]">Life at GE Tradecom</span>
-                <h2 class="font-display text-3xl sm:text-4xl font-semibold tracking-tight text-[#1d1d1f] mt-1">
-                    Meetings, Summits &amp; Milestones
-                </h2>
-                <p class="text-[14px] text-[#6e6e73] mt-2 max-w-xl">
-                    Highlights from our executive reviews, partner summits, and team moments across Assam. Hover to pause or click any card to expand.
-                </p>
-            </div>
-
-            <!-- Interactive Category Filter -->
-            <div class="flex flex-wrap gap-2">
-                <?php foreach (['All', 'Leadership Meetings', 'Partner Summits', 'Team & Events'] as $idx => $cat): ?>
-                <button type="button" onclick="filterMoments('<?= e($cat) ?>', this)"
-                        class="moment-filter px-4 py-1.5 rounded-full text-xs font-medium transition cursor-pointer <?= $idx === 0 ? 'bg-[#1d1d1f] text-white' : 'bg-white border border-[#d2d2d7] text-[#424245] hover:border-[#1d1d1f]' ?>">
-                    <?= e($cat) ?>
-                </button>
-                <?php endforeach; ?>
-            </div>
+        <div>
+            <span class="text-[11px] font-semibold uppercase tracking-widest text-[#0071e3]">Life at GE Tradecom</span>
+            <h2 class="font-display text-3xl sm:text-4xl font-semibold tracking-tight text-[#1d1d1f] mt-1">
+                Meetings, Summits &amp; Milestones
+            </h2>
+            <p class="text-[14px] text-[#6e6e73] mt-2 max-w-xl">
+                Highlights from our executive reviews, partner summits, and team moments across Assam. Hover to pause or click any card to expand.
+            </p>
         </div>
     </div>
 
@@ -184,21 +172,6 @@ $moments = [
             <?php endforeach; ?>
         </div>
         <?php endfor; ?>
-    </div>
-
-    <!-- Filtered Grid View (Shown when a specific category tab is clicked) -->
-    <div id="moments-grid-view" class="hidden max-w-[1200px] mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-        <?php foreach ($moments as $idx => $m): ?>
-        <button type="button" data-moment-cat="<?= e($m['category']) ?>" onclick="openMomentLightbox(<?= $idx ?>)" aria-label="<?= e($m['title']) ?>"
-                class="moment-grid-card group relative h-[250px] rounded-[26px] overflow-hidden border border-black/[0.06] shadow-sm hover:shadow-xl transition-all duration-500 cursor-pointer">
-            <?php if (!empty($m['image'])): ?>
-                <img src="<?= e($m['image']) ?>" alt="<?= e($m['title']) ?>"
-                     class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-            <?php else: ?>
-                <div class="absolute inset-0 bg-gradient-to-br <?= e($m['accent']) ?> transition-transform duration-700 group-hover:scale-105"></div>
-            <?php endif; ?>
-        </button>
-        <?php endforeach; ?>
     </div>
 </section>
 
@@ -262,30 +235,6 @@ $moments = [
 <script>
 const MOMENTS = <?= json_encode($moments, JSON_UNESCAPED_SLASHES) ?>;
 let currentMomentIdx = 0;
-
-function filterMoments(cat, btn) {
-    document.querySelectorAll('.moment-filter').forEach(el => {
-        el.classList.remove('bg-[#1d1d1f]', 'text-white');
-        el.classList.add('bg-white', 'border', 'border-[#d2d2d7]', 'text-[#424245]');
-    });
-    if (btn) {
-        btn.classList.add('bg-[#1d1d1f]', 'text-white');
-        btn.classList.remove('bg-white', 'border', 'border-[#d2d2d7]', 'text-[#424245]');
-    }
-
-    const marquee = document.getElementById('moments-marquee-view');
-    const grid = document.getElementById('moments-grid-view');
-    if (cat === 'All') {
-        marquee.classList.remove('hidden');
-        grid.classList.add('hidden');
-    } else {
-        marquee.classList.add('hidden');
-        grid.classList.remove('hidden');
-        grid.querySelectorAll('.moment-grid-card').forEach(card => {
-            card.style.display = card.getAttribute('data-moment-cat') === cat ? '' : 'none';
-        });
-    }
-}
 
 function openMomentLightbox(idx) {
     currentMomentIdx = (idx + MOMENTS.length) % MOMENTS.length;
