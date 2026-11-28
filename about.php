@@ -171,28 +171,15 @@ $moments = [
             <?php foreach ($loopItems as $mIdx => $m):
                 $origIdx = array_search($m, $moments, true);
             ?>
-            <button type="button" onclick="openMomentLightbox(<?= (int)$origIdx ?>)"
-                    class="group relative w-[320px] sm:w-[370px] h-[230px] rounded-[26px] overflow-hidden text-left shrink-0 border border-black/[0.06] shadow-sm hover:shadow-xl transition-all duration-500 cursor-pointer">
+            <button type="button" onclick="openMomentLightbox(<?= (int)$origIdx ?>)" aria-label="<?= e($m['title']) ?>"
+                    class="group relative w-[320px] sm:w-[370px] h-[230px] rounded-[26px] overflow-hidden shrink-0 border border-black/[0.06] shadow-sm hover:shadow-xl transition-all duration-500 cursor-pointer">
                 <?php if (!empty($m['image'])): ?>
                     <img src="<?= e($m['image']) ?>" alt="<?= e($m['title']) ?>"
                          class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent"></div>
                 <?php else: ?>
                     <div class="absolute inset-0 bg-gradient-to-br <?= e($m['accent']) ?> transition-transform duration-700 group-hover:scale-105"></div>
                     <div class="absolute inset-0 bg-[radial-gradient(circle_at_75%_20%,rgba(255,255,255,0.16),transparent_55%)]"></div>
                 <?php endif; ?>
-
-                <div class="relative z-10 h-full p-6 flex flex-col justify-between text-white">
-                    <span class="self-start text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-white/15 backdrop-blur-md border border-white/15">
-                        <?= e($m['category']) ?>
-                    </span>
-                    <div>
-                        <div class="text-[11px] text-white/75 mb-1"><?= e($m['date']) ?> &middot; <?= e($m['location']) ?></div>
-                        <h3 class="font-display text-lg font-semibold leading-snug group-hover:text-[#60a5fa] transition-colors">
-                            <?= e($m['title']) ?>
-                        </h3>
-                    </div>
-                </div>
             </button>
             <?php endforeach; ?>
         </div>
@@ -202,24 +189,14 @@ $moments = [
     <!-- Filtered Grid View (Shown when a specific category tab is clicked) -->
     <div id="moments-grid-view" class="hidden max-w-[1200px] mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         <?php foreach ($moments as $idx => $m): ?>
-        <button type="button" data-moment-cat="<?= e($m['category']) ?>" onclick="openMomentLightbox(<?= $idx ?>)"
-                class="moment-grid-card group relative h-[250px] rounded-[26px] overflow-hidden text-left border border-black/[0.06] shadow-sm hover:shadow-xl transition-all duration-500 cursor-pointer">
+        <button type="button" data-moment-cat="<?= e($m['category']) ?>" onclick="openMomentLightbox(<?= $idx ?>)" aria-label="<?= e($m['title']) ?>"
+                class="moment-grid-card group relative h-[250px] rounded-[26px] overflow-hidden border border-black/[0.06] shadow-sm hover:shadow-xl transition-all duration-500 cursor-pointer">
             <?php if (!empty($m['image'])): ?>
                 <img src="<?= e($m['image']) ?>" alt="<?= e($m['title']) ?>"
                      class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent"></div>
             <?php else: ?>
                 <div class="absolute inset-0 bg-gradient-to-br <?= e($m['accent']) ?> transition-transform duration-700 group-hover:scale-105"></div>
             <?php endif; ?>
-            <div class="relative z-10 h-full p-6 flex flex-col justify-between text-white">
-                <span class="self-start text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-white/15 backdrop-blur-md border border-white/15">
-                    <?= e($m['category']) ?>
-                </span>
-                <div>
-                    <div class="text-[11px] text-white/75 mb-1"><?= e($m['date']) ?> &middot; <?= e($m['location']) ?></div>
-                    <h3 class="font-display text-lg font-semibold leading-snug"><?= e($m['title']) ?></h3>
-                </div>
-            </div>
         </button>
         <?php endforeach; ?>
     </div>
