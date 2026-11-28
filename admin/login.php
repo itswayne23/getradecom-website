@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <img src="../assets/images/getradecom-logo.png" alt="GE Tradecom Pvt. Ltd." class="h-9 w-auto object-contain mb-4">
         <span class="text-[11px] font-semibold uppercase tracking-widest text-[#0071e3]">Admin Console</span>
         <h1 class="font-display text-2xl font-semibold text-[#1d1d1f] mt-1 mb-1">Partner &amp; Lead Console</h1>
-        <p class="text-[12px] text-[#6e6e73] mb-6">Sign in to review enquiries, subscribers, and Assam dealer status.</p>
+        <p class="text-[12px] text-[#6e6e73] mb-6">Sign in to review enquiries, product status, and subscribers.</p>
 
         <?php if ($error): ?>
         <div class="bg-[#fff2f4] border border-[#ff3b30]/20 text-[#d70015] text-xs rounded-xl p-3 mb-4">

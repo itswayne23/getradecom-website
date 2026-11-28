@@ -71,7 +71,7 @@ unset($_SESSION['flash_message']);
         </h1>
 
         <p class="text-[17px] sm:text-[21px] text-[#a1a1a6] font-normal max-w-2xl mx-auto leading-relaxed mb-8">
-            Corporate portfolio &amp; channel hub for GE Tradecom Pvt Ltd &mdash; connecting Assam customers, verified dealers, institutions, and service partners with the official Apple ecosystem.
+            Corporate portfolio &amp; distribution hub for GE Tradecom Pvt Ltd &mdash; connecting Assam customers, businesses, institutions, and service partners with the official Apple ecosystem.
         </p>
 
         <div class="flex flex-wrap justify-center items-center gap-3.5 mb-12">
@@ -118,7 +118,7 @@ unset($_SESSION['flash_message']);
                 Built on clarity, partner verification, and Assam-first enablement.
             </h2>
             <p class="text-[15px] sm:text-[17px] text-[#6e6e73] leading-relaxed">
-                GE Tradecom Pvt Ltd serves as a structured distribution and channel enablement gateway across Assam &mdash; bridging Apple product discovery with verified local dealers, corporate buyers, and authorised service desks.
+                GE Tradecom Pvt Ltd serves as a structured distribution and specialist enablement gateway across Assam &mdash; bridging Apple product discovery with corporate buyers, institutions, and authorised service desks.
             </p>
         </div>
 
@@ -270,7 +270,7 @@ unset($_SESSION['flash_message']);
             <h2 class="font-display text-3xl sm:text-[34px] font-semibold tracking-tight text-[#1d1d1f]">
                 Featured lineup. <span class="text-[#6e6e73] font-normal">Hardware across our Assam channel.</span>
             </h2>
-            <p class="text-[#6e6e73] text-[14px] mt-1">Explore official specifications, request stock alerts, or connect with a verified dealer.</p>
+            <p class="text-[#6e6e73] text-[14px] mt-1">Explore official specifications, request stock alerts, or connect with our Assam specialist team.</p>
         </div>
         <a href="products.php" class="text-[14px] font-medium text-[#0071e3] hover:underline apple-link-arrow shrink-0">
             <span>View &amp; compare all</span>
@@ -396,7 +396,7 @@ unset($_SESSION['flash_message']);
             <span class="text-[11px] font-semibold uppercase tracking-widest text-[#2997ff]">GE Tradecom Pvt Ltd &middot; Concierge</span>
             <h2 class="font-display text-3xl sm:text-4xl font-semibold tracking-tight mt-1 mb-3">Ready to connect across Assam?</h2>
             <p class="text-[#a1a1a6] text-[15px] leading-relaxed">
-                Whether you are evaluating Apple hardware, registering as an authorised Assam dealer, or planning an institutional rollout, our specialist team routes every enquiry accurately.
+                Whether you are evaluating Apple hardware, requesting bulk business pricing, or planning an institutional rollout, our specialist team routes every enquiry accurately.
             </p>
         </div>
         <div class="flex flex-wrap gap-3 relative z-10">

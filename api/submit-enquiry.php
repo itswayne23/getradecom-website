@@ -36,7 +36,7 @@ if ($action === 'subscribe') {
     $stmt = $pdo->prepare("INSERT IGNORE INTO subscribers (email, consent_given) VALUES (:email, :consent)");
     $stmt->execute([':email' => $email, ':consent' => $consent]);
 
-    $_SESSION['flash_message'] = 'Subscribed! You will receive updates on GE Tradecom Assam launches, workshops, and approved campaigns.';
+    $_SESSION['flash_message'] = 'Subscribed! You will receive updates on GE Tradecom Assam launches and approved campaigns.';
     header('Location: ' . $redirect_back);
     exit;
 }

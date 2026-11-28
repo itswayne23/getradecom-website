@@ -18,7 +18,7 @@ unset($_SESSION['flash_message']);
         <span class="text-[11px] font-semibold uppercase tracking-widest text-[#0071e3]">GE Tradecom Pvt Ltd &mdash; Assam</span>
         <h1 class="font-display text-4xl sm:text-5xl font-semibold tracking-tight text-[#1d1d1f] mt-1">Contact &amp; Escalation Desk</h1>
         <p class="text-[#6e6e73] text-[15px] sm:text-[17px] mt-2 max-w-2xl">
-            Reach out for product consultations, stock notifications, Assam dealer onboarding, corporate enquiries, or service escalation.
+            Reach out for product consultations, stock notifications, corporate enquiries, education programmes, or service escalation.
         </p>
     </div>
 </section>

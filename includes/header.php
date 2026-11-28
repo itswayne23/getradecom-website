@@ -63,7 +63,7 @@ $current_cat = $_GET['category'] ?? '';
 
             <!-- Action Controls & Official Apple Authorised Dealer Lockup (Right) -->
             <div class="flex items-center gap-2 shrink-0">
-                <button onclick="openSpotlightModal()" aria-label="Quick Search" title="Search products or Assam dealers (Ctrl+K)"
+                <button onclick="openSpotlightModal()" aria-label="Quick Search" title="Search products or programmes (Ctrl+K)"
                         class="p-1.5 rounded-full text-[#1d1d1f]/80 hover:text-[#1d1d1f] hover:bg-black/[0.06] transition cursor-pointer">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35m1.85-5.15a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
                 </button>

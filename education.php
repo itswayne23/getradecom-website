@@ -46,7 +46,7 @@ unset($_SESSION['flash_message']);
             <span class="text-[11px] font-semibold uppercase tracking-wider text-[#0071e3]">Step 03 / Routing</span>
             <h2 class="font-display text-xl font-semibold text-[#1d1d1f] mt-2 mb-2">Verified Partner Fulfilment</h2>
             <p class="text-[14px] text-[#6e6e73] leading-relaxed">
-                Approved education enquiries are routed to a participating verified Assam dealer outlet for document review and hardware handover.
+                Approved education enquiries are coordinated by our Guwahati specialist desk for document verification and hardware fulfilment.
             </p>
         </div>
     </div>

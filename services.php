@@ -59,7 +59,7 @@ unset($_SESSION['flash_message']);
             </p>
             <ul class="text-[13px] text-[#6e6e73] space-y-2 mb-7 list-disc pl-5">
                 <li>Eligible tenures, processing charges, down payments, and approval rules depend on the issuing partner and active programme terms.</li>
-                <li>Confirm active financing availability directly with a verified Assam dealer or specialist before purchase.</li>
+                <li>Confirm active financing availability directly with a GE Tradecom specialist before purchase.</li>
             </ul>
             <button onclick="openEnquiryModal('specialist', 'Financing & Payment Options Query')"
                     class="btn-tactile px-6 py-2.5 rounded-full bg-[#1d1d1f] hover:bg-black text-white text-[13px] font-medium transition cursor-pointer">
@@ -141,7 +141,7 @@ unset($_SESSION['flash_message']);
                     <span class="text-[#6e6e73] text-lg group-open:rotate-45 transition-transform">+</span>
                 </summary>
                 <p class="text-[14px] text-[#6e6e73] mt-2 leading-relaxed">
-                    This portal is GE Tradecom Pvt Ltd's corporate portfolio and Assam channel gateway for product discovery, specialist/business consultations, workshop registration, and routing visitors to verified Assam dealers.
+                    This portal is GE Tradecom Pvt Ltd's corporate portfolio and Assam gateway for product discovery, specialist/business consultations, education programmes, and authorised service guidance.
                 </p>
             </details>
 
@@ -161,7 +161,7 @@ unset($_SESSION['flash_message']);
                     <span class="text-[#6e6e73] text-lg group-open:rotate-45 transition-transform">+</span>
                 </summary>
                 <p class="text-[14px] text-[#6e6e73] mt-2 leading-relaxed">
-                    Details submitted through enquiry, stock notification, workshop, or newsletter forms are protected and used solely to respond to your request or deliver opted-in updates, with clear consent and unsubscribe controls.
+                    Details submitted through enquiry, stock notification, consultation, or newsletter forms are protected and used solely to respond to your request or deliver opted-in updates, with clear consent and unsubscribe controls.
                 </p>
             </details>
         </div>
