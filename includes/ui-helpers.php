@@ -147,6 +147,26 @@ function get_product_color_images(string $slug): array {
             'Purple'    => 'assets/images/products/airpods-max-2-purple.png',
             'Orange'    => 'assets/images/products/airpods-max-2-orange.png',
         ],
+        'ipad-pro' => [
+            'Space Black' => 'assets/images/products/ipad-pro-space-black.png',
+            'Silver'      => 'assets/images/products/ipad-pro-silver.png',
+        ],
+        'ipad-air' => [
+            'Space Grey' => 'assets/images/products/ipad-air-space-grey.png',
+            'Blue'       => 'assets/images/products/ipad-air-blue.png',
+            'Purple'     => 'assets/images/products/ipad-air-purple.png',
+            'Starlight'  => 'assets/images/products/ipad-air-starlight.png',
+        ],
+        'ipad-a16' => [
+            'Blue'   => 'assets/images/products/ipad-blue.png',
+            'Pink'   => 'assets/images/products/ipad-pink.png',
+            'Yellow' => 'assets/images/products/ipad-yellow.png',
+            'Silver' => 'assets/images/products/ipad-silver.png',
+        ],
+        'ipad-mini' => [
+            'Space Grey' => 'assets/images/products/ipad-mini-space-grey.png',
+            'Starlight'  => 'assets/images/products/ipad-mini-starlight.png',
+        ],
     ];
     return $map[$slug] ?? [];
 }
