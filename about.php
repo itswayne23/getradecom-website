@@ -63,31 +63,16 @@ $moments = [
 ];
 ?>
 
-<!-- Cinematic About Hero -->
+<!-- Minimal About Hero -->
 <section class="hero-titanium-glow text-white overflow-hidden border-b border-white/10">
-    <div class="max-w-[1140px] mx-auto px-4 sm:px-6 pt-16 sm:pt-24 pb-16 text-center">
-        <span class="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#2997ff]">About GE Tradecom Pvt Ltd</span>
-        <h1 class="font-display text-4xl sm:text-6xl font-semibold tracking-tight leading-[1.06] mt-3 mb-5 max-w-4xl mx-auto">
-            Powering Apple&rsquo;s official ecosystem <span class="ai-gradient-text">across Assam.</span>
+    <div class="max-w-[960px] mx-auto px-4 sm:px-6 pt-16 sm:pt-20 pb-14 sm:pb-16 text-center">
+        <span class="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#2997ff]">About Us</span>
+        <h1 class="font-display text-4xl sm:text-6xl font-semibold tracking-tight leading-[1.06] mt-3 mb-4">
+            GE Tradecom <span class="ai-gradient-text">Pvt Ltd.</span>
         </h1>
-        <p class="text-[16px] sm:text-[20px] text-[#a1a1a6] max-w-2xl mx-auto leading-relaxed mb-12">
-            As an Apple Authorised Distributor, GE Tradecom Pvt Ltd connects Assam&rsquo;s businesses, educational institutions, and customers with genuine Apple hardware, specialist guidance, and trusted care.
+        <p class="text-[16px] sm:text-[19px] text-[#a1a1a6] max-w-xl mx-auto leading-relaxed">
+            Apple Authorised Distributor for Assam &mdash; based in Guwahati.
         </p>
-
-        <div class="pt-8 border-t border-white/10 grid grid-cols-1 sm:grid-cols-3 gap-6 text-left max-w-4xl mx-auto">
-            <div class="bg-white/[0.04] border border-white/10 rounded-2xl p-6">
-                <div class="font-display text-2xl sm:text-3xl font-semibold text-white">Apple Authorised</div>
-                <div class="text-[12px] text-[#a1a1a6] mt-1">Official Distributor for Assam territory with strict brand governance</div>
-            </div>
-            <div class="bg-white/[0.04] border border-white/10 rounded-2xl p-6">
-                <div class="font-display text-2xl sm:text-3xl font-semibold text-white">Guwahati HQ</div>
-                <div class="text-[12px] text-[#a1a1a6] mt-1">Serving corporate, institutional, and consumer demand statewide</div>
-            </div>
-            <div class="bg-white/[0.04] border border-white/10 rounded-2xl p-6">
-                <div class="font-display text-2xl sm:text-3xl font-semibold text-white">End-to-End Care</div>
-                <div class="text-[12px] text-[#a1a1a6] mt-1">Product discovery, B2B fleet sizing, education &amp; service support</div>
-            </div>
-        </div>
     </div>
 </section>
 
@@ -195,9 +180,6 @@ $moments = [
                 <?php else: ?>
                     <div class="absolute inset-0 bg-gradient-to-br <?= e($m['accent']) ?> transition-transform duration-700 group-hover:scale-105"></div>
                     <div class="absolute inset-0 bg-[radial-gradient(circle_at_75%_20%,rgba(255,255,255,0.16),transparent_55%)]"></div>
-                    <div class="absolute top-5 right-5 w-10 h-10 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 flex items-center justify-center text-white/80">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                    </div>
                 <?php endif; ?>
 
                 <div class="relative z-10 h-full p-6 flex flex-col justify-between text-white">
