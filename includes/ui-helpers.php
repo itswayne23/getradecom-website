@@ -123,6 +123,14 @@ function get_product_color_images(string $slug): array {
             'Pearl White'  => 'assets/images/products/watch-s12-pearl-white.png',
             'Night Blue'   => 'assets/images/products/watch-s12-night-blue.png',
         ],
+        'apple-watch-ultra-4' => [
+            'Natural' => 'assets/images/products/watch-ultra4-natural.png',
+            'Black'   => 'assets/images/products/watch-ultra4-black.png',
+        ],
+        'apple-watch-se-3' => [
+            'Midnight'  => 'assets/images/products/watch-se3-midnight.png',
+            'Starlight' => 'assets/images/products/watch-se3-starlight.png',
+        ],
     ];
     return $map[$slug] ?? [];
 }
