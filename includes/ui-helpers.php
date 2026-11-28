@@ -113,6 +113,16 @@ function get_product_color_images(string $slug): array {
             'Teal'        => 'assets/images/products/iphone-16-teal.png',
             'Ultramarine' => 'assets/images/products/iphone-16-ultramarine.png',
         ],
+        'apple-watch-series-12' => [
+            'Dark Bronze'  => 'assets/images/products/watch-s12-dark-bronze.png',
+            'Light Gold'   => 'assets/images/products/watch-s12-light-gold.png',
+            'Black'        => 'assets/images/products/watch-s12-black.png',
+            'Space Grey'   => 'assets/images/products/watch-s12-space-grey.png',
+            'Radiant Gold' => 'assets/images/products/watch-s12-radiant-gold.png',
+            'Natural'      => 'assets/images/products/watch-s12-natural.png',
+            'Pearl White'  => 'assets/images/products/watch-s12-pearl-white.png',
+            'Night Blue'   => 'assets/images/products/watch-s12-night-blue.png',
+        ],
     ];
     return $map[$slug] ?? [];
 }
